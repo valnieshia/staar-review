@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 2 Slides — Writing &amp; Solving Linear Equations</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  :root { --day: #27ae60; --day-light: #2ecc71; --day-dark: #1e8449; --accent: #e67e22; --info: #2980b9; --danger: #e74c3c; --bg: #f0f8f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); overflow: hidden; height: 100vh; }
+  .slide { display: none; width: 100vw; height: 100vh; padding: 40px 60px; flex-direction: column; justify-content: center; position: relative; }
+  .slide.active { display: flex; }
+  .slide-counter { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: white; padding: 6px 18px; border-radius: 20px; font-size: 0.85em; z-index: 100; }
+  .nav { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: white; border: none; font-size: 2em; padding: 15px 18px; cursor: pointer; z-index: 100; border-radius: 8px; transition: background 0.2s; }
+  .nav:hover { background: rgba(0,0,0,0.6); }
+  .nav.prev { left: 15px; }
+  .nav.next { right: 15px; }
+  h1 { font-size: 2.4em; font-weight: 800; margin-bottom: 10px; }
+  h2 { font-size: 1.8em; font-weight: 700; margin-bottom: 15px; }
+  h3 { font-size: 1.3em; font-weight: 600; margin-bottom: 10px; }
+  .tag { display: inline-block; background: var(--day); color: white; padding: 4px 14px; border-radius: 15px; font-size: 0.8em; font-weight: 600; margin-bottom: 15px; }
+
+  /* Slide 1 Warm-Up */
+  .slide-warmup { background: linear-gradient(135deg, var(--day-dark) 0%, var(--day) 60%, var(--day-light) 100%); color: white; text-align: center; }
+  .review-cards { display: flex; gap: 20px; justify-content: center; margin: 20px 0; }
+  .review-card { background: white; color: #333; border-radius: 12px; padding: 20px; width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+  .review-card h4 { color: var(--day-dark); margin-bottom: 8px; }
+  .review-card table { width: 100%; border-collapse: collapse; margin: 6px 0; }
+  .review-card th { background: var(--day); color: white; padding: 5px 12px; font-size: 0.85em; }
+  .review-card td { border: 1px solid #ddd; padding: 5px 12px; text-align: center; }
+  .hand-signals { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 12px 20px; margin-top: 15px; display: inline-block; }
+  .hand-signals span { margin: 0 15px; font-size: 1.3em; }
+
+  /* Slide 2 La Pulga */
+  .slide-ido { background: #fff; color: #333; }
+  .pulga-scene { display: flex; gap: 30px; align-items: flex-start; margin: 15px 0; }
+  .booth { background: linear-gradient(180deg, #8e44ad 0%, #6c3483 100%); border-radius: 12px; padding: 20px 25px; color: white; width: 340px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15); position: relative; }
+  .booth .sign { background: #f1c40f; color: #333; padding: 8px 15px; border-radius: 8px; font-weight: 800; font-size: 1.3em; margin: 10px 0; display: inline-block; transform: rotate(-2deg); }
+  .booth .items { display: flex; justify-content: center; gap: 8px; margin: 10px 0; font-size: 1.5em; }
+  .equation-build { flex: 1; }
+  .eq-step { background: #f8f9fa; border-left: 4px solid var(--day); padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 8px 0; }
+  .eq-highlight { background: #fff3cd; border: 2px solid #f39c12; border-radius: 10px; padding: 15px; margin: 10px 0; text-align: center; font-size: 1.4em; font-weight: 800; color: #e67e22; }
+  .desmos-verify { background: #eaf6ff; border: 2px solid var(--info); border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 0.95em; }
+
+  /* Slide 3 Tilde Method */
+  .slide-tilde { background: #f8f9fa; color: #333; }
+  .tilde-demo { display: flex; gap: 30px; margin: 15px 0; }
+  .scenario-box { flex: 1; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .desmos-box { background: #f0f6ff; border: 2px solid var(--info); border-radius: 10px; padding: 15px 20px; margin: 10px 0; }
+  .desmos-line { font-family: 'Fira Code', monospace; padding: 6px 10px; margin: 4px 0; border-radius: 4px; }
+  .desmos-line.formula { background: #e8f0fe; border-left: 3px solid var(--info); }
+  .desmos-line.result { background: #d5f5e3; border-left: 3px solid var(--day); font-weight: 700; }
+  .warning-box { background: #fce4ec; border: 3px solid var(--danger); border-radius: 12px; padding: 15px 20px; margin: 15px 0; }
+  .warning-box h3 { color: var(--danger); font-size: 1.4em; }
+
+  /* Slide 4-5 Practice */
+  .slide-practice { background: #f8f9fa; color: #333; }
+  .practice-layout { display: flex; gap: 25px; }
+  .problem-area { flex: 1; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .sidebar { width: 280px; }
+  .sidebar-card { background: #eaf6ff; border: 2px solid var(--info); border-radius: 10px; padding: 15px; margin-bottom: 12px; font-size: 0.9em; }
+  .context-banner { background: linear-gradient(90deg, var(--day), var(--day-light)); color: white; padding: 12px 20px; border-radius: 10px; margin-bottom: 15px; font-size: 1.05em; }
+  .fill-line { display: inline-block; border-bottom: 2px dashed var(--danger); min-width: 70px; text-align: center; color: var(--danger); font-style: italic; }
+  .step-given { background: #d5f5e3; border-left: 4px solid var(--day); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 6px 0; }
+  .step-todo { background: #fadbd8; border-left: 4px solid var(--danger); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 6px 0; }
+  .step-partial { background: #fef9e7; border-left: 4px solid #f39c12; padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 6px 0; }
+
+  /* Slide 6 Exit Ticket */
+  .slide-exit { background: linear-gradient(135deg, #f8f9fa 0%, #eef2f7 100%); }
+  .ticket { background: white; border: 3px dashed var(--day); border-radius: 16px; padding: 30px; max-width: 800px; margin: 0 auto; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .ticket::before { content: '🎫'; font-size: 2em; position: absolute; top: -18px; left: 30px; }
+  .ticket h2 { color: var(--day); text-align: center; border-bottom: 2px solid var(--day); padding-bottom: 10px; }
+  .question { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 10px; }
+  .question p { font-weight: 600; margin-bottom: 10px; }
+  .option { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+  .bubble { width: 22px; height: 22px; border: 2px solid #999; border-radius: 50%; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: WARM-UP -->
+<div class="slide slide-warmup active" id="slide1">
+  <span class="tag">WARM-UP — 5 MINUTES</span>
+  <h1>Quick Review — Slope &amp; Y-Intercept</h1>
+  <p style="font-size:1.1em; opacity:0.9;">What do you remember from yesterday? Show me with hand signals!</p>
+  <div class="hand-signals">
+    <span>👍 I remember!</span>
+    <span>🤚 Kinda...</span>
+    <span>👎 Need help</span>
+  </div>
+  <div class="review-cards">
+    <div class="review-card">
+      <h4>Table A — Find the slope</h4>
+      <table><tr><th>x</th><th>y</th></tr><tr><td>1</td><td>4</td></tr><tr><td>2</td><td>8</td></tr></table>
+      <p style="margin-top:8px;">Use Desmos: + → table → Add regression</p>
+      <p style="font-weight:700; color:#27ae60;">slope (m) = ___</p>
+    </div>
+    <div class="review-card">
+      <h4>Table B — Find slope AND y-intercept</h4>
+      <table><tr><th>x</th><th>y</th></tr><tr><td>0</td><td>3</td></tr><tr><td>2</td><td>9</td></tr></table>
+      <p style="margin-top:8px;">Use Desmos: + → table → Add regression</p>
+      <p style="font-weight:700; color:#27ae60;">slope (m) = ___ &nbsp; y-int (b) = ___</p>
+    </div>
+  </div>
+  <p style="margin-top:15px; font-size:1.1em;">Remember: <strong>m = MULTIPLIER</strong> (touching x) &nbsp;|&nbsp; <strong>b = BONUS</strong> (by itself)</p>
+</div>
+
+<!-- SLIDE 2: I DO — La Pulga -->
+<div class="slide slide-ido" id="slide2">
+  <span class="tag">I DO — WRITING y = mx + b</span>
+  <h2>Working at La Pulga (Flea Market) 🛍️</h2>
+  <div class="pulga-scene">
+    <div class="booth">
+      <div style="font-size:1.3em; font-weight:800;">🛍️ LA PULGA 🛍️</div>
+      <div style="font-size:0.9em; margin:5px 0;">Dallas Flea Market</div>
+      <div class="sign">HELP WANTED<br>$10/hr + $20 setup</div>
+      <div class="items">👕 👖 👟 🧢 👜</div>
+      <div style="font-size:0.85em; background:rgba(255,255,255,0.2); padding:6px; border-radius:6px; margin-top:8px;">You earn money for each hour you work PLUS a bonus for setting up!</div>
+    </div>
+    <div class="equation-build">
+      <h3 style="color:var(--day-dark);">Building the Equation</h3>
+      <div class="eq-step"><strong>What changes?</strong> You earn $10 for each hour → that's the <strong>slope (m) = 10</strong></div>
+      <div class="eq-step"><strong>What stays the same?</strong> You always get $20 for setup → that's the <strong>y-intercept (b) = 20</strong></div>
+      <div class="eq-highlight">y = 10x + 20</div>
+      <div style="font-size:0.95em; color:#555;">m = MULTIPLIER ($10 per hour) &nbsp;|&nbsp; b = BONUS ($20 setup)</div>
+      <div class="desmos-verify">
+        <strong>🖩 Verify with Desmos!</strong> Enter (0, 20) and (1, 30) into table → Add regression → Confirms: <strong>y = 10x + 20</strong> ✅
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: I DO — Tilde Method -->
+<div class="slide slide-tilde" id="slide3">
+  <span class="tag">I DO — SOLVING EQUATIONS WITH DESMOS</span>
+  <h2>When Are Two Plans EQUAL? 📱</h2>
+  <div class="tilde-demo">
+    <div class="scenario-box">
+      <h3>The Scenario</h3>
+      <p style="font-size:1.05em;">Two phone plans:</p>
+      <div style="background:#e8f5e9; padding:10px; border-radius:8px; margin:8px 0;"><strong>Plan A:</strong> 15x + 30 (per month)</div>
+      <div style="background:#e3f2fd; padding:10px; border-radius:8px; margin:8px 0;"><strong>Plan B:</strong> 10x + 55 (per month)</div>
+      <p style="margin-top:10px; font-weight:600;">When do they cost the SAME?</p>
+      <div class="desmos-box">
+        <h4 style="color:var(--info);">🖩 Desmos Steps</h4>
+        <div class="desmos-line formula">15a + 30 ~ 10a + 55</div>
+        <div class="desmos-line result">Desmos shows: a = 5</div>
+        <p style="margin-top:8px;">Both plans cost the same at <strong>5 months!</strong></p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <div class="warning-box">
+        <h3>⚠️ NO "x"!</h3>
+        <p style="font-size:1.1em; margin-top:8px;">You <strong>CANNOT</strong> use the letter "x" when solving with tilde!</p>
+        <p style="margin-top:8px;">Desmos treats x as a graphing variable.</p>
+        <p style="margin-top:10px; font-size:1.2em; font-weight:800; color:var(--day);">Change x to "a" (or any other letter)!</p>
+        <div style="margin-top:12px; background:white; padding:10px; border-radius:8px;">
+          <p>❌ <code style="color:var(--danger);">15x + 30 ~ 10x + 55</code> → Won't work!</p>
+          <p>✅ <code style="color:var(--day);">15a + 30 ~ 10a + 55</code> → a = 5!</p>
+        </div>
+      </div>
+      <div style="background:#e8f5e9; border:2px solid var(--day); border-radius:10px; padding:12px; margin-top:12px;">
+        <strong>3 Steps:</strong>
+        <ol style="margin-left:20px; margin-top:6px;">
+          <li>Change every x to "a"</li>
+          <li>Type the WHOLE thing with ~ (tilde)</li>
+          <li>Read the answer!</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: GUIDED PRACTICE — Writing Equations -->
+<div class="slide slide-practice" id="slide4">
+  <span class="tag">WE DO — GUIDED PRACTICE</span>
+  <h2>Writing Equations: State Fair of Texas 🎡</h2>
+  <div class="practice-layout">
+    <div class="problem-area">
+      <div class="context-banner">🎡 "At the State Fair, admission costs $18 and each ride costs $4."</div>
+      <h3>What's the equation for total cost (y) after x rides?</h3>
+      <div class="step-given"><strong>What changes per ride?</strong> $4 per ride → m (slope) = <strong>4</strong> ✅</div>
+      <div class="step-given"><strong>What's the starting cost?</strong> $18 admission → b (y-intercept) = <strong>18</strong> ✅</div>
+      <div class="step-partial"><strong>Write the equation:</strong> y = <span class="fill-line">____</span>x + <span class="fill-line">____</span></div>
+      <div class="step-todo"><strong>Verify with Desmos:</strong> Enter (0, <span class="fill-line">____</span>) and (1, <span class="fill-line">____</span>) → + → table → Add regression → Does Desmos confirm? <span class="fill-line">____</span></div>
+      <div style="background:#fff3cd; padding:10px; border-radius:8px; margin-top:10px;">
+        <strong>Think:</strong> After 5 rides, the total cost = 4(5) + 18 = $<span class="fill-line">____</span>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-card">
+        <strong>📋 Writing y = mx + b</strong><br>
+        ☐ What CHANGES? → m<br>
+        ☐ What STARTS at? → b<br>
+        ☐ Write: y = mx + b<br>
+        ☐ Verify with Desmos!
+      </div>
+      <div class="sidebar-card" style="background:#fff3e0; border-color:#e67e22;">
+        <strong>🧠 Remember:</strong><br>
+        m = MULTIPLIER (per each)<br>
+        b = BONUS (starting value)
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: GUIDED PRACTICE — Solving Equations -->
+<div class="slide slide-practice" id="slide5">
+  <span class="tag">WE DO — GUIDED PRACTICE</span>
+  <h2>Solving: When Does Plan A = Plan B? 📱</h2>
+  <div class="practice-layout">
+    <div class="problem-area">
+      <div class="context-banner">📱 Plan A: 4x + 8 &nbsp;&nbsp;|&nbsp;&nbsp; Plan B: 2x + 20 &nbsp;&nbsp;→&nbsp;&nbsp; When are they equal?</div>
+      <div class="step-given"><strong>Step 1:</strong> Change x to "a" → 4<strong>a</strong> + 8 = 2<strong>a</strong> + 20 ✅</div>
+      <div class="step-given"><strong>Step 2:</strong> Type with tilde: <code style="background:#e8f0fe; padding:2px 8px; border-radius:4px;">4a + 8 ~ 2a + 20</code> ✅</div>
+      <div class="step-partial"><strong>Step 3:</strong> Desmos shows: a = <span class="fill-line">____</span> → so x = <span class="fill-line">____</span></div>
+      <div class="step-todo"><strong>Step 4 — Check:</strong><br>
+        Left side: 4(<span class="fill-line">__</span>) + 8 = <span class="fill-line">____</span><br>
+        Right side: 2(<span class="fill-line">__</span>) + 20 = <span class="fill-line">____</span><br>
+        Equal? <span class="fill-line">____</span></div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-card" style="background:#fce4ec; border-color:#e74c3c;">
+        <strong>⚠️ Solving Checklist</strong><br>
+        ☐ Change x → "a"<br>
+        ☐ Use ~ not =<br>
+        ☐ Read the answer<br>
+        ☐ CHECK both sides!
+      </div>
+      <div class="sidebar-card">
+        <strong>Example:</strong><br>
+        <code>3a + 56 ~ 17a</code><br>
+        → Desmos: a = 4<br>
+        → Answer: x = 4
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: EXIT TICKET -->
+<!-- SLIDE 6: CHEAT SHEET REFERENCE -->
+<div class="slide" style="background:#f8f9fa; flex-direction:column; align-items:center; justify-content:flex-start; overflow-y:auto; padding:30px 50px;">
+  <h2 style="color:#27ae60; font-size:1.3em; margin-bottom:16px; text-align:center;">📌 Day 2 Reference Cheat Sheets</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; width:100%;">
+    <div style="text-align:center;">
+      <p style="font-size:0.85em; color:#27ae60; font-weight:700; margin-bottom:6px;">Verbal to Desmos Checklist</p>
+      <img src="cheatsheet_verbal_desmos.png" alt="Verbal to Desmos" style="width:100%; border-radius:10px; border:3px solid #27ae60; max-height:72vh; object-fit:contain;">
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:0.85em; color:#2980b9; font-weight:700; margin-bottom:6px;">Finding the Equation</p>
+      <img src="cheatsheet_finding_equation.png" alt="Finding the Equation" style="width:100%; border-radius:10px; border:3px solid #2980b9; max-height:72vh; object-fit:contain;">
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: EXIT TICKET -->
+<div class="slide slide-exit" id="slide6">
+  <div class="ticket">
+    <h2>🎫 Exit Ticket — Day 2</h2>
+    <div class="question">
+      <p>1. At the State Fair of Texas, admission costs $18 and each ride costs $4. Which equation represents the total cost (y) for x rides?</p>
+      <div class="option"><div class="bubble"></div> A. y = 18x + 4</div>
+      <div class="option"><div class="bubble"></div> B. y = 4x + 18</div>
+      <div class="option"><div class="bubble"></div> C. y = 22x</div>
+      <div class="option"><div class="bubble"></div> D. y = 4x − 18</div>
+    </div>
+    <div class="question">
+      <p>2. Solve: 3x + 12 = x + 28</p>
+      <p style="font-weight:400; font-size:0.9em; color:#888;">(Hint: change x to another letter in Desmos, use ~)</p>
+      <div class="option"><div class="bubble"></div> A. x = 4</div>
+      <div class="option"><div class="bubble"></div> B. x = 8</div>
+      <div class="option"><div class="bubble"></div> C. x = 16</div>
+      <div class="option"><div class="bubble"></div> D. x = 20</div>
+    </div>
+    <p style="text-align:center; margin-top:15px; color:#999; font-size:0.9em;">Remember: Change x → "a", use ~ not =, read Desmos answer!</p>
+  </div>
+</div>
+
+<button class="nav prev" onclick="changeSlide(-1)">&#8249;</button>
+<button class="nav next" onclick="changeSlide(1)">&#8250;</button>
+<div class="slide-counter"><span id="current">1</span> / <span id="total">7</span></div>
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  function changeSlide(dir) { slides[current].classList.remove('active'); current = Math.max(0, Math.min(slides.length-1, current+dir)); slides[current].classList.add('active'); document.getElementById('current').textContent = current+1; }
+  document.addEventListener('keydown', e => { if(e.key==='ArrowRight'||e.key===' ')changeSlide(1); if(e.key==='ArrowLeft')changeSlide(-1); });
+</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 5 Slides — Mixed Review, Strategies &amp; Confidence Building</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  :root { --day:#e74c3c; --day-light:#f1948a; --day-dark:#c0392b; --success:#27ae60; --info:#2980b9; --accent:#e67e22; --purple:#8e44ad; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; overflow:hidden; height:100vh; }
+  .slide { display:none; width:100vw; height:100vh; padding:40px 60px; flex-direction:column; justify-content:center; }
+  .slide.active { display:flex; }
+  .slide-counter { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.6); color:white; padding:6px 18px; border-radius:20px; font-size:0.85em; z-index:100; }
+  .nav { position:fixed; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.3); color:white; border:none; font-size:2em; padding:15px 18px; cursor:pointer; z-index:100; border-radius:8px; }
+  .nav:hover { background:rgba(0,0,0,0.6); }
+  .nav.prev { left:15px; } .nav.next { right:15px; }
+  h1 { font-size:2.3em; font-weight:800; margin-bottom:10px; }
+  h2 { font-size:1.7em; font-weight:700; margin-bottom:12px; }
+  h3 { font-size:1.2em; font-weight:600; margin-bottom:8px; }
+  .tag { display:inline-block; background:var(--day); color:white; padding:4px 14px; border-radius:15px; font-size:0.8em; font-weight:600; margin-bottom:12px; }
+
+  /* Slide 1 Brain Dump */
+  .slide-warmup { background:linear-gradient(135deg,var(--day-dark),var(--day),var(--day-light)); color:white; text-align:center; }
+  .brain-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:20px 0; }
+  .brain-card { background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4); border-radius:12px; padding:12px; backdrop-filter:blur(4px); text-align:center; }
+  .brain-card h4 { font-size:0.9em; margin-bottom:4px; opacity:0.9; }
+  .brain-card .day-label { font-size:0.75em; opacity:0.7; margin-bottom:4px; }
+  .brain-card .icon { font-size:1.6em; margin-bottom:4px; }
+  .confetti { font-size:1.2em; margin-top:15px; }
+
+  /* Slide 2 Volume */
+  .slide-volume { background:#fff; color:#333; }
+  .shapes-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:15px; margin:12px 0; }
+  .shape-card { border:2px solid var(--day); border-radius:12px; padding:15px; text-align:center; }
+  .shape-card h4 { color:var(--day); margin-bottom:6px; }
+  .shape-visual { font-size:3em; margin:8px 0; }
+  .desmos-mini { background:#f0f6ff; border:1px solid var(--info); border-radius:6px; padding:8px; font-family:'Fira Code',monospace; font-size:0.8em; text-align:left; margin:6px 0; }
+  .desmos-mini div { margin:2px 0; }
+  .shape-answer { background:#d5f5e3; border-radius:6px; padding:4px 8px; font-weight:700; color:#1b5e20; margin-top:6px; font-size:0.9em; }
+  .key-q { background:#fff3cd; border:2px solid var(--accent); border-radius:10px; padding:10px 15px; text-align:center; margin-top:10px; font-size:1.05em; }
+
+  /* Slide 3 Ordering */
+  .slide-ordering { background:#f8f9fa; color:#333; }
+  .order-demo { display:flex; gap:25px; align-items:flex-start; margin:12px 0; }
+  .desmos-input { flex:1; background:#f0f6ff; border:2px solid var(--info); border-radius:12px; padding:18px; }
+  .desmos-line { font-family:'Fira Code',monospace; padding:6px 10px; margin:4px 0; border-radius:4px; font-size:1em; }
+  .desmos-line.var { background:#e8f5e9; border-left:3px solid var(--success); }
+  .number-line-visual { flex:1; }
+  .nl { height:4px; background:#333; border-radius:2px; position:relative; margin:40px 20px 60px; }
+  .nl-tick { position:absolute; top:-25px; width:3px; height:50px; background:var(--day); }
+  .nl-label { position:absolute; top:30px; transform:translateX(-50%); font-size:0.8em; font-weight:600; text-align:center; white-space:nowrap; }
+  .nl-val { position:absolute; top:-45px; transform:translateX(-50%); font-size:0.75em; color:#888; }
+  .arrow-lr { text-align:center; font-size:1.3em; font-weight:700; color:var(--success); margin-top:10px; }
+
+  /* Slide 4 Screen to Scratch */
+  .slide-scratch { background:#fff; color:#333; }
+  .scratch-layout { display:flex; gap:30px; margin:12px 0; }
+  .screen-side { flex:1; background:#2c3e50; border-radius:12px; padding:20px; color:white; position:relative; }
+  .screen-side::before { content:'SCREEN'; position:absolute; top:-12px; left:15px; background:var(--day); color:white; padding:2px 12px; border-radius:10px; font-size:0.75em; font-weight:700; }
+  .scratch-side { flex:1; position:relative; }
+  .scratch-side::before { content:'SCRATCH PAPER'; position:absolute; top:-12px; left:15px; background:var(--success); color:white; padding:2px 12px; border-radius:10px; font-size:0.75em; font-weight:700; }
+  .paper-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:0; border:2px solid #333; border-radius:8px; overflow:hidden; height:280px; }
+  .paper-box { border:1px dashed #aaa; padding:10px; font-size:0.85em; background:#fffef5; }
+  .paper-box.active { background:#fff3cd; }
+  .fold-steps { display:flex; gap:10px; justify-content:center; margin:12px 0; }
+  .fold-step { background:#f8f9fa; border:2px solid #ddd; border-radius:8px; padding:10px; text-align:center; width:120px; }
+  .fold-step .num { background:var(--day); color:white; width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:0.8em; margin-bottom:4px; }
+
+  /* Slide 5 Practice */
+  .slide-practice { background:#f8f9fa; color:#333; }
+  .practice-layout { display:flex; gap:20px; }
+  .problem-area { flex:1; background:white; border-radius:12px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,0.08); }
+  .sidebar { width:260px; }
+  .sidebar-card { border-radius:10px; padding:12px; margin-bottom:10px; font-size:0.88em; }
+  .context-banner { color:white; padding:8px 14px; border-radius:8px; margin-bottom:10px; font-size:0.95em; }
+  .fill-line { display:inline-block; border-bottom:2px dashed var(--day); min-width:60px; text-align:center; color:var(--day); }
+  .step-given { background:#d5f5e3; border-left:4px solid var(--success); padding:6px 10px; border-radius:0 6px 6px 0; margin:5px 0; font-size:0.95em; }
+  .step-todo { background:#fadbd8; border-left:4px solid var(--day); padding:6px 10px; border-radius:0 6px 6px 0; margin:5px 0; font-size:0.95em; }
+
+  /* Slide 6 */
+  .slide-exit { background:linear-gradient(135deg,#f8f9fa,#fde8e8); }
+  .ticket { background:white; border:3px dashed var(--day); border-radius:16px; padding:25px; max-width:800px; margin:0 auto; box-shadow:0 4px 20px rgba(0,0,0,0.08); position:relative; }
+  .ticket::before { content:'🎫'; font-size:2em; position:absolute; top:-18px; left:30px; }
+  .ticket h2 { color:var(--day); text-align:center; border-bottom:2px solid var(--day); padding-bottom:10px; }
+  .question { margin:15px 0; padding:12px; background:#f8f9fa; border-radius:10px; }
+  .question p { font-weight:600; margin-bottom:8px; }
+  .option { display:flex; align-items:center; gap:10px; margin:5px 0; }
+  .bubble { width:22px; height:22px; border:2px solid #999; border-radius:50%; flex-shrink:0; }
+  .ready-msg { text-align:center; margin-top:12px; padding:12px; background:linear-gradient(90deg,var(--day),var(--accent)); color:white; border-radius:10px; font-size:1.2em; font-weight:700; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: WARM-UP — Brain Dump -->
+<div class="slide slide-warmup active">
+  <span class="tag">WARM-UP — 5 MINUTES</span>
+  <h1>Brain Dump — What Do You Remember?</h1>
+  <p style="font-size:1.1em; opacity:0.9;">Write down EVERYTHING you remember from this week!</p>
+  <div class="brain-grid">
+    <div class="brain-card">
+      <div class="day-label">DAY 1</div>
+      <div class="icon">📈</div>
+      <h4>Slope &amp; Proportional Relationships</h4>
+      <p style="font-size:0.8em; opacity:0.8;">+ → table → regression</p>
+    </div>
+    <div class="brain-card">
+      <div class="day-label">DAY 2</div>
+      <div class="icon">✏️</div>
+      <h4>Writing &amp; Solving Equations</h4>
+      <p style="font-size:0.8em; opacity:0.8;">y=mx+b &amp; tilde method</p>
+    </div>
+    <div class="brain-card">
+      <div class="day-label">DAY 3</div>
+      <div class="icon">🤔</div>
+      <h4>Functions &amp; Scatterplots</h4>
+      <p style="font-size:0.8em; opacity:0.8;">Each x → one y</p>
+    </div>
+    <div class="brain-card">
+      <div class="day-label">DAY 4</div>
+      <div class="icon">📐</div>
+      <h4>Pythagorean &amp; Transformations</h4>
+      <p style="font-size:0.8em; opacity:0.8;">a²+b²~c² &amp; coordinate rules</p>
+    </div>
+    <div class="brain-card" style="border-color:#f1c40f; background:rgba(241,196,15,0.2);">
+      <div class="day-label">DAY 5 — TODAY!</div>
+      <div class="icon">🎯</div>
+      <h4>Volume &amp; Ordering Numbers</h4>
+      <p style="font-size:0.8em; opacity:0.8;">+ Screen to Scratch!</p>
+    </div>
+  </div>
+  <div class="confetti">🌟 Look how much you've learned! You are <strong>READY</strong> for STAAR! 🌟</div>
+</div>
+
+<!-- SLIDE 2: I DO — Volume with Desmos -->
+<div class="slide slide-volume">
+  <span class="tag">I DO — VOLUME WITH DESMOS</span>
+  <h2>Volume — The Formulas Are on Your Reference Chart! 📋</h2>
+  <div class="shapes-grid">
+    <div class="shape-card">
+      <h4>Cylinder</h4>
+      <div class="shape-visual">🥫</div>
+      <p style="font-size:0.9em;">Dallas water tank: r=5, h=12</p>
+      <div class="desmos-mini">
+        <div>V ~ B · h</div>
+        <div>V = &nbsp;(blank)</div>
+        <div>B ~ π · r²</div>
+        <div>h = 12</div>
+        <div>r = 5</div>
+      </div>
+      <div class="shape-answer">V ≈ 942.48 ft³</div>
+    </div>
+    <div class="shape-card">
+      <h4>Cone</h4>
+      <div class="shape-visual">🍦</div>
+      <p style="font-size:0.9em;">Raspa cone: r=3, h=6</p>
+      <div class="desmos-mini">
+        <div>V ~ <strong>(1/3)</strong> · B · h</div>
+        <div>V = &nbsp;(blank)</div>
+        <div>B ~ π · r²</div>
+        <div>h = 6</div>
+        <div>r = 3</div>
+      </div>
+      <div class="shape-answer">V ≈ 56.55 in³</div>
+      <p style="font-size:0.8em; color:var(--day); margin-top:4px;">⅓ makes it different!</p>
+    </div>
+    <div class="shape-card">
+      <h4>Sphere</h4>
+      <div class="shape-visual">🏀</div>
+      <p style="font-size:0.9em;">Mavericks ball: r=4.7</p>
+      <div class="desmos-mini">
+        <div>V ~ (4/3) · π · r³</div>
+        <div>V = &nbsp;(blank)</div>
+        <div>r = 4.7</div>
+      </div>
+      <div class="shape-answer">V ≈ 434.89 in³</div>
+      <p style="font-size:0.8em; color:var(--purple); margin-top:4px;">No height needed!</p>
+    </div>
+  </div>
+  <div class="key-q">
+    <strong>Key Question:</strong> "What shape is the BASE?" → <strong>Circle!</strong> → B = πr²
+  </div>
+</div>
+
+<!-- SLIDE 3: I DO — Ordering Numbers -->
+<div class="slide slide-ordering">
+  <span class="tag">I DO — ORDERING REAL NUMBERS WITH DESMOS</span>
+  <h2>Put Numbers in Order — Let Desmos Show You! 📊</h2>
+  <p style="margin-bottom:10px;"><strong>Order from least to greatest:</strong> 0.5, &nbsp; √7, &nbsp; 2², &nbsp; 26/5</p>
+  <div class="order-demo">
+    <div class="desmos-input">
+      <h3 style="color:var(--info); margin-bottom:8px;">🖩 Type each as x = ___</h3>
+      <div class="desmos-line var">Line 1: x = 0.5</div>
+      <div class="desmos-line var">Line 2: x = √7 &nbsp;&nbsp;<span style="color:#888; font-size:0.85em;">≈ 2.65</span></div>
+      <div class="desmos-line var">Line 3: x = 2² &nbsp;&nbsp;<span style="color:#888; font-size:0.85em;">= 4</span></div>
+      <div class="desmos-line var">Line 4: x = 26/5 &nbsp;&nbsp;<span style="color:#888; font-size:0.85em;">= 5.2</span></div>
+    </div>
+    <div class="number-line-visual">
+      <h3>Each x= draws a vertical line!</h3>
+      <div class="nl">
+        <div class="nl-tick" style="left:5%;"><div class="nl-val" style="left:0;">0.5</div><div class="nl-label" style="left:0;">0.5</div></div>
+        <div class="nl-tick" style="left:30%;"><div class="nl-val" style="left:0;">≈2.65</div><div class="nl-label" style="left:0;">√7</div></div>
+        <div class="nl-tick" style="left:58%;"><div class="nl-val" style="left:0;">4</div><div class="nl-label" style="left:0;">2²</div></div>
+        <div class="nl-tick" style="left:82%;"><div class="nl-val" style="left:0;">5.2</div><div class="nl-label" style="left:0;">26/5</div></div>
+      </div>
+      <div class="arrow-lr">⬅️ LEAST &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GREATEST ➡️</div>
+      <div style="text-align:center; margin-top:8px; font-weight:700; font-size:1.1em; color:var(--success);">LEFT to RIGHT = LEAST to GREATEST!</div>
+      <div style="text-align:center; margin-top:8px; background:#d5f5e3; padding:8px; border-radius:8px; font-weight:600;">Answer: 0.5, √7, 2², 26/5</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Screen to Scratch -->
+<div class="slide slide-scratch">
+  <span class="tag">STAAR STRATEGY — SCREEN TO SCRATCH</span>
+  <h2>Screen to Scratch — Your STAAR Superpower! 📝</h2>
+  <div class="fold-steps">
+    <div class="fold-step"><div class="num">1</div><br>Start with paper</div>
+    <div class="fold-step"><div class="num">2</div><br>Fold in half</div>
+    <div class="fold-step"><div class="num">3</div><br>Fold in half again</div>
+    <div class="fold-step"><div class="num">4</div><br>Fold one more time</div>
+    <div class="fold-step" style="border-color:var(--success); background:#e8f5e9;"><div class="num" style="background:var(--success);">✓</div><br><strong>8 BOXES!</strong></div>
+  </div>
+  <div class="scratch-layout">
+    <div class="screen-side">
+      <p style="font-size:0.9em; margin-bottom:10px;">Question 3:</p>
+      <p style="font-size:1em;">A cylindrical water tank has a radius of 5 feet and a height of 12 feet. What is the approximate volume of the tank?</p>
+      <div style="margin-top:10px; font-size:0.9em; opacity:0.8;">
+        <div>A. 188.5 ft³</div>
+        <div>B. 376.99 ft³</div>
+        <div>C. 942.48 ft³</div>
+        <div>D. 1884.96 ft³</div>
+      </div>
+      <p style="margin-top:12px; font-size:0.85em; color:#f1c40f;">⚠️ You CAN'T highlight on this screen!</p>
+    </div>
+    <div class="scratch-side">
+      <div class="paper-grid">
+        <div class="paper-box">Q1</div>
+        <div class="paper-box">Q2</div>
+        <div class="paper-box active">
+          <strong>Q3</strong> ✏️<br>
+          <span style="font-size:0.8em;">Keywords: <strong>cylinder, r=5, h=12</strong></span><br>
+          <span style="font-size:0.8em;">Shape: 🥫 (draw cylinder)</span><br>
+          <span style="font-size:0.8em;">Desmos: V~B·h, B~π·r²</span><br>
+          <span style="font-size:0.8em; color:var(--success); font-weight:700;">V ≈ 942.48 → C!</span>
+        </div>
+        <div class="paper-box">Q4</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:10px; background:#fff3cd; padding:8px 15px; border-radius:8px; font-size:1.05em;">
+    <strong>Steps:</strong> 1. Read problem → 2. Write <strong>keywords</strong> in your box → 3. <strong>Draw</strong> shapes/tables → 4. Solve in your box!
+  </div>
+</div>
+
+<!-- SLIDE 5: GUIDED PRACTICE — Mixed Review -->
+<div class="slide slide-practice">
+  <span class="tag">WE DO — MIXED REVIEW</span>
+  <h2>Mixed Practice — All Week's Skills! 💪</h2>
+  <div class="practice-layout">
+    <div class="problem-area">
+      <div class="context-banner" style="background:linear-gradient(90deg,var(--info),#3498db);">🥫 Problem 1: "A Dallas trash can (cylinder) has r = 2 ft, h = 4 ft. Find the volume."</div>
+      <div class="step-given">Shape: Cylinder → V ~ B·h, B ~ π·r² ✅</div>
+      <div class="step-todo">Desmos: V= (blank), B~π·r², h=<span class="fill-line">__</span>, r=<span class="fill-line">__</span> → V ≈ <span class="fill-line">______</span> ft³</div>
+
+      <div class="context-banner" style="background:linear-gradient(90deg,var(--success),#2ecc71); margin-top:12px;">📊 Problem 2: "Order least to greatest: √4, 1.5, 7/4, π"</div>
+      <div class="step-given">Type: x=√4, x=1.5, x=7/4, x=π ✅</div>
+      <div class="step-todo">Read left to right: <span class="fill-line">____</span>, <span class="fill-line">____</span>, <span class="fill-line">____</span>, <span class="fill-line">____</span></div>
+
+      <div class="context-banner" style="background:linear-gradient(90deg,var(--info),#2980b9); margin-top:12px;">📈 Problem 3: Table (1, 6), (2, 12). Find slope with Desmos.</div>
+      <div class="step-todo">+ → table → Add regression → y = <span class="fill-line">____</span>x → slope = <span class="fill-line">____</span></div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-card" style="background:#fde8e8; border:2px solid var(--day);">
+        <strong>📋 Quick Reference</strong><br>
+        <strong>Slope:</strong> + → table → regression<br>
+        <strong>Equations:</strong> change x→a, use ~<br>
+        <strong>Volume:</strong> V~B·h (cyl), V~⅓B·h (cone)<br>
+        <strong>Order:</strong> x= each number<br>
+        <strong>Pyth:</strong> a²+b²~c²
+      </div>
+      <div class="sidebar-card" style="background:#e8f5e9; border:2px solid var(--success);">
+        <strong>Screen to Scratch!</strong><br>
+        ☐ Fold paper into 8 boxes<br>
+        ☐ Write keywords<br>
+        ☐ Draw shapes/tables<br>
+        ☐ Solve in your box
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: CHEAT SHEET REFERENCE -->
+<div class="slide" style="background:#fdf5f4; flex-direction:column; align-items:center; justify-content:flex-start; overflow-y:auto; padding:30px 50px;">
+  <h2 style="color:#e74c3c; font-size:1.3em; margin-bottom:16px; text-align:center;">📌 Day 5 Reference Cheat Sheets</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; width:100%;">
+    <div style="text-align:center;">
+      <p style="font-size:0.85em; color:#e74c3c; font-weight:700; margin-bottom:6px;">Volume &amp; Surface Area</p>
+      <img src="cheatsheet_volume.png" alt="Volume Cheat Sheet" style="width:100%; border-radius:10px; border:3px solid #e74c3c; max-height:72vh; object-fit:contain;">
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:0.85em; color:#2980b9; font-weight:700; margin-bottom:6px;">Ordering Numbers with Desmos</p>
+      <img src="cheatsheet_ordering.png" alt="Ordering Numbers Cheat Sheet" style="width:100%; border-radius:10px; border:3px solid #2980b9; max-height:72vh; object-fit:contain;">
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: EXIT TICKET -->
+<div class="slide slide-exit">
+  <div class="ticket">
+    <h2>🎫 Exit Ticket — Day 5</h2>
+    <div class="question">
+      <p>1. A cylindrical trash can in downtown Dallas has a radius of 2 feet and a height of 4 feet. What is the approximate volume? (Use π ≈ 3.14)</p>
+      <div class="option"><div class="bubble"></div> A. 25.12 ft³</div>
+      <div class="option"><div class="bubble"></div> B. 50.24 ft³</div>
+      <div class="option"><div class="bubble"></div> C. 100.48 ft³</div>
+      <div class="option"><div class="bubble"></div> D. 16.56 ft³</div>
+    </div>
+    <div class="question">
+      <p>2. Which list shows numbers in order from LEAST to GREATEST?</p>
+      <p style="font-weight:400; font-size:0.9em;">Numbers: √4, 1.5, 7/4, π</p>
+      <div class="option"><div class="bubble"></div> A. π, √4, 7/4, 1.5</div>
+      <div class="option"><div class="bubble"></div> B. 1.5, 7/4, √4, π</div>
+      <div class="option"><div class="bubble"></div> C. 1.5, √4, 7/4, π</div>
+      <div class="option"><div class="bubble"></div> D. 7/4, 1.5, √4, π</div>
+    </div>
+    <div class="ready-msg">You worked SO HARD this week. You ARE ready for STAAR! 🌟</div>
+  </div>
+</div>
+
+<button class="nav prev" onclick="changeSlide(-1)">&#8249;</button>
+<button class="nav next" onclick="changeSlide(1)">&#8250;</button>
+<div class="slide-counter"><span id="current">1</span> / <span id="total">7</span></div>
+<script>
+let current=0;const slides=document.querySelectorAll('.slide');
+function changeSlide(d){slides[current].classList.remove('active');current=Math.max(0,Math.min(slides.length-1,current+d));slides[current].classList.add('active');document.getElementById('current').textContent=current+1;}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')changeSlide(1);if(e.key==='ArrowLeft')changeSlide(-1);});
+</script>
+</body>
+</html>

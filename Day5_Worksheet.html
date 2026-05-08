@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 5 Worksheet — Volume, Ordering &amp; Mixed Review</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; font-size:14px; color:#222; padding:30px 40px; line-height:1.5; }
+  .header { text-align:center; border-bottom:3px solid #e74c3c; padding-bottom:12px; margin-bottom:18px; }
+  .header h1 { font-size:1.6em; color:#e74c3c; }
+  .header h2 { font-size:1em; color:#555; font-weight:500; }
+  .name-line { display:flex; justify-content:space-between; margin:10px 0 15px; }
+  .name-line span { border-bottom:1px solid #333; min-width:200px; display:inline-block; }
+  .ref-box { background:#fdecea; border:2px solid #e74c3c; border-radius:8px; padding:10px 14px; margin-bottom:8px; font-size:0.88em; }
+  .ref-box strong { color:#e74c3c; }
+  .ref-box.blue { background:#eef5fc; border-color:#2980b9; }
+  .ref-box.blue strong { color:#2980b9; }
+  .section-title { background:#e74c3c; color:white; padding:6px 14px; border-radius:6px; font-weight:700; margin:14px 0 10px; font-size:1.05em; }
+  .problem { margin-bottom:14px; padding:10px 12px; border:1px solid #ddd; border-radius:8px; page-break-inside:avoid; }
+  .problem-num { display:inline-block; background:#e74c3c; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; font-weight:700; font-size:0.8em; margin-right:6px; }
+  .problem-text { font-weight:600; margin-bottom:6px; }
+  .blank { display:inline-block; border-bottom:1.5px solid #333; min-width:50px; }
+  .desmos-template { background:#f0f6ff; border:1px solid #2980b9; border-radius:6px; padding:6px 10px; margin-top:6px; font-family:'Fira Code',monospace; font-size:0.88em; }
+  .desmos-template .dl { margin:2px 0; }
+  .answer-line { margin-top:5px; font-size:0.92em; }
+  .formula-box { background:#fdecea; border:1px solid #e74c3c; border-radius:6px; padding:5px 10px; margin:6px 0; font-size:0.92em; }
+  .shape-label { display:flex; gap:12px; margin:6px 0; font-size:0.92em; }
+  .shape-label div { border:1px dashed #aaa; border-radius:6px; padding:4px 10px; flex:1; }
+  .ordering-box { background:#fff8e1; border:1px solid #f39c12; border-radius:6px; padding:6px 10px; margin:6px 0; font-size:0.92em; }
+  .ordering-box .slot { display:inline-block; border-bottom:2px solid #333; min-width:60px; text-align:center; margin:0 6px; }
+  .sentence-frame { background:#fff8e1; border-left:3px solid #f39c12; padding:5px 10px; margin-top:5px; font-size:0.88em; font-style:italic; }
+  .data-table { border-collapse:collapse; margin:6px 0; font-size:0.92em; }
+  .data-table th { background:#e74c3c; color:white; padding:4px 12px; font-size:0.85em; }
+  .data-table td { border:1px solid #ccc; padding:4px 12px; text-align:center; min-width:70px; }
+  .work-area { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px; }
+  .work-box { border:1px dashed #aaa; border-radius:6px; padding:5px 10px; font-size:0.88em; min-height:26px; }
+  .work-box label { font-weight:600; color:#555; font-size:0.82em; display:block; margin-bottom:2px; }
+  .self-check { background:#fdecea; border:2px solid #e74c3c; border-radius:8px; padding:10px 14px; margin-top:16px; font-size:0.88em; }
+  .self-check strong { color:#e74c3c; }
+  .confidence { background:#fff3e0; border:2px solid #e67e22; border-radius:8px; padding:10px 14px; margin-top:10px; font-size:0.88em; }
+  .confidence strong { color:#e67e22; }
+  .conf-row { display:flex; gap:8px; align-items:center; margin:3px 0; }
+  .conf-row span { flex:1; }
+  .conf-row .dots { font-size:1.1em; }
+  @media print {
+    body { padding:15px 20px; font-size:11.5px; }
+    .problem { margin-bottom:10px; padding:7px 10px; }
+    .ref-box,.self-check,.confidence { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Day 5 — Volume, Ordering Numbers &amp; Mixed Review</h1>
+  <h2>8th Grade STAAR Math Review | TEKS 8.7(A) &amp; 8.2(D) | Independent Practice</h2>
+</div>
+
+<div class="name-line">
+  <div>Name: <span>&nbsp;</span></div>
+  <div>Date: <span style="min-width:120px;">&nbsp;</span></div>
+  <div>Period: <span style="min-width:60px;">&nbsp;</span></div>
+</div>
+
+<div class="ref-box">
+  <strong>VOLUME FORMULAS (on your reference chart!):</strong><br>
+  Cylinder: V = B &middot; h &nbsp;(B = &pi;r&sup2;) &nbsp;|&nbsp; Cone: V = &frac13; &middot; B &middot; h &nbsp;(B = &pi;r&sup2;) &nbsp;|&nbsp; Sphere: V = 4/3 &middot; &pi; &middot; r&sup3;<br>
+  <strong>DESMOS:</strong> Type the formula with <code>~</code> → Define known values → Leave V blank → Desmos solves!
+</div>
+<div class="ref-box blue">
+  <strong>ORDERING NUMBERS:</strong> Type each value on its own line as <code>x = ___</code> &nbsp;|&nbsp; Vertical lines appear &nbsp;|&nbsp; Read LEFT → RIGHT = Least to Greatest
+</div>
+
+<!-- CHEAT SHEET: VOLUME -->
+<div style="margin-bottom:12px; text-align:center; page-break-inside:avoid;">
+  <p style="font-size:0.82em; color:#e74c3c; font-weight:700; margin-bottom:6px;">📌 REFERENCE — Volume &amp; Surface Area Cheat Sheet</p>
+  <img src="cheatsheet_volume.png" alt="Volume and Surface Area Cheat Sheet" style="width:100%; max-width:860px; border-radius:10px; border:2px solid #e74c3c; display:block; margin:0 auto;">
+</div>
+
+<!-- SECTION A -->
+<div class="section-title">Part A: Volume with Desmos (Problems 1–4)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">1</span> A cylindrical water tank at Fair Park has radius 6 ft and height 10 ft. Find the volume.</div>
+  <div class="formula-box"><strong>Shape:</strong> Cylinder &nbsp;|&nbsp; <strong>Formula:</strong> V = &pi;r&sup2; &middot; h</div>
+  <div class="shape-label">
+    <div>r = <span class="blank"></span></div>
+    <div>h = <span class="blank"></span></div>
+    <div>V = <span class="blank"></span> (solving for)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: V ~ &pi; &middot; r&sup2; &middot; h</div>
+    <div class="dl">Line 2: r = ___</div>
+    <div class="dl">Line 3: h = ___</div>
+    <div class="dl">Line 4: V = &nbsp;&nbsp;(leave blank)</div>
+  </div>
+  <div class="answer-line"><strong>Answer: V &asymp; <span class="blank"></span> ft&sup3;</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">2</span> A raspa (snow cone) cup is shaped like a cone with radius 4 cm and height 12 cm. Find the volume.</div>
+  <div class="formula-box"><strong>Shape:</strong> Cone &nbsp;|&nbsp; <strong>Formula:</strong> V = &frac13; &middot; &pi;r&sup2; &middot; h</div>
+  <div class="shape-label">
+    <div>r = <span class="blank"></span></div>
+    <div>h = <span class="blank"></span></div>
+    <div>V = <span class="blank"></span> (solving for)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: V ~ (1/3) &middot; &pi; &middot; r&sup2; &middot; h</div>
+    <div class="dl">Line 2: r = ___</div>
+    <div class="dl">Line 3: h = ___</div>
+    <div class="dl">Line 4: V = &nbsp;&nbsp;(leave blank)</div>
+  </div>
+  <div class="answer-line"><strong>Answer: V &asymp; <span class="blank"></span> cm&sup3;</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">3</span> A Mavericks basketball has a radius of 4.7 inches. Find the volume of the ball.</div>
+  <div class="formula-box"><strong>Shape:</strong> Sphere &nbsp;|&nbsp; <strong>Formula:</strong> V = 4/3 &middot; &pi; &middot; r&sup3;</div>
+  <div class="shape-label">
+    <div>r = <span class="blank"></span></div>
+    <div>V = <span class="blank"></span> (solving for)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: V ~ (4/3) &middot; &pi; &middot; r&sup3;</div>
+    <div class="dl">Line 2: r = ___</div>
+    <div class="dl">Line 3: V = &nbsp;&nbsp;(leave blank)</div>
+  </div>
+  <div class="answer-line"><strong>Answer: V &asymp; <span class="blank"></span> in&sup3;</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">4</span> &#11088; A traffic cone near Reunion Tower has radius 5 in and height 18 in. A cylindrical can has the same radius and height. How much MORE does the can hold?</div>
+  <div class="formula-box"><strong>Cone:</strong> V = &frac13; &middot; &pi;r&sup2; &middot; h &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Cylinder:</strong> V = &pi;r&sup2; &middot; h</div>
+  <div class="desmos-template">
+    <div class="dl">Cone volume: V &asymp; <span class="blank"></span> in&sup3;</div>
+    <div class="dl">Cylinder volume: V &asymp; <span class="blank"></span> in&sup3;</div>
+  </div>
+  <div class="answer-line"><strong>Difference:</strong> <span class="blank"></span> &minus; <span class="blank"></span> = <span class="blank"></span> in&sup3;</div>
+  <div class="sentence-frame">"The cylinder holds about _______ in&sup3; more because ___________________________________."</div>
+</div>
+
+<!-- CHEAT SHEET: ORDERING -->
+<div style="margin-bottom:12px; text-align:center; page-break-inside:avoid;">
+  <p style="font-size:0.82em; color:#2980b9; font-weight:700; margin-bottom:6px;">📌 REFERENCE — Ordering Numbers with Desmos</p>
+  <img src="cheatsheet_ordering.png" alt="Ordering Numbers Cheat Sheet" style="width:100%; max-width:860px; border-radius:10px; border:2px solid #2980b9; display:block; margin:0 auto;">
+</div>
+
+<!-- SECTION B -->
+<div class="section-title">Part B: Ordering Real Numbers (Problems 5–7)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">5</span> Order from LEAST to GREATEST: &nbsp; 3.5, &nbsp; &radic;10, &nbsp; &pi;, &nbsp; 11/3</div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: x = 3.5</div>
+    <div class="dl">Line 2: x = &radic;10</div>
+    <div class="dl">Line 3: x = &pi;</div>
+    <div class="dl">Line 4: x = 11/3</div>
+  </div>
+  <div class="ordering-box">
+    <strong>Left → Right on number line:</strong><br>
+    <span class="slot"></span> &lt; <span class="slot"></span> &lt; <span class="slot"></span> &lt; <span class="slot"></span>
+  </div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">6</span> Order from LEAST to GREATEST: &nbsp; &radic;50, &nbsp; 7.1, &nbsp; 22/3, &nbsp; 7&frac14;</div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: x = &radic;50</div>
+    <div class="dl">Line 2: x = 7.1</div>
+    <div class="dl">Line 3: x = 22/3</div>
+    <div class="dl">Line 4: x = 7.25 &nbsp;&nbsp;(convert 7&frac14; to decimal!)</div>
+  </div>
+  <div class="ordering-box">
+    <strong>Left → Right on number line:</strong><br>
+    <span class="slot"></span> &lt; <span class="slot"></span> &lt; <span class="slot"></span> &lt; <span class="slot"></span>
+  </div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">7</span> &#11088; Order from GREATEST to LEAST: &nbsp; 2&sup3;, &nbsp; &radic;60, &nbsp; 7.8, &nbsp; 23/3</div>
+  <div class="desmos-template">
+    <div class="dl">Type all 4 lines on your own:</div>
+    <div class="dl">Line 1: x = ___</div>
+    <div class="dl">Line 2: x = ___</div>
+    <div class="dl">Line 3: x = ___</div>
+    <div class="dl">Line 4: x = ___</div>
+  </div>
+  <div class="ordering-box">
+    <strong>GREATEST to Least (right → left!):</strong><br>
+    <span class="slot"></span> &gt; <span class="slot"></span> &gt; <span class="slot"></span> &gt; <span class="slot"></span>
+  </div>
+  <div style="font-size:0.85em; color:#888; margin-top:4px;">&#9888; Careful — this one asks GREATEST to LEAST! Read right to left on the number line.</div>
+</div>
+
+<!-- SECTION C -->
+<div class="section-title">Part C: Mixed Review — All Week Skills (Problems 8–12)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">8</span> <span style="color:#2980b9;">[Day 1 — Slope]</span> A Dallas taco truck charges $2 per taco plus $1 delivery fee. Enter these points into Desmos and find the slope.</div>
+  <table class="data-table"><tr><th>Tacos (x)</th><td>1</td><td>2</td><td>3</td><td>5</td></tr><tr><th>Total $ (y)</th><td>3</td><td>5</td><td>7</td><td>11</td></tr></table>
+  <div class="desmos-template">
+    <div class="dl">+ → table → enter data → Add regression</div>
+    <div class="dl">Desmos equation: y = ___x + ___</div>
+  </div>
+  <div class="answer-line">m (MULTIPLIER) = <span class="blank"></span> &nbsp;&nbsp; b (BONUS) = <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means each taco costs $_______ ."</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">9</span> <span style="color:#27ae60;">[Day 2 — Equations]</span> Solve with Desmos: &nbsp; 5a + 12 = 3a + 28</div>
+  <div class="desmos-template">
+    <div class="dl">Type: 5a + 12 ~ 3a + 28</div>
+    <div class="dl">Desmos says: a = <span class="blank"></span></div>
+  </div>
+  <div class="answer-line"><strong>Check:</strong> Left side: 5(<span class="blank"></span>) + 12 = <span class="blank"></span> &nbsp;&nbsp; Right side: 3(<span class="blank"></span>) + 28 = <span class="blank"></span> &nbsp;&nbsp; Same? <strong>YES / NO</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">10</span> <span style="color:#8e44ad;">[Day 3 — Functions]</span> Is this a function?</div>
+  <table class="data-table"><tr><th>x</th><td>2</td><td>4</td><td>6</td><td>2</td><td>8</td></tr><tr><th>y</th><td>5</td><td>9</td><td>13</td><td>7</td><td>17</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>List all x-values:</label></div>
+    <div class="work-box"><label>Does any x repeat with different y?</label></div>
+  </div>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong> &nbsp;&nbsp; Why? <span class="blank" style="min-width:200px;"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">11</span> <span style="color:#e67e22;">[Day 4 — Pythagorean Theorem]</span> A kite string is 25 ft long. The kite is directly above a point 7 ft from where you stand. How high is the kite?</div>
+  <div class="shape-label">
+    <div>a = <span class="blank"></span> (ground)</div>
+    <div>b = <span class="blank"></span> (height — solving for)</div>
+    <div>c = <span class="blank"></span> (string = hypotenuse)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: a&sup2; + b&sup2; ~ c&sup2;</div>
+    <div class="dl">Line 2: a = ___</div>
+    <div class="dl">Line 3: b = &nbsp;&nbsp;(leave blank)</div>
+    <div class="dl">Line 4: c = ___</div>
+  </div>
+  <div class="answer-line"><strong>Answer: b = <span class="blank"></span> ft</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">12</span> &#11088; <span style="color:#e74c3c;">[Day 4 — Transformations]</span> Triangle P(1, 3), Q(4, 3), R(1, 7). Reflect across the <strong>y-axis</strong>, then translate 2 units DOWN.</div>
+  <div class="formula-box"><strong>Step 1 Rule:</strong> (&minus;x, y) &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Step 2 Rule:</strong> (x, y &minus; 2)</div>
+  <table class="data-table">
+    <tr><th>Original</th><th>After Reflect y-axis</th><th>After Translate Down 2</th></tr>
+    <tr><td>P(1, 3)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>P''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>Q(4, 3)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>Q''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>R(1, 7)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>R''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+  </table>
+</div>
+
+<div class="self-check">
+  <strong>&#9989; Self-Check Before You Turn This In:</strong><br>
+  &#9744; Did I use the correct <strong>volume formula</strong> for each shape (cylinder, cone, sphere)?<br>
+  &#9744; Did I type <strong>x = ___</strong> for each value when ordering numbers?<br>
+  &#9744; Did I read the number line in the <strong>correct direction</strong> (least→greatest OR greatest→least)?<br>
+  &#9744; Did I use the <strong>right Desmos method</strong> for each mixed review problem?
+</div>
+
+<div class="confidence">
+  <strong>&#127775; STAAR Confidence Checklist — Rate yourself!</strong>
+  <div class="conf-row"><span>Slope &amp; Rate of Change (Day 1)</span> <span class="dots">&#9898; &#9898; &#9898; &#9898; &#9898;</span></div>
+  <div class="conf-row"><span>Writing &amp; Solving Equations (Day 2)</span> <span class="dots">&#9898; &#9898; &#9898; &#9898; &#9898;</span></div>
+  <div class="conf-row"><span>Functions &amp; Scatterplots (Day 3)</span> <span class="dots">&#9898; &#9898; &#9898; &#9898; &#9898;</span></div>
+  <div class="conf-row"><span>Pythagorean Theorem &amp; Transformations (Day 4)</span> <span class="dots">&#9898; &#9898; &#9898; &#9898; &#9898;</span></div>
+  <div class="conf-row"><span>Volume &amp; Ordering Numbers (Day 5)</span> <span class="dots">&#9898; &#9898; &#9898; &#9898; &#9898;</span></div>
+  <div style="font-size:0.85em; color:#888; margin-top:4px;">Fill in circles: 1 = need help &nbsp; 3 = getting there &nbsp; 5 = I got this!</div>
+</div>
+
+</body>
+</html>

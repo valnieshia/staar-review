@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 Worksheet — Functions &amp; Scatterplots</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; font-size:14px; color:#222; padding:30px 40px; line-height:1.5; }
+  .header { text-align:center; border-bottom:3px solid #8e44ad; padding-bottom:12px; margin-bottom:18px; }
+  .header h1 { font-size:1.6em; color:#8e44ad; }
+  .header h2 { font-size:1em; color:#555; font-weight:500; }
+  .name-line { display:flex; justify-content:space-between; margin:10px 0 15px; }
+  .name-line span { border-bottom:1px solid #333; min-width:200px; display:inline-block; }
+  .ref-box { background:#f5eef8; border:2px solid #8e44ad; border-radius:8px; padding:10px 14px; margin-bottom:8px; font-size:0.9em; }
+  .ref-box strong { color:#8e44ad; }
+  .section-title { background:#8e44ad; color:white; padding:6px 14px; border-radius:6px; font-weight:700; margin:14px 0 10px; font-size:1.05em; }
+  .problem { margin-bottom:14px; padding:10px 12px; border:1px solid #ddd; border-radius:8px; page-break-inside:avoid; }
+  .problem-num { display:inline-block; background:#8e44ad; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; font-weight:700; font-size:0.8em; margin-right:6px; }
+  .problem-text { font-weight:600; margin-bottom:6px; }
+  .pairs { font-family:'Fira Code',monospace; font-size:0.95em; margin:4px 0; }
+  .work-area { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px; }
+  .work-box { border:1px dashed #aaa; border-radius:6px; padding:5px 10px; font-size:0.88em; min-height:26px; }
+  .work-box label { font-weight:600; color:#555; font-size:0.82em; display:block; margin-bottom:2px; }
+  .answer-line { margin-top:5px; font-size:0.92em; }
+  .blank { display:inline-block; border-bottom:1.5px solid #333; min-width:55px; }
+  .sentence-frame { background:#fff8e1; border-left:3px solid #f39c12; padding:5px 10px; margin-top:5px; font-size:0.88em; font-style:italic; }
+  .data-table { border-collapse:collapse; margin:6px 0; font-size:0.92em; }
+  .data-table th { background:#8e44ad; color:white; padding:4px 14px; font-size:0.85em; }
+  .data-table td { border:1px solid #ccc; padding:4px 14px; text-align:center; }
+  .mapping { display:flex; gap:30px; justify-content:center; margin:8px 0; }
+  .map-col { text-align:center; }
+  .map-col h5 { font-size:0.85em; color:#8e44ad; margin-bottom:4px; }
+  .map-val { background:#f5eef8; border:1px solid #8e44ad; border-radius:50%; width:36px; height:36px; line-height:36px; text-align:center; font-weight:700; margin:4px auto; font-size:0.9em; }
+  .arrow-area { display:flex; flex-direction:column; justify-content:center; font-size:1.2em; color:#8e44ad; }
+  .desmos-template { background:#f0f6ff; border:1px solid #2980b9; border-radius:6px; padding:6px 10px; margin-top:6px; font-family:'Fira Code',monospace; font-size:0.88em; }
+  .self-check { background:#f5eef8; border:2px solid #8e44ad; border-radius:8px; padding:10px 14px; margin-top:16px; font-size:0.88em; }
+  .self-check strong { color:#8e44ad; }
+  @media print {
+    body { padding:15px 20px; font-size:11.5px; }
+    .problem { margin-bottom:10px; padding:7px 10px; }
+    .ref-box,.self-check { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Day 3 — Functions &amp; Scatterplots</h1>
+  <h2>8th Grade STAAR Math Review | TEKS 8.5(G) &amp; 8.5(D) | Independent Practice</h2>
+</div>
+
+<div class="name-line">
+  <div>Name: <span>&nbsp;</span></div>
+  <div>Date: <span style="min-width:120px;">&nbsp;</span></div>
+  <div>Period: <span style="min-width:60px;">&nbsp;</span></div>
+</div>
+
+<div class="ref-box">
+  <strong>FUNCTION RULE:</strong> Each x (input) can only have <strong>ONE y</strong> (output). If an x-value repeats with different y-values → NOT a function!
+</div>
+<div class="ref-box" style="background:#eef5fc; border-color:#2980b9;">
+  <strong style="color:#2980b9;">🖩 SCATTERPLOT:</strong> + → table → enter data → <strong>Add regression</strong> → Read equation | <strong>Positive</strong> = both up | <strong>Negative</strong> = one up, one down | <strong>None</strong> = no pattern
+</div>
+
+<!-- CHEAT SHEET REFERENCE -->
+<div style="margin-bottom:12px; text-align:center; page-break-inside:avoid;">
+  <p style="font-size:0.82em; color:#8e44ad; font-weight:700; margin-bottom:6px;">📌 REFERENCE CHEAT SHEET — Identifying Functions</p>
+  <img src="cheatsheet_functions.png" alt="Functions Cheat Sheet" style="width:100%; max-width:900px; border-radius:10px; border:2px solid #8e44ad; display:block; margin:0 auto;">
+</div>
+
+<!-- SECTION A -->
+<div class="section-title">Part A: Is It a Function? (Problems 1–6)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">1</span> Is this a function?</div>
+  <div class="pairs">{(1, 5), (2, 7), (3, 9), (4, 11)}</div>
+  <div class="work-area">
+    <div class="work-box"><label>List all x-values:</label></div>
+    <div class="work-box"><label>Does any x repeat?</label></div>
+  </div>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong> &nbsp;&nbsp; Why? <span class="blank" style="min-width:200px;"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">2</span> Is this a function?</div>
+  <div class="pairs">{(2, 4), (3, 6), (2, 8), (5, 10)}</div>
+  <div class="work-area">
+    <div class="work-box"><label>List all x-values:</label></div>
+    <div class="work-box"><label>Does any x repeat? Which one?</label></div>
+  </div>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong> &nbsp;&nbsp; Why? <span class="blank" style="min-width:200px;"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">3</span> Is this table a function?</div>
+  <table class="data-table"><tr><th>x</th><th>y</th></tr><tr><td>1</td><td>5</td></tr><tr><td>2</td><td>5</td></tr><tr><td>3</td><td>5</td></tr><tr><td>4</td><td>5</td></tr></table>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong> &nbsp;&nbsp; (Hint: Same y is OK! Check the x-values.)</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">4</span> Is this table a function?</div>
+  <table class="data-table"><tr><th>x</th><th>y</th></tr><tr><td>3</td><td>1</td></tr><tr><td>3</td><td>2</td></tr><tr><td>3</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></table>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong> &nbsp;&nbsp; Why? <span class="blank" style="min-width:200px;"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">5</span> Is this mapping a function? (Draw arrows from each x to its y.)</div>
+  <div class="mapping">
+    <div class="map-col">
+      <h5>Input (x)</h5>
+      <div class="map-val">1</div>
+      <div class="map-val">2</div>
+      <div class="map-val">3</div>
+    </div>
+    <div class="arrow-area">→<br>→<br>→<br>→</div>
+    <div class="map-col">
+      <h5>Output (y)</h5>
+      <div class="map-val">5</div>
+      <div class="map-val">8</div>
+      <div class="map-val">11</div>
+      <div class="map-val">14</div>
+    </div>
+  </div>
+  <div style="font-size:0.88em; color:#888; margin:4px 0;">Note: x = 1 → y = 5, x = 2 → y = 8, x = 2 → y = 11, x = 3 → y = 14</div>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong> &nbsp;&nbsp; Why? <span class="blank" style="min-width:200px;"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">6</span> Each Dallas Mavericks player has one jersey number. Is (jersey number → player name) a function?</div>
+  <div class="answer-line">Function? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong></div>
+  <div class="sentence-frame">"This is / is not a function because _____________________________________________"</div>
+</div>
+
+<!-- SECTION B -->
+<div class="section-title">Part B: Scatterplots &amp; Trend Lines (Problems 7–10)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">7</span> Dallas monthly high temperatures. Enter into Desmos and find the trend.</div>
+  <table class="data-table"><tr><th>Month (x)</th><th>1 (Jan)</th><th>3 (Mar)</th><th>5 (May)</th><th>7 (Jul)</th><th>9 (Sep)</th><th>11 (Nov)</th></tr><tr><th>Temp °F (y)</th><td>47</td><td>65</td><td>84</td><td>96</td><td>90</td><td>60</td></tr></table>
+  <div class="desmos-template">
+    <div>+ → table → enter data → Add regression</div>
+    <div>Desmos equation: y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Association: Circle: &nbsp; <strong>Positive</strong> &nbsp; / &nbsp; <strong>Negative</strong> &nbsp; / &nbsp; <strong>None</strong></div>
+  <div class="sentence-frame">"The slope means the temperature changes about _______ °F per month."</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">8</span> A survey of Dallas 8th graders — shoe size vs. height. Enter into Desmos.</div>
+  <table class="data-table"><tr><th>Shoe Size (x)</th><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr><tr><th>Height in. (y)</th><td>58</td><td>60</td><td>63</td><td>65</td><td>67</td><td>70</td></tr></table>
+  <div class="desmos-template">
+    <div>Desmos equation: y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Association: Circle: &nbsp; <strong>Positive</strong> &nbsp; / &nbsp; <strong>Negative</strong> &nbsp; / &nbsp; <strong>None</strong></div>
+  <div class="sentence-frame">"As shoe size increases, height _________________ (increases/decreases/stays the same)."</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">9</span> Hours studied vs. test score for Dallas students. Enter into Desmos.</div>
+  <table class="data-table"><tr><th>Hours (x)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>6</td><td>8</td></tr><tr><th>Score (y)</th><td>55</td><td>62</td><td>68</td><td>74</td><td>85</td><td>93</td></tr></table>
+  <div class="desmos-template">
+    <div>Desmos equation: y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Association: <span class="blank"></span> &nbsp;&nbsp; Slope (m) = <span class="blank"></span></div>
+  <div class="answer-line"><strong>Predict:</strong> If a student studies for 5 hours, their predicted score = <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means for each extra hour studied, the score goes up about _______ points."</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">10</span> ⭐ CHALLENGE: Dallas restaurant ratings vs. average meal price.</div>
+  <table class="data-table"><tr><th>Price $ (x)</th><td>8</td><td>12</td><td>15</td><td>20</td><td>25</td><td>35</td></tr><tr><th>Rating /5 (y)</th><td>3.2</td><td>3.5</td><td>3.8</td><td>4.0</td><td>4.3</td><td>4.6</td></tr></table>
+  <div class="desmos-template">
+    <div>Desmos equation: y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Association: <span class="blank"></span> &nbsp;&nbsp; m = <span class="blank"></span> &nbsp;&nbsp; b = <span class="blank"></span></div>
+  <div class="answer-line"><strong>Predict:</strong> A $30 meal would have a predicted rating of <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means for every extra $1 in price, the rating goes up by about _______ stars."</div>
+</div>
+
+<div class="self-check">
+  <strong>✅ Self-Check Before You Turn This In:</strong><br>
+  ☐ Did I check if any <strong>x-value repeats</strong> before deciding if it's a function?<br>
+  ☐ Did I use <strong>+ → table → Add regression</strong> for every scatterplot problem?<br>
+  ☐ Did I name the <strong>type of association</strong> (positive, negative, none)?<br>
+  ☐ Did I make <strong>predictions</strong> using the Desmos equation when asked?
+</div>
+
+</body>
+</html>

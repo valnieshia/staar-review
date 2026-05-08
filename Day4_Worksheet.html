@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 Worksheet — Pythagorean Theorem &amp; Transformations</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; font-size:14px; color:#222; padding:30px 40px; line-height:1.5; }
+  .header { text-align:center; border-bottom:3px solid #e67e22; padding-bottom:12px; margin-bottom:18px; }
+  .header h1 { font-size:1.6em; color:#e67e22; }
+  .header h2 { font-size:1em; color:#555; font-weight:500; }
+  .name-line { display:flex; justify-content:space-between; margin:10px 0 15px; }
+  .name-line span { border-bottom:1px solid #333; min-width:200px; display:inline-block; }
+  .ref-box { background:#fff3e0; border:2px solid #e67e22; border-radius:8px; padding:10px 14px; margin-bottom:8px; font-size:0.88em; }
+  .ref-box strong { color:#e67e22; }
+  .ref-box.blue { background:#eef5fc; border-color:#2980b9; }
+  .ref-box.blue strong { color:#2980b9; }
+  .section-title { background:#e67e22; color:white; padding:6px 14px; border-radius:6px; font-weight:700; margin:14px 0 10px; font-size:1.05em; }
+  .problem { margin-bottom:14px; padding:10px 12px; border:1px solid #ddd; border-radius:8px; page-break-inside:avoid; }
+  .problem-num { display:inline-block; background:#e67e22; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; font-weight:700; font-size:0.8em; margin-right:6px; }
+  .problem-text { font-weight:600; margin-bottom:6px; }
+  .blank { display:inline-block; border-bottom:1.5px solid #333; min-width:50px; }
+  .desmos-template { background:#f0f6ff; border:1px solid #2980b9; border-radius:6px; padding:6px 10px; margin-top:6px; font-family:'Fira Code',monospace; font-size:0.88em; }
+  .desmos-template .dl { margin:2px 0; }
+  .answer-line { margin-top:5px; font-size:0.92em; }
+  .triangle-label { display:flex; gap:12px; margin:6px 0; font-size:0.92em; }
+  .triangle-label div { border:1px dashed #aaa; border-radius:6px; padding:4px 10px; flex:1; }
+  .coord-table { border-collapse:collapse; margin:6px 0; font-size:0.92em; }
+  .coord-table th { background:#e67e22; color:white; padding:4px 12px; font-size:0.85em; }
+  .coord-table td { border:1px solid #ccc; padding:4px 12px; text-align:center; min-width:70px; }
+  .rule-box { background:#fff3e0; border:1px solid #e67e22; border-radius:6px; padding:5px 10px; margin:6px 0; font-size:0.92em; }
+  .grid-area { border:1px solid #ccc; width:220px; height:220px; background:repeating-linear-gradient(0deg,#f5f5f5,#f5f5f5 1px,transparent 1px,transparent 27.5px),repeating-linear-gradient(90deg,#f5f5f5,#f5f5f5 1px,transparent 1px,transparent 27.5px); position:relative; margin:6px 0; display:inline-block; }
+  .grid-area::after { content:''; position:absolute; top:50%; left:0; right:0; height:1.5px; background:#999; }
+  .grid-area::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:1.5px; background:#999; }
+  .grid-label { font-size:0.75em; color:#888; text-align:center; }
+  .self-check { background:#fff3e0; border:2px solid #e67e22; border-radius:8px; padding:10px 14px; margin-top:16px; font-size:0.88em; }
+  .self-check strong { color:#e67e22; }
+  @media print {
+    body { padding:15px 20px; font-size:11.5px; }
+    .problem { margin-bottom:10px; padding:7px 10px; }
+    .ref-box,.self-check { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .grid-area { width:180px; height:180px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Day 4 — Pythagorean Theorem &amp; Transformations</h1>
+  <h2>8th Grade STAAR Math Review | TEKS 8.7(C) &amp; 8.10(A) | Independent Practice</h2>
+</div>
+
+<div class="name-line">
+  <div>Name: <span>&nbsp;</span></div>
+  <div>Date: <span style="min-width:120px;">&nbsp;</span></div>
+  <div>Period: <span style="min-width:60px;">&nbsp;</span></div>
+</div>
+
+<div class="ref-box blue">
+  <strong>🖩 PYTHAGOREAN THEOREM (on your reference chart!):</strong> a² + b² = c² &nbsp;|&nbsp; <strong>DESMOS:</strong> Line 1: <code>a² + b² ~ c²</code> → Define known values → Leave unknown BLANK &nbsp;|&nbsp; c = hypotenuse (LONGEST side)
+</div>
+<div class="ref-box">
+  <strong>TRANSFORMATIONS:</strong> Translate: (x+a, y+b) &nbsp;|&nbsp; Reflect x-axis: (x, −y) &nbsp;|&nbsp; Reflect y-axis: (−x, y) &nbsp;|&nbsp; Rotate 90° CW: (y, −x)
+</div>
+
+<!-- SECTION A -->
+<div class="section-title">Part A: Pythagorean Theorem with Desmos (Problems 1–5)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">1</span> A TV screen at AT&T Stadium is 40 inches wide and 30 inches tall. Find the diagonal.</div>
+  <div class="triangle-label">
+    <div>a = <span class="blank"></span> (width)</div>
+    <div>b = <span class="blank"></span> (height)</div>
+    <div>c = <span class="blank"></span> (solving for)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: a² + b² ~ c²</div>
+    <div class="dl">Line 2: a = ___</div>
+    <div class="dl">Line 3: b = ___</div>
+    <div class="dl">Line 4: c = &nbsp;&nbsp;(leave ________)</div>
+  </div>
+  <div class="answer-line"><strong>Answer: c = <span class="blank"></span> inches</strong> (the diagonal)</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">2</span> A ladder is 17 ft long and its base is 8 ft from a Dallas building. How high does it reach? (Find a LEG!)</div>
+  <div class="triangle-label">
+    <div>a = <span class="blank"></span> (base)</div>
+    <div>b = <span class="blank"></span> (solving for: height)</div>
+    <div>c = <span class="blank"></span> (ladder = hypotenuse)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: a² + b² ~ c²</div>
+    <div class="dl">Line 2: a = ___</div>
+    <div class="dl">Line 3: b = &nbsp;&nbsp;(leave ________)</div>
+    <div class="dl">Line 4: c = ___</div>
+  </div>
+  <div class="answer-line"><strong>Answer: b = <span class="blank"></span> ft</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">3</span> Klyde Warren Park is 200 ft long and 80 ft wide. Find the diagonal path across it.</div>
+  <div class="triangle-label">
+    <div>a = <span class="blank"></span></div>
+    <div>b = <span class="blank"></span></div>
+    <div>c = <span class="blank"></span> (diagonal = hypotenuse)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: a² + b² ~ c²</div>
+    <div class="dl">Line 2: a = ___</div>
+    <div class="dl">Line 3: b = ___</div>
+    <div class="dl">Line 4: c = &nbsp;&nbsp;(leave blank)</div>
+  </div>
+  <div class="answer-line"><strong>Answer: c ≈ <span class="blank"></span> ft</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">4</span> A ramp is 15 ft long and 9 ft high. How far is the base of the ramp from the wall?</div>
+  <div class="triangle-label">
+    <div>a = <span class="blank"></span> (solving for: base)</div>
+    <div>b = <span class="blank"></span> (height)</div>
+    <div>c = <span class="blank"></span> (ramp = hypotenuse)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Line 1: _______________</div>
+    <div class="dl">Line 2: a = &nbsp;&nbsp;(leave ___)</div>
+    <div class="dl">Line 3: b = ___</div>
+    <div class="dl">Line 4: c = ___</div>
+  </div>
+  <div class="answer-line"><strong>Answer: a = <span class="blank"></span> ft</strong></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">5</span> ⭐ A rope goes from the top of a 12 ft pole to a point on the ground 5 ft from the base. How long is the rope?</div>
+  <div class="triangle-label">
+    <div>a = <span class="blank"></span></div>
+    <div>b = <span class="blank"></span></div>
+    <div>c = <span class="blank"></span> (which are you solving for?)</div>
+  </div>
+  <div class="desmos-template">
+    <div class="dl">Type all 4 Desmos lines on your own:</div>
+    <div class="dl">Line 1: _______________</div>
+    <div class="dl">Line 2: _______________</div>
+    <div class="dl">Line 3: _______________</div>
+    <div class="dl">Line 4: _______________</div>
+  </div>
+  <div class="answer-line"><strong>Answer: <span class="blank"></span> = <span class="blank"></span> ft</strong></div>
+</div>
+
+<!-- SECTION B -->
+<div class="section-title">Part B: Transformations (Problems 6–10)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">6</span> Translate triangle A(1,2), B(4,2), C(1,5) → 3 units RIGHT and 2 units UP.</div>
+  <div class="rule-box"><strong>Rule:</strong> (x + 3, y + 2)</div>
+  <table class="coord-table">
+    <tr><th>Original</th><th>Rule Applied</th><th>New Point</th></tr>
+    <tr><td>A(1, 2)</td><td>(1+3, 2+2)</td><td>A'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>B(4, 2)</td><td>(4+3, 2+2)</td><td>B'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>C(1, 5)</td><td>(1+3, 5+2)</td><td>C'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+  </table>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">7</span> Reflect triangle A(1,2), B(4,2), C(1,5) across the <strong>y-axis</strong>.</div>
+  <div class="rule-box"><strong>Rule:</strong> (−x, y)</div>
+  <table class="coord-table">
+    <tr><th>Original</th><th>Rule Applied</th><th>New Point</th></tr>
+    <tr><td>A(1, 2)</td><td>(−1, 2)</td><td>A'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>B(4, 2)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>B'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>C(1, 5)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>C'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+  </table>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">8</span> Reflect point P(3, −4) across the <strong>x-axis</strong>.</div>
+  <div class="rule-box"><strong>Rule for x-axis:</strong> (x, −y)</div>
+  <div class="answer-line">P(3, −4) → P'(<span class="blank"></span>, <span class="blank"></span>)</div>
+  <div style="font-size:0.88em; color:#888; margin-top:4px;">Show work: (3, −(−4)) = (3, ___)</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">9</span> Rotate triangle D(2,1), E(5,1), F(2,4) by <strong>90° clockwise</strong>.</div>
+  <div class="rule-box"><strong>Rule:</strong> (y, −x)</div>
+  <table class="coord-table">
+    <tr><th>Original</th><th>Rule Applied</th><th>New Point</th></tr>
+    <tr><td>D(2, 1)</td><td>(1, −2)</td><td>D'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>E(5, 1)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>E'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>F(2, 4)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>F'(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+  </table>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">10</span> ⭐ CHALLENGE: Shape ABCD: A(1,1), B(3,1), C(3,4), D(1,4). First translate 2 RIGHT, then reflect across the <strong>x-axis</strong>.</div>
+  <div class="rule-box"><strong>Step 1 Rule:</strong> (x+2, y) &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Step 2 Rule:</strong> (x, −y)</div>
+  <table class="coord-table">
+    <tr><th>Original</th><th>After Translate</th><th>After Reflect x-axis</th></tr>
+    <tr><td>A(1, 1)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>A''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>B(3, 1)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>B''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>C(3, 4)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>C''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+    <tr><td>D(1, 4)</td><td>(<span class="blank"></span>, <span class="blank"></span>)</td><td>D''(<span class="blank"></span>, <span class="blank"></span>)</td></tr>
+  </table>
+</div>
+
+<div class="self-check">
+  <strong>✅ Self-Check Before You Turn This In:</strong><br>
+  ☐ Did I label <strong>a, b, c</strong> for every Pythagorean problem? (c = hypotenuse = LONGEST)<br>
+  ☐ Did I leave the <strong>unknown variable BLANK</strong> in Desmos?<br>
+  ☐ Did I write the <strong>transformation rule</strong> before applying it?<br>
+  ☐ Did I apply the rule to <strong>EVERY point</strong> (not just one)?
+</div>
+
+</body>
+</html>

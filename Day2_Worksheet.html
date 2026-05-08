@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 Worksheet — Writing &amp; Solving Linear Equations</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; font-size: 14px; color: #222; padding: 30px 40px; line-height: 1.5; }
+  .header { text-align: center; border-bottom: 3px solid #27ae60; padding-bottom: 12px; margin-bottom: 18px; }
+  .header h1 { font-size: 1.6em; color: #27ae60; }
+  .header h2 { font-size: 1em; color: #555; font-weight: 500; }
+  .name-line { display: flex; justify-content: space-between; margin: 10px 0 15px; }
+  .name-line span { border-bottom: 1px solid #333; min-width: 200px; display: inline-block; }
+  .ref-box { background: #eafce8; border: 2px solid #27ae60; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.88em; }
+  .ref-box strong { color: #27ae60; }
+  .ref-box.warn { background: #fce4ec; border-color: #e74c3c; }
+  .ref-box.warn strong { color: #e74c3c; }
+  .section-title { background: #27ae60; color: white; padding: 6px 14px; border-radius: 6px; font-weight: 700; margin: 14px 0 10px; font-size: 1.05em; }
+  .problem { margin-bottom: 14px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; page-break-inside: avoid; }
+  .problem-num { display: inline-block; background: #27ae60; color: white; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; font-weight: 700; font-size: 0.8em; margin-right: 6px; }
+  .problem-text { font-weight: 600; margin-bottom: 6px; }
+  .work-area { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px; }
+  .work-box { border: 1px dashed #aaa; border-radius: 6px; padding: 5px 10px; font-size: 0.88em; min-height: 26px; }
+  .work-box label { font-weight: 600; color: #555; font-size: 0.82em; display: block; margin-bottom: 2px; }
+  .answer-line { margin-top: 5px; font-size: 0.92em; }
+  .blank { display: inline-block; border-bottom: 1.5px solid #333; min-width: 55px; }
+  .sentence-frame { background: #fff8e1; border-left: 3px solid #f39c12; padding: 5px 10px; margin-top: 5px; font-size: 0.88em; font-style: italic; }
+  .desmos-template { background: #f0f6ff; border: 1px solid #2980b9; border-radius: 6px; padding: 6px 10px; margin-top: 6px; font-family: 'Fira Code', monospace; font-size: 0.88em; }
+  .desmos-template .dl { margin: 2px 0; }
+  .check-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 6px; font-size: 0.88em; }
+  .check-cell { border: 1px dashed #aaa; border-radius: 6px; padding: 4px 8px; }
+  .check-cell label { font-weight: 600; color: #555; font-size: 0.82em; display: block; }
+  .self-check { background: #e8f5e9; border: 2px solid #27ae60; border-radius: 8px; padding: 10px 14px; margin-top: 16px; font-size: 0.88em; }
+  .self-check strong { color: #27ae60; }
+  @media print {
+    body { padding: 15px 20px; font-size: 11.5px; }
+    .problem { margin-bottom: 10px; padding: 7px 10px; }
+    .ref-box, .self-check { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Day 2 — Writing &amp; Solving Linear Equations</h1>
+  <h2>8th Grade STAAR Math Review | TEKS 8.5(I) &amp; 8.8(C) | Independent Practice</h2>
+</div>
+
+<div class="name-line">
+  <div>Name: <span>&nbsp;</span></div>
+  <div>Date: <span style="min-width:120px;">&nbsp;</span></div>
+  <div>Period: <span style="min-width:60px;">&nbsp;</span></div>
+</div>
+
+<div class="ref-box">
+  <strong>🖩 WRITING EQUATIONS:</strong> + → table → type points → Add regression → y = mx + b &nbsp;|&nbsp; <strong>m = MULTIPLIER</strong> (slope) &nbsp;|&nbsp; <strong>b = BONUS</strong> (y-intercept)
+</div>
+<div class="ref-box warn">
+  <strong>🖩 SOLVING EQUATIONS:</strong> ⚠️ Change x to "a"! → Type with <strong>~ (tilde)</strong> not = → Read answer → Write x = (answer) → CHECK both sides!
+</div>
+
+<!-- CHEAT SHEET REFERENCES -->
+<div style="margin-bottom:12px; display:grid; grid-template-columns:1fr 1fr; gap:10px; page-break-inside:avoid;">
+  <div style="text-align:center;">
+    <p style="font-size:0.8em; color:#27ae60; font-weight:700; margin-bottom:4px;">📌 Verbal to Desmos Checklist</p>
+    <img src="cheatsheet_verbal_desmos.png" alt="Verbal to Desmos Cheat Sheet" style="width:100%; border-radius:8px; border:2px solid #27ae60;">
+  </div>
+  <div style="text-align:center;">
+    <p style="font-size:0.8em; color:#2980b9; font-weight:700; margin-bottom:4px;">📌 Finding the Equation</p>
+    <img src="cheatsheet_finding_equation.png" alt="Finding the Equation Cheat Sheet" style="width:100%; border-radius:8px; border:2px solid #2980b9;">
+  </div>
+</div>
+
+<!-- SECTION A -->
+<div class="section-title">Part A: Writing Equations (y = mx + b)</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">1</span> You work at a Dallas car wash earning $9/hour plus $15 for showing up.</div>
+  <div class="work-area">
+    <div class="work-box"><label>What changes per hour? (m)</label></div>
+    <div class="work-box"><label>Starting amount? (b)</label></div>
+  </div>
+  <div class="answer-line">Equation: y = <span class="blank"></span>x + <span class="blank"></span> &nbsp;&nbsp; m = <span class="blank"></span> &nbsp; b = <span class="blank"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">2</span> A rideshare in Dallas charges $3 base fee plus $2 per mile.</div>
+  <div class="work-area">
+    <div class="work-box"><label>What changes per mile? (m)</label></div>
+    <div class="work-box"><label>Starting fee? (b)</label></div>
+  </div>
+  <div class="answer-line">Equation: y = <span class="blank"></span>x + <span class="blank"></span></div>
+  <div class="sentence-frame">"After 10 miles, the total cost = _______ × 10 + _______ = $_______"</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">3</span> Use Desmos to find the equation from this table.</div>
+  <table style="border-collapse:collapse; margin:4px 0;"><tr><th style="background:#27ae60;color:white;padding:4px 16px;">x</th><th style="background:#27ae60;color:white;padding:4px 16px;">y</th></tr><tr><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">0</td><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">5</td></tr><tr><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">1</td><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">8</td></tr><tr><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">2</td><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">11</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points for Desmos:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">m = <span class="blank"></span> &nbsp; b = <span class="blank"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">4</span> A State Fair game booth: $5 to play plus $3 per extra ball.</div>
+  <div class="work-area">
+    <div class="work-box"><label>Cost per ball? (m)</label></div>
+    <div class="work-box"><label>Starting cost? (b)</label></div>
+  </div>
+  <div class="answer-line">Equation: y = <span class="blank"></span>x + <span class="blank"></span></div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">5</span> Use Desmos to find the equation from this table.</div>
+  <table style="border-collapse:collapse; margin:4px 0;"><tr><th style="background:#27ae60;color:white;padding:4px 16px;">x</th><th style="background:#27ae60;color:white;padding:4px 16px;">y</th></tr><tr><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">1</td><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">15</td></tr><tr><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">3</td><td style="border:1px solid #ccc;padding:4px 16px;text-align:center;">25</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">m = <span class="blank"></span> &nbsp; b = <span class="blank"></span> &nbsp; Full equation: y = <span class="blank"></span>x + <span class="blank"></span></div>
+</div>
+
+<!-- SECTION B -->
+<div class="section-title">Part B: Solving Equations — Desmos Tilde Method</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">6</span> Solve: 5x + 10 = 3x + 24</div>
+  <div class="desmos-template">
+    <div class="dl">Change x to: ___</div>
+    <div class="dl">Type in Desmos: _________________________</div>
+    <div class="dl">Desmos says: ___ = ___</div>
+  </div>
+  <div class="answer-line">Answer: <strong>x = <span class="blank"></span></strong></div>
+  <div class="check-row">
+    <div class="check-cell"><label>Left side:</label>5( __ ) + 10 = ___</div>
+    <div class="check-cell"><label>Right side:</label>3( __ ) + 24 = ___</div>
+    <div class="check-cell"><label>Equal?</label>YES / NO</div>
+  </div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">7</span> Solve: 4x + 8 = 2x + 20</div>
+  <div class="desmos-template">
+    <div class="dl">Change x to: ___</div>
+    <div class="dl">Type in Desmos: _________________________</div>
+    <div class="dl">Desmos says: ___ = ___</div>
+  </div>
+  <div class="answer-line">Answer: <strong>x = <span class="blank"></span></strong></div>
+  <div class="check-row">
+    <div class="check-cell"><label>Left side:</label>4( __ ) + 8 = ___</div>
+    <div class="check-cell"><label>Right side:</label>2( __ ) + 20 = ___</div>
+    <div class="check-cell"><label>Equal?</label>YES / NO</div>
+  </div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">8</span> Two Dallas phone plans: Plan A costs 12x + 30 per month. Plan B costs 8x + 50. When do they cost the same?</div>
+  <div class="desmos-template">
+    <div class="dl">Change x to: ___</div>
+    <div class="dl">Type in Desmos: _________________________</div>
+    <div class="dl">Desmos says: ___ = ___</div>
+  </div>
+  <div class="answer-line">Answer: <strong>x = <span class="blank"></span></strong></div>
+  <div class="sentence-frame">"Both plans cost the same at _______ months."</div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">9</span> Solve: 6x + 5 = 2x + 25</div>
+  <div class="desmos-template">
+    <div class="dl">Change x to: ___</div>
+    <div class="dl">Type in Desmos: _________________________</div>
+    <div class="dl">Desmos says: ___ = ___</div>
+  </div>
+  <div class="answer-line">Answer: <strong>x = <span class="blank"></span></strong></div>
+  <div class="check-row">
+    <div class="check-cell"><label>Left side:</label>6( __ ) + 5 = ___</div>
+    <div class="check-cell"><label>Right side:</label>2( __ ) + 25 = ___</div>
+    <div class="check-cell"><label>Equal?</label>YES / NO</div>
+  </div>
+</div>
+
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">10</span> ⭐ CHALLENGE: You and your friend sell candy at school. You make 3x + 40 dollars and your friend makes 5x + 16 dollars. After how many days do you make the same amount?</div>
+  <div class="desmos-template">
+    <div class="dl">Change x to: ___</div>
+    <div class="dl">Type in Desmos: _________________________</div>
+    <div class="dl">Desmos says: ___ = ___</div>
+  </div>
+  <div class="answer-line">Answer: <strong>x = <span class="blank"></span> days</strong></div>
+  <div class="sentence-frame">"After _______ days, we both make $_______ ."</div>
+  <div class="check-row">
+    <div class="check-cell"><label>Your earnings:</label>3( __ ) + 40 = ___</div>
+    <div class="check-cell"><label>Friend's:</label>5( __ ) + 16 = ___</div>
+    <div class="check-cell"><label>Equal?</label>YES / NO</div>
+  </div>
+</div>
+
+<div class="self-check">
+  <strong>✅ Self-Check Before You Turn This In:</strong><br>
+  ☐ Did I identify <strong>m (MULTIPLIER)</strong> and <strong>b (BONUS)</strong> for every equation in Part A?<br>
+  ☐ Did I change <strong>x to another letter</strong> for EVERY problem in Part B?<br>
+  ☐ Did I use <strong>~ (tilde)</strong> not = in Desmos?<br>
+  ☐ Did I <strong>CHECK</strong> both sides for at least 3 problems?
+</div>
+
+</body>
+</html>

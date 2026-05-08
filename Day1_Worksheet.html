@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 Worksheet — Proportional Relationships &amp; Slope</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; font-size: 14px; color: #222; padding: 30px 40px; line-height: 1.5; }
+  .header { text-align: center; border-bottom: 3px solid #2980b9; padding-bottom: 12px; margin-bottom: 18px; }
+  .header h1 { font-size: 1.6em; color: #2980b9; }
+  .header h2 { font-size: 1em; color: #555; font-weight: 500; }
+  .name-line { display: flex; justify-content: space-between; margin: 10px 0 15px; font-size: 1em; }
+  .name-line span { border-bottom: 1px solid #333; min-width: 200px; display: inline-block; }
+  .ref-box { background: #eef5fc; border: 2px solid #2980b9; border-radius: 8px; padding: 10px 14px; margin-bottom: 18px; font-size: 0.92em; }
+  .ref-box strong { color: #2980b9; }
+  .problem { margin-bottom: 16px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; page-break-inside: avoid; }
+  .problem-num { display: inline-block; background: #2980b9; color: white; width: 26px; height: 26px; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; font-size: 0.85em; margin-right: 8px; }
+  .problem-text { font-weight: 600; margin-bottom: 8px; }
+  .data-table { border-collapse: collapse; margin: 6px 0; font-size: 0.95em; }
+  .data-table th { background: #2980b9; color: white; padding: 5px 18px; font-size: 0.85em; }
+  .data-table td { border: 1px solid #ccc; padding: 5px 18px; text-align: center; }
+  .work-area { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .work-box { border: 1px dashed #aaa; border-radius: 6px; padding: 6px 10px; font-size: 0.9em; min-height: 28px; }
+  .work-box label { font-weight: 600; color: #555; font-size: 0.85em; display: block; margin-bottom: 2px; }
+  .answer-line { margin-top: 6px; font-size: 0.95em; }
+  .answer-line .blank { display: inline-block; border-bottom: 1.5px solid #333; min-width: 60px; }
+  .sentence-frame { background: #fff8e1; border-left: 3px solid #f39c12; padding: 6px 10px; margin-top: 6px; font-size: 0.9em; font-style: italic; }
+  .self-check { background: #e8f5e9; border: 2px solid #27ae60; border-radius: 8px; padding: 10px 14px; margin-top: 18px; font-size: 0.9em; }
+  .self-check strong { color: #27ae60; }
+  @media print {
+    body { padding: 15px 20px; font-size: 12px; }
+    .problem { border: 1px solid #999; margin-bottom: 12px; padding: 8px; }
+    .ref-box { background: #f5f5f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .self-check { background: #f5f5f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Day 1 — Proportional Relationships &amp; Slope</h1>
+  <h2>8th Grade STAAR Math Review | TEKS 8.4(B) &amp; 8.4(C) | Independent Practice</h2>
+</div>
+
+<div class="name-line">
+  <div>Name: <span>&nbsp;</span></div>
+  <div>Date: <span style="min-width:120px;">&nbsp;</span></div>
+  <div>Period: <span style="min-width:60px;">&nbsp;</span></div>
+</div>
+
+<div class="ref-box">
+  <strong>🖩 DESMOS STEPS:</strong> Pick 2 points → Press <strong>+</strong> → Click <strong>"table"</strong> → Type points → Click <strong>"Add regression"</strong> → Read equation: <strong>m = MULTIPLIER</strong> (number touching x = slope) | <strong>b = BONUS</strong> (number by itself = y-intercept)
+</div>
+
+<!-- CHEAT SHEET REFERENCE -->
+<div style="margin-bottom:16px; text-align:center; page-break-inside:avoid;">
+  <p style="font-size:0.82em; color:#2980b9; font-weight:700; margin-bottom:6px;">📌 REFERENCE CHEAT SHEET — Use this while you work!</p>
+  <img src="cheatsheet_finding_equation.png" alt="Finding the Equation Cheat Sheet" style="width:100%; max-width:860px; border-radius:10px; border:2px solid #2980b9; display:block; margin:0 auto;">
+</div>
+
+<!-- PROBLEM 1 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">1</span> A food truck near Fair Park charges a set price per taco.</div>
+  <table class="data-table"><tr><th>Tacos (x)</th><th>Cost (y)</th></tr><tr><td>1</td><td>$3</td></tr><tr><td>2</td><td>$6</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points I chose:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; y-intercept (b) = <span class="blank"></span> &nbsp; Unit rate = $<span class="blank"></span> per taco</div>
+</div>
+
+<!-- PROBLEM 2 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">2</span> DART bus rides cost a set price per ride.</div>
+  <table class="data-table"><tr><th>Rides (x)</th><th>Cost (y)</th></tr><tr><td>1</td><td>$1.75</td></tr><tr><td>2</td><td>$3.50</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points I chose:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; Unit rate = $<span class="blank"></span> per ride</div>
+</div>
+
+<!-- PROBLEM 3 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">3</span> Jaylen walks on the Katy Trail. His data is below.</div>
+  <table class="data-table"><tr><th>Hours (x)</th><th>Miles (y)</th></tr><tr><td>2</td><td>5</td></tr><tr><td>4</td><td>10</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points I chose:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means Jaylen walks _______ miles per _______."</div>
+</div>
+
+<!-- PROBLEM 4 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">4</span> Dallas Mavericks t-shirts sell at a set price each.</div>
+  <table class="data-table"><tr><th>Shirts (x)</th><th>Cost (y)</th></tr><tr><td>1</td><td>$15</td></tr><tr><td>3</td><td>$45</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; Unit rate = $<span class="blank"></span> per shirt</div>
+</div>
+
+<!-- PROBLEM 5 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">5</span> A parking garage in Downtown Dallas charges per hour.</div>
+  <table class="data-table"><tr><th>Hours (x)</th><th>Cost (y)</th></tr><tr><td>1</td><td>$8</td></tr><tr><td>3</td><td>$24</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; Unit rate = $<span class="blank"></span> per hour</div>
+  <div class="sentence-frame">"The slope means parking costs $_______ per _______."</div>
+</div>
+
+<!-- PROBLEM 6 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">6</span> Elotes at the State Fair of Texas:</div>
+  <table class="data-table"><tr><th>Cups (x)</th><th>Cost (y)</th></tr><tr><td>2</td><td>$7.00</td></tr><tr><td>5</td><td>$17.50</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; y-intercept (b) = <span class="blank"></span></div>
+  <div class="answer-line">Is this proportional (does b = 0)? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong></div>
+</div>
+
+<!-- PROBLEM 7 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">7</span> State Fair turkey legs sell at a set price. Pick ANY 2 points to use in Desmos.</div>
+  <table class="data-table"><tr><th>Legs (x)</th><th>Cost (y)</th></tr><tr><td>1</td><td>$12</td></tr><tr><td>2</td><td>$24</td></tr><tr><td>4</td><td>$48</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points I chose:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; Does it matter which 2 points you pick? Circle: &nbsp; <strong>YES</strong> &nbsp; / &nbsp; <strong>NO</strong></div>
+</div>
+
+<!-- PROBLEM 8 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">8</span> A Dallas food delivery app charges a base fee plus a per-mile rate.</div>
+  <table class="data-table"><tr><th>Miles (x)</th><th>Cost (y)</th></tr><tr><td>0</td><td>$5</td></tr><tr><td>2</td><td>$11</td></tr><tr><td>4</td><td>$17</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; y-intercept (b) = <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means delivery costs $_______ per _______. The y-intercept means the base fee is $_______."</div>
+</div>
+
+<!-- PROBLEM 9 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">9</span> A DART monthly pass costs a set price per month.</div>
+  <table class="data-table"><tr><th>Months (x)</th><th>Cost (y)</th></tr><tr><td>1</td><td>$48</td></tr><tr><td>3</td><td>$144</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means the DART pass costs $_______ per _______."</div>
+</div>
+
+<!-- PROBLEM 10 -->
+<div class="problem">
+  <div class="problem-text"><span class="problem-num">10</span> ⭐ CHALLENGE: A Dallas tutoring company charges per session plus a signup fee.</div>
+  <table class="data-table"><tr><th>Sessions (x)</th><th>Total Cost (y)</th></tr><tr><td>1</td><td>$35</td></tr><tr><td>3</td><td>$75</td></tr><tr><td>5</td><td>$115</td></tr></table>
+  <div class="work-area">
+    <div class="work-box"><label>Two points:</label>( ___ , ___ ) and ( ___ , ___ )</div>
+    <div class="work-box"><label>Desmos equation:</label>y = ___x + ___</div>
+  </div>
+  <div class="answer-line">Slope (m) = <span class="blank"></span> &nbsp; y-intercept (b) = <span class="blank"></span></div>
+  <div class="sentence-frame">"The slope means each session costs $_______. The y-intercept means the signup fee is $_______."</div>
+  <div class="answer-line" style="margin-top:6px;">Full equation: y = <span class="blank"></span>x + <span class="blank"></span></div>
+</div>
+
+<div class="self-check">
+  <strong>✅ Self-Check Before You Turn This In:</strong><br>
+  ☐ Did I use <strong>+ → table → Add regression</strong> for every problem?<br>
+  ☐ Did I identify <strong>m (MULTIPLIER = slope)</strong> and <strong>b (BONUS = y-intercept)</strong> in each equation?<br>
+  ☐ Did I write what the slope <em>means</em> when asked?
+</div>
+
+</body>
+</html>
