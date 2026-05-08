@@ -100,8 +100,8 @@
             <strong>Try typing these formats:</strong>
             <ul>
                 <li><strong>Equations:</strong> 3a + 56 ~ 17a</li>
-                <li><strong>Pythagorean:</strong> a² + 8² ~ 10²</li>
-                <li><strong>Volume:</strong> V ~ π · 5² · 12</li>
+                <li><strong>Pythagorean:</strong> a² + b² ~ c²</li>
+                <li><strong>Volume:</strong> V ~ π · r² · h</li>
             </ul>
         </div>
 
@@ -139,27 +139,55 @@
                 return;
             }
 
-            // Check for illegal graphing variables (x and y)
-            // Using regex to make sure we don't flag words, just standalone letters if possible, 
-            // but for safety in this simple sim, we check if x or y exists anywhere.
+            // Syntax Variables
             let hasX = input.includes("x");
             let hasY = input.includes("y");
             let hasEquals = input.includes("=");
             let hasTilde = input.includes("~");
 
+            // Formula Structure Variables
+            let hasSquare = input.includes("²");
+            let hasCube = input.includes("³");
+            let hasPlus = input.includes("+");
+            let hasPi = input.includes("π");
+
+            // 1. Check for basic Desmos Rules (The Syntax check)
             if ((hasX || hasY) && hasEquals) {
                 feedbackBox.className = "feedback error";
-                feedbackBox.innerHTML = "Wait! You broke the <strong>No X/Y Rule</strong> AND you need to use the <strong>Tilde Method</strong>. Change '=' to '~', and use letters like 'a', 'b', 'v', or 'h'.";
+                feedbackBox.innerHTML = "Wait! You broke the <strong>No X/Y Rule</strong> AND you need to use the <strong>Tilde Method</strong>. Change '=' to '~', and use letters like 'a', 'b', 'v', or 'r'.";
             } else if (hasX || hasY) {
                 feedbackBox.className = "feedback error";
-                feedbackBox.innerHTML = "Remember the <strong>No X or Y Rule</strong>! Desmos tries to draw a graph when you use x or y. Change them to letters like 'a', 'b', 'v', or 'h'.";
+                feedbackBox.innerHTML = "Remember the <strong>No X or Y Rule</strong>! Desmos tries to draw a graph when you use x or y. Change them to letters like 'a', 'b', 'v', or 'r'.";
             } else if (hasEquals) {
                 feedbackBox.className = "feedback error";
                 feedbackBox.innerHTML = "Remember the <strong>Tilde Method</strong>! To make Desmos solve the formula for you, change the '=' sign to a '~'.";
-            } else if (hasTilde) {
-                feedbackBox.className = "feedback success";
-                feedbackBox.innerHTML = "🎉 PERFECT! You used the Tilde Method and safe variables correctly. You are ready to type this into the STAAR Desmos calculator!";
-            } else {
+            } 
+            // 2. Check for Formula Viability (The Math Teacher check)
+            else if (hasTilde) {
+                
+                // Catch mixed exponents (e.g., trying to use cubed in Pythagorean theorem)
+                if (hasPlus && hasSquare && hasCube) {
+                    feedbackBox.className = "feedback error";
+                    feedbackBox.innerHTML = "Hold on! I see a plus sign (+), a square (²), and a cube (³). That doesn't match our formulas! Please check your <strong>STAAR Reference Chart</strong> to make sure you wrote the formula correctly.";
+                } 
+                // Catch using the exact same variable with different exponents (a² + a³)
+                else if (input.includes("a²") && input.includes("a³") || input.includes("b²") && input.includes("b³")) {
+                    feedbackBox.className = "feedback error";
+                    feedbackBox.innerHTML = "Careful! You used the same letter with two different exponents. Look closely at your <strong>STAAR Reference Chart</strong> to find the right formula.";
+                }
+                // Catch mixing Pythagorean symbols with Volume symbols (e.g., a² + π)
+                else if (hasPlus && hasPi) {
+                    feedbackBox.className = "feedback error";
+                    feedbackBox.innerHTML = "Hmm, I see a plus sign and pi (π) together. That looks a bit scrambled. Double-check your <strong>STAAR Reference Chart</strong>!";
+                }
+                // If they passed all the traps:
+                else {
+                    feedbackBox.className = "feedback success";
+                    feedbackBox.innerHTML = "🎉 PERFECT! You used the Tilde Method and a valid formula structure! You are ready to type this into the STAAR Desmos calculator!";
+                }
+            } 
+            // 3. Catch missing tilde entirely
+            else {
                 feedbackBox.className = "feedback error";
                 feedbackBox.innerHTML = "Hmm, I don't see a tilde (~). Remember to use the Tilde Method so Desmos can solve it!";
             }
