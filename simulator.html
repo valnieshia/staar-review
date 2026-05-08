@@ -150,6 +150,10 @@
             let hasCube = input.includes("³");
             let hasPlus = input.includes("+");
             let hasPi = input.includes("π");
+            
+            // Check if there is text on both sides of the tilde
+            let parts = input.split("~");
+            let isMissingSide = hasTilde && (parts.length < 2 || parts[0].trim() === "" || parts[1].trim() === "");
 
             // 1. Check for basic Desmos Rules (The Syntax check)
             if ((hasX || hasY) && hasEquals) {
@@ -165,8 +169,13 @@
             // 2. Check for Formula Viability (The Math Teacher check)
             else if (hasTilde) {
                 
+                // Catch missing sides of the equation
+                if (isMissingSide) {
+                    feedbackBox.className = "feedback error";
+                    feedbackBox.innerHTML = "You remembered the tilde (~), but an equation needs something on BOTH sides of it! (For example: <strong>V ~ πr²h</strong>)";
+                }
                 // Catch mixed exponents (e.g., trying to use cubed in Pythagorean theorem)
-                if (hasPlus && hasSquare && hasCube) {
+                else if (hasPlus && hasSquare && hasCube) {
                     feedbackBox.className = "feedback error";
                     feedbackBox.innerHTML = "Hold on! I see a plus sign (+), a square (²), and a cube (³). That doesn't match our formulas! Please check your <strong>STAAR Reference Chart</strong> to make sure you wrote the formula correctly.";
                 } 
