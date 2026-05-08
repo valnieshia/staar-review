@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5-Day 8th Grade STAAR Math Review — Special Education Small Group</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap');
+
+  :root {
+    --primary: #1a5276;
+    --primary-light: #2980b9;
+    --accent: #e67e22;
+    --accent-light: #f39c12;
+    --success: #27ae60;
+    --info: #3498db;
+    --warning: #f1c40f;
+    --danger: #e74c3c;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #dee2e6;
+    --day1: #2980b9;
+    --day2: #27ae60;
+    --day3: #8e44ad;
+    --day4: #e67e22;
+    --day5: #e74c3c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  /* COVER PAGE */
+  .cover {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--accent) 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  }
+  .cover h1 { font-size: 2.2em; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
+  .cover h2 { font-size: 1.3em; font-weight: 500; opacity: 0.95; margin-bottom: 20px; }
+  .cover .meta {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    margin-top: 20px;
+  }
+  .cover .meta span {
+    background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px;
+    font-size: 0.85em; backdrop-filter: blur(4px);
+  }
+
+  /* TABLE OF CONTENTS */
+  .toc {
+    background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .toc h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.4em; }
+  .toc ul { list-style: none; }
+  .toc li {
+    padding: 8px 0; border-bottom: 1px dotted var(--border);
+    display: flex; justify-content: space-between;
+  }
+  .toc a { color: var(--primary-light); text-decoration: none; font-weight: 500; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* SECTION HEADERS */
+  .section-header {
+    background: var(--primary); color: white; padding: 16px 24px;
+    border-radius: 10px 10px 0 0; margin-top: 40px;
+    font-size: 1.3em; font-weight: 700;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card-bg); border-radius: 0 0 12px 12px;
+    padding: 24px; margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid var(--border); border-top: none;
+  }
+  .card.standalone {
+    border-radius: 12px; border-top: 1px solid var(--border);
+  }
+
+  /* DAY HEADERS */
+  .day-header {
+    padding: 20px 24px; border-radius: 10px 10px 0 0; color: white;
+    margin-top: 40px;
+  }
+  .day-header.day1 { background: var(--day1); }
+  .day-header.day2 { background: var(--day2); }
+  .day-header.day3 { background: var(--day3); }
+  .day-header.day4 { background: var(--day4); }
+  .day-header.day5 { background: var(--day5); }
+  .day-header h2 { font-size: 1.4em; margin-bottom: 4px; }
+  .day-header p { opacity: 0.9; font-size: 0.95em; }
+
+  /* TABLES */
+  table {
+    width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.92em;
+  }
+  th {
+    background: var(--primary); color: white; padding: 10px 14px;
+    text-align: left; font-weight: 600; font-size: 0.9em; text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) { background: #f7f9fc; }
+  tr:hover { background: #edf2f7; }
+
+  /* BADGES / TAGS */
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 0.78em; font-weight: 600; letter-spacing: 0.3px;
+  }
+  .badge-readiness { background: #d4edda; color: #155724; }
+  .badge-high { background: #f8d7da; color: #721c24; }
+  .badge-medium { background: #fff3cd; color: #856404; }
+  .badge-id { background: #e2d5f1; color: #4a148c; }
+  .badge-adhd { background: #fce4ec; color: #b71c1c; }
+  .badge-both { background: #e3f2fd; color: #0d47a1; }
+  .badge-teks { background: #e8f5e9; color: #1b5e20; font-family: 'Fira Code', monospace; }
+
+  /* FADED EXAMPLE BOXES */
+  .faded-example {
+    border: 2px solid var(--info); border-radius: 10px; padding: 20px;
+    margin: 15px 0; background: #f0f8ff;
+  }
+  .faded-example h4 {
+    color: var(--info); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .faded-step {
+    display: flex; gap: 12px; margin: 8px 0; padding: 8px 12px;
+    border-radius: 6px; align-items: flex-start;
+  }
+  .faded-step.given { background: #d5f5e3; border-left: 4px solid var(--success); }
+  .faded-step.partial { background: #fef9e7; border-left: 4px solid var(--warning); }
+  .faded-step.blank { background: #fadbd8; border-left: 4px solid var(--danger); }
+  .step-num {
+    background: var(--primary); color: white; width: 28px; height: 28px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85em; flex-shrink: 0;
+  }
+  .step-content { flex: 1; }
+  .fill-blank {
+    display: inline-block; border-bottom: 2px dashed var(--danger);
+    min-width: 80px; color: var(--danger); font-style: italic; padding: 0 4px;
+  }
+
+  /* CHECKLIST BOXES */
+  .checklist {
+    border: 2px solid var(--success); border-radius: 10px; padding: 20px;
+    margin: 15px 0; background: #f0fff4;
+  }
+  .checklist h4 { color: var(--success); margin-bottom: 12px; }
+  .checklist-item {
+    display: flex; gap: 10px; margin: 6px 0; align-items: flex-start;
+  }
+  .checkbox {
+    width: 20px; height: 20px; border: 2px solid var(--success); border-radius: 4px;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* ACCOMMODATION BOXES */
+  .accommodation {
+    border: 2px solid var(--accent); border-radius: 10px; padding: 20px;
+    margin: 15px 0; background: #fff8f0;
+  }
+  .accommodation h4 { color: var(--accent); margin-bottom: 12px; }
+
+  /* EXIT TICKET */
+  .exit-ticket {
+    border: 2px solid var(--primary); border-radius: 10px; padding: 20px;
+    margin: 15px 0; background: #f0f4ff;
+  }
+  .exit-ticket h4 { color: var(--primary); margin-bottom: 12px; }
+  .question { margin: 12px 0; padding: 10px; background: white; border-radius: 6px; }
+  .question p { font-weight: 600; margin-bottom: 8px; }
+  .options { padding-left: 20px; }
+  .options div { margin: 4px 0; }
+  .correct { color: var(--success); font-weight: 600; }
+
+  /* SCHEDULE TIMELINE */
+  .timeline { margin: 15px 0; }
+  .time-block {
+    display: flex; gap: 15px; margin: 8px 0; padding: 10px 15px;
+    background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--primary-light);
+  }
+  .time-label {
+    font-weight: 700; color: var(--primary); min-width: 90px; white-space: nowrap;
+  }
+
+  /* LINKS */
+  a { color: var(--primary-light); }
+  a:hover { color: var(--primary); }
+
+  /* UTILITY */
+  h3 { color: var(--primary); margin: 18px 0 10px; font-size: 1.15em; }
+  h4 { margin: 12px 0 8px; }
+  ul, ol { margin: 8px 0 8px 20px; }
+  li { margin: 4px 0; }
+  strong { color: var(--text); }
+  .highlight { background: #fff3cd; padding: 2px 6px; border-radius: 3px; }
+  .callout {
+    padding: 14px 18px; border-radius: 8px; margin: 12px 0;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .callout-info { background: #e3f2fd; border-left: 4px solid var(--info); }
+  .callout-tip { background: #e8f5e9; border-left: 4px solid var(--success); }
+  .callout-warn { background: #fff3e0; border-left: 4px solid var(--accent); }
+  .emoji { font-size: 1.2em; }
+  .divider { border: none; border-top: 2px solid var(--border); margin: 25px 0; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+  @media print {
+    .cover { break-after: page; }
+    .day-header { break-before: page; }
+    body { font-size: 12px; }
+  }
+  .progress-table td:first-child { font-weight: 600; }
+
+  /* RESOURCE LINKS STRIP */
+  .day-resources {
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    padding: 10px 20px; margin-bottom: 0;
+    background: rgba(255,255,255,0.13);
+    border-left: 4px solid rgba(255,255,255,0.4);
+    border-right: 4px solid rgba(255,255,255,0.4);
+  }
+  .day-resources span { color: rgba(255,255,255,0.85); font-size: 0.82em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .day-resources a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 20px; font-size: 0.88em; font-weight: 600;
+    text-decoration: none; border: 2px solid rgba(255,255,255,0.7);
+    color: white; background: rgba(255,255,255,0.18);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .day-resources a:hover { background: rgba(255,255,255,0.35); border-color: white; }
+
+  /* DESMOS CALCULATOR DISPLAY */
+  .desmos-box {
+    border: 2px solid #2d70b3; border-radius: 10px; padding: 20px;
+    margin: 15px 0; background: #f5f8ff;
+  }
+  .desmos-box h4 { color: #2d70b3; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .desmos-lines {
+    background: #fff; border: 1px solid #d0d8e8; border-radius: 8px;
+    padding: 12px 16px; font-family: 'Fira Code', monospace; font-size: 0.95em;
+    line-height: 2;
+  }
+  .desmos-lines .line-num {
+    display: inline-block; width: 28px; color: #999; font-size: 0.85em; text-align: right;
+    margin-right: 10px;
+  }
+  .desmos-lines .desmos-line {
+    margin: 2px 0; padding: 4px 8px; border-radius: 4px;
+  }
+  .desmos-lines .desmos-line.formula { background: #e8f0fe; border-left: 3px solid #2d70b3; }
+  .desmos-lines .desmos-line.variable { background: #f0f8e8; border-left: 3px solid #27ae60; }
+  .desmos-lines .desmos-line.result { background: #fff8e1; border-left: 3px solid #f39c12; }
+  .desmos-lines .desmos-line.student-fill {
+    background: #fce4ec; border-left: 3px solid #e74c3c; border-bottom: 2px dashed #e74c3c;
+  }
+  .desmos-tip {
+    margin-top: 10px; padding: 8px 12px; background: #e8f5e9; border-radius: 6px;
+    font-size: 0.9em; color: #1b5e20;
+  }
+  .desmos-badge {
+    display: inline-block; background: #2d70b3; color: white; padding: 2px 8px;
+    border-radius: 10px; font-size: 0.75em; font-weight: 600; letter-spacing: 0.3px;
+    vertical-align: middle; margin-left: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- COVER PAGE -->
+<!-- ============================================================ -->
+<div class="cover" id="top">
+  <h1>5-Day 8th Grade STAAR Math Review</h1>
+  <h2>Special Education Small Group Pull-Out Lesson Plan</h2>
+  <p style="opacity:0.85; font-size:1.05em;">Culturally Responsive &bull; Accommodated &bull; Evidence-Based</p>
+  <div class="meta">
+    <span>📍 Dallas ISD, TX</span>
+    <span>📅 Spring 2026</span>
+    <span>⏱ 50 min/session</span>
+    <span>👥 Small Group Pull-Out</span>
+    <span>🎯 High-Leverage Readiness TEKS</span>
+    <span>♿ ID &amp; OHI (ADHD)</span>
+    <span>🖩 STAAR Desmos Calculator</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS -->
+<!-- ============================================================ -->
+<div class="toc">
+  <h2>📑 Table of Contents</h2>
+  <ul>
+    <li><a href="#overview">Program Overview &amp; TEKS Prioritization</a></li>
+    <li><a href="#accommodations">Universal Accommodations &amp; Supports</a></li>
+    <li><a href="#day1">Day 1 — Proportional Relationships &amp; Slope</a></li>
+    <li><a href="#day2">Day 2 — Writing &amp; Solving Linear Equations</a></li>
+    <li><a href="#day3">Day 3 — Functions &amp; Scatterplots</a></li>
+    <li><a href="#day4">Day 4 — Geometry: Pythagorean Theorem &amp; Transformations</a></li>
+    <li><a href="#day5">Day 5 — Mixed Review, Test Strategies &amp; Confidence Building</a></li>
+    <li><a href="#checklists">Procedural Checklists Bank</a></li>
+    <li><a href="#faded-bank">Faded Worked Examples Bank</a></li>
+    <li><a href="#desmos-ref">STAAR Desmos Calculator — Quick Reference</a></li>
+    <li><a href="#progress">Progress Monitoring &amp; Data Tracking</a></li>
+    <li><a href="#strategies">STAAR Test-Taking Strategies</a></li>
+    <li><a href="#resources">Resource Links</a></li>
+    <li style="background:#1a1a2e; border-radius:8px; padding:8px 12px; margin-top:6px;">
+      <a href="Cheatsheet_Slideshow.html" target="_blank" style="color:white; font-weight:700;">⭐ Step-by-Step Concept Guide — 27 slides, all 5 concepts</a>
+      <span style="color:#aaa; font-size:0.82em;">↗ opens in new tab</span>
+    </li>
+    <li style="background:linear-gradient(90deg,#6a0572,#a020a0); border-radius:8px; padding:8px 12px; margin-top:6px;">
+      <a href="https://student.magicschool.ai/s/join?joinCode=2ha82g" target="_blank" style="color:white; font-weight:700;">🤖 AI Tutor — STAAR Math Review Chatbot (MagicSchool)</a>
+      <span style="color:rgba(255,255,255,0.7); font-size:0.82em;">↗ opens in new tab</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUICK ACCESS — ALL MATERIALS -->
+<!-- ============================================================ -->
+<div class="card standalone" style="margin-bottom:30px;">
+  <h3 style="margin-bottom:12px; color:var(--primary);">🗂️ Quick Access — All Slide Decks &amp; Worksheets</h3>
+  <p style="font-size:0.88em; color:var(--text-light); margin-bottom:14px;">Click any link to open the file. All files are in the same folder as this lesson plan.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:0.9em;">
+    <thead>
+      <tr style="background:var(--primary); color:white;">
+        <th style="padding:8px 12px; text-align:left;">Day</th>
+        <th style="padding:8px 12px; text-align:left;">Topic</th>
+        <th style="padding:8px 12px; text-align:center;">Slide Deck</th>
+        <th style="padding:8px 12px; text-align:center;">Worksheet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#eaf4fb;">
+        <td style="padding:8px 12px; font-weight:700; color:var(--day1);">Day 1</td>
+        <td style="padding:8px 12px;">Proportional Relationships &amp; Slope</td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day1_Slides.html" target="_blank" style="background:var(--day1); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">🖥️ Open Slides</a></td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day1_Worksheet.html" target="_blank" style="background:var(--day1); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">📄 Open Worksheet</a></td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px; font-weight:700; color:var(--day2);">Day 2</td>
+        <td style="padding:8px 12px;">Writing &amp; Solving Linear Equations</td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day2_Slides.html" target="_blank" style="background:var(--day2); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">🖥️ Open Slides</a></td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day2_Worksheet.html" target="_blank" style="background:var(--day2); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">📄 Open Worksheet</a></td>
+      </tr>
+      <tr style="background:#f5eefb;">
+        <td style="padding:8px 12px; font-weight:700; color:var(--day3);">Day 3</td>
+        <td style="padding:8px 12px;">Functions &amp; Scatterplots</td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day3_Slides.html" target="_blank" style="background:var(--day3); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">🖥️ Open Slides</a></td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day3_Worksheet.html" target="_blank" style="background:var(--day3); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">📄 Open Worksheet</a></td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px; font-weight:700; color:var(--day4);">Day 4</td>
+        <td style="padding:8px 12px;">Pythagorean Theorem &amp; Transformations</td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day4_Slides.html" target="_blank" style="background:var(--day4); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">🖥️ Open Slides</a></td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day4_Worksheet.html" target="_blank" style="background:var(--day4); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">📄 Open Worksheet</a></td>
+      </tr>
+      <tr style="background:#fdecea;">
+        <td style="padding:8px 12px; font-weight:700; color:var(--day5);">Day 5</td>
+        <td style="padding:8px 12px;">Volume, Ordering Numbers &amp; Mixed Review</td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day5_Slides.html" target="_blank" style="background:var(--day5); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">🖥️ Open Slides</a></td>
+        <td style="padding:8px 12px; text-align:center;"><a href="Day5_Worksheet.html" target="_blank" style="background:var(--day5); color:white; padding:4px 12px; border-radius:12px; text-decoration:none; font-weight:600; font-size:0.85em;">📄 Open Worksheet</a></td>
+      </tr>
+      <tr style="background:linear-gradient(90deg,#1a1a2e,#16213e);">
+        <td colspan="4" style="padding:12px 16px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <div>
+              <div style="font-weight:800; color:white; font-size:1em;">⭐ Step-by-Step Concept Guide</div>
+              <div style="color:#aaa; font-size:0.82em; margin-top:2px;">27 slides · All 5 concepts · One idea per slide · Faded worked examples · Chapter navigation</div>
+            </div>
+            <a href="Cheatsheet_Slideshow.html" target="_blank" style="background:white; color:#1a1a2e; padding:7px 18px; border-radius:12px; text-decoration:none; font-weight:800; font-size:0.9em; white-space:nowrap;">🎓 Open Concept Guide →</a>
+          </div>
+        </td>
+      </tr>
+      <tr style="background:linear-gradient(90deg,#6a0572,#a020a0);">
+        <td colspan="4" style="padding:12px 16px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <div>
+              <div style="font-weight:800; color:white; font-size:1em;">🤖 AI Tutor — STAAR Math Review Chatbot</div>
+              <div style="color:rgba(255,255,255,0.75); font-size:0.82em; margin-top:2px;">Powered by MagicSchool · Personalized help · Available anytime · Ask questions about any concept</div>
+            </div>
+            <a href="https://student.magicschool.ai/s/join?joinCode=2ha82g" target="_blank" style="background:white; color:#6a0572; padding:7px 18px; border-radius:12px; text-decoration:none; font-weight:800; font-size:0.9em; white-space:nowrap;">🤖 Open AI Tutor →</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:10px; font-size:0.82em; color:var(--text-light);">⚠️ <strong>Important:</strong> Keep all files together in the same folder so the links work correctly.</p>
+  <hr style="margin:16px 0; border-color:var(--border);">
+  <h3 style="margin-bottom:10px; color:var(--primary); font-size:1em;">🖼️ Embedded Cheat Sheets &amp; Visuals</h3>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; font-size:0.82em;">
+    <div style="text-align:center;"><p style="font-weight:700; color:#2980b9; margin-bottom:4px;">Finding the Equation<br><span style="color:#555; font-weight:400;">(Day 1 &amp; 2 Worksheets)</span></p><img src="cheatsheet_finding_equation.png" alt="Finding the Equation" style="width:100%; border-radius:8px; border:2px solid #2980b9;"></div>
+    <div style="text-align:center;"><p style="font-weight:700; color:#27ae60; margin-bottom:4px;">Verbal to Desmos Checklist<br><span style="color:#555; font-weight:400;">(Day 2 Worksheet &amp; Slides)</span></p><img src="cheatsheet_verbal_desmos.png" alt="Verbal to Desmos" style="width:100%; border-radius:8px; border:2px solid #27ae60;"></div>
+    <div style="text-align:center;"><p style="font-weight:700; color:#8e44ad; margin-bottom:4px;">Identifying Functions<br><span style="color:#555; font-weight:400;">(Day 3 Worksheet &amp; Slides)</span></p><img src="cheatsheet_functions.png" alt="Functions" style="width:100%; border-radius:8px; border:2px solid #8e44ad;"></div>
+    <div style="text-align:center;"><p style="font-weight:700; color:#e74c3c; margin-bottom:4px;">Volume &amp; Surface Area<br><span style="color:#555; font-weight:400;">(Day 5 Worksheet &amp; Slides)</span></p><img src="cheatsheet_volume.png" alt="Volume" style="width:100%; border-radius:8px; border:2px solid #e74c3c;"></div>
+    <div style="text-align:center;"><p style="font-weight:700; color:#2980b9; margin-bottom:4px;">Ordering Numbers<br><span style="color:#555; font-weight:400;">(Day 5 Worksheet &amp; Slides)</span></p><img src="cheatsheet_ordering.png" alt="Ordering Numbers" style="width:100%; border-radius:8px; border:2px solid #2980b9;"></div>
+    <div style="text-align:center;"><p style="font-weight:700; color:#e67e22; margin-bottom:4px;">Daily Exit Ticket Form<br><span style="color:#555; font-weight:400;">(Use every day)</span></p><img src="cheatsheet_exit_ticket.png" alt="Daily Exit Ticket" style="width:100%; border-radius:8px; border:2px solid #e67e22;"></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PROGRAM OVERVIEW -->
+<!-- ============================================================ -->
+<div class="section-header" id="overview">📋 Program Overview &amp; TEKS Prioritization</div>
+<div class="card">
+  <h3>Student Population</h3>
+  <p>This 5-day STAAR Math review is designed for a <strong>special education small group pull-out</strong> averaging <strong>50 minutes per session</strong>. Students range from <span class="badge badge-id">Intellectual Disability (ID)</span> to <span class="badge badge-adhd">Other Health Impairment (OHI) for ADHD</span>. All instruction is <strong>culturally responsive</strong> and contextualized for students in <strong>Dallas, Texas</strong>.</p>
+
+  <h3>Instructional Framework</h3>
+  <div class="callout callout-info">
+    <span class="emoji">🧠</span>
+    <div><strong>Evidence-Based Approaches Used:</strong> Explicit Instruction (I Do → We Do → You Do), Backward-Faded Worked Examples (Cognitive Load Theory), Procedural Checklists (Proceduralizing Strategy), Schema-Based Instruction, Universal Design for Learning (UDL), Culturally Responsive Teaching (CRT), and <strong>STAAR Desmos Calculator Integration</strong> (the same calculator students use on test day).</div>
+  </div>
+
+  <h3>High-Leverage Readiness TEKS — Prioritized for This Group</h3>
+  <p>Based on the <a href="https://tea.texas.gov/student-assessment/staar/staar-8-math-blueprint.pdf" target="_blank">TEA STAAR Grade 8 Math Blueprint</a> and <a href="https://lead4ward.com/docs/resources/snapshots/math/teks_snapshot_math_gr_08.pdf" target="_blank">lead4ward TEKS Snapshot</a>, these readiness standards are historically the most tested and most accessible for short-term mastery:</p>
+
+  <table>
+    <thead>
+      <tr><th>Day</th><th>TEKS</th><th>Standard</th><th>Priority</th><th>Why Accessible</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2"><strong>1</strong></td>
+        <td><span class="badge badge-teks">8.4(B)</span></td>
+        <td>Graph proportional relationships; interpret unit rate as slope</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Concrete, visual, uses real-world rates</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-teks">8.4(C)</span></td>
+        <td>Determine rate of change (slope) and y-intercept from data</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Procedural — follows clear steps</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>2</strong></td>
+        <td><span class="badge badge-teks">8.5(I)</span></td>
+        <td>Write equations in y = mx + b form</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Most-tested TEKS; template-based</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-teks">8.8(C)</span></td>
+        <td>Solve one-variable equations with variables on both sides</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Step-by-step procedural process</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>3</strong></td>
+        <td><span class="badge badge-teks">8.5(G)</span></td>
+        <td>Identify functions using ordered pairs, tables, mappings, graphs</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Pattern recognition; visual</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-teks">8.5(D)</span></td>
+        <td>Use trend line to make predictions (scatterplots)</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Graph reading; estimation skills</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>4</strong></td>
+        <td><span class="badge badge-teks">8.7(C)</span></td>
+        <td>Pythagorean Theorem and its converse</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Formula on reference chart; solve in Desmos with a²+b²~c²</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-teks">8.10(A)</span></td>
+        <td>Transformations (translations, reflections, rotations)</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Visual; can use coordinate rules</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>5</strong></td>
+        <td><span class="badge badge-teks">8.7(A)</span></td>
+        <td>Volume of cylinders, cones, spheres</td>
+        <td><span class="badge badge-high">HIGH</span></td>
+        <td>Formulas provided; Desmos V~Bh method</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-teks">8.2(D)</span></td>
+        <td>Order a set of real numbers</td>
+        <td><span class="badge badge-medium">MED</span></td>
+        <td>Number line visual; concrete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIVERSAL ACCOMMODATIONS -->
+<!-- ============================================================ -->
+<div class="section-header" id="accommodations">♿ Universal Accommodations &amp; Supports</div>
+<div class="card">
+
+  <h3>Accommodations by Disability Category</h3>
+  <div class="two-col">
+    <div class="accommodation">
+      <h4>🧩 For Students with ID (Intellectual Disability)</h4>
+      <ul>
+        <li><strong>Simplified language</strong> — Rewrite word problems at lower reading level</li>
+        <li><strong>Reduced number of answer choices</strong> — Highlight 2 of 4 options when possible during practice</li>
+        <li><strong>Concrete manipulatives</strong> — Algebra tiles, base-ten blocks, number lines</li>
+        <li><strong>Visual step-by-step checklists</strong> with pictures/icons at each step</li>
+        <li><strong>Extended time</strong> (1.5x–2x on all tasks)</li>
+        <li><strong>Oral administration</strong> — Read problems aloud; allow oral responses</li>
+        <li><strong>Calculator access</strong> for all computation</li>
+        <li><strong>Reduced problem sets</strong> (e.g., 5 problems instead of 10)</li>
+        <li><strong>Enlarged font</strong> (16pt+) with increased spacing</li>
+        <li><strong>Color-coded reference sheets</strong> at desk</li>
+        <li><strong>Repeated practice with same problem type</strong> before moving on</li>
+      </ul>
+    </div>
+    <div class="accommodation">
+      <h4>⚡ For Students with OHI/ADHD</h4>
+      <ul>
+        <li><strong>Chunked tasks</strong> — Break worksheets into 3-4 problem sections</li>
+        <li><strong>Movement breaks</strong> — 2-3 min every 12-15 min</li>
+        <li><strong>Fidget tools</strong> allowed during instruction</li>
+        <li><strong>Visual timer</strong> displayed for each task segment</li>
+        <li><strong>Preferential seating</strong> — Near teacher, away from distractions</li>
+        <li><strong>Written + verbal directions</strong> simultaneously</li>
+        <li><strong>Graphic organizers</strong> pre-printed (no copying from board)</li>
+        <li><strong>Frequent check-ins</strong> — Every 3-4 problems</li>
+        <li><strong>Choice in order</strong> of problems to solve</li>
+        <li><strong>Token/point system</strong> for on-task behavior</li>
+        <li><strong>Noise-reducing headphones</strong> during independent work</li>
+        <li><strong>Highlight key words</strong> in problems before solving</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Universal Supports for ALL Students in This Group</h3>
+  <div class="accommodation">
+    <h4>🌐 Applied Every Day</h4>
+    <ul>
+      <li>✅ <strong>STAAR Reference Chart</strong> available at all times (<a href="https://tea.texas.gov/student-assessment/staar/staar-8-math-reference-materials.pdf" target="_blank">TEA Reference Materials</a>)</li>
+      <li>✅ <strong>STAAR Desmos Calculator</strong> used in every session — the SAME calculator students will have on test day (<a href="https://www.desmos.com/testing/texas/graphing" target="_blank">STAAR Desmos Texas Testing Version</a>). Students practice entering formulas using the tilde (~) regression method so they can let Desmos solve for unknowns.</li>
+      <li>✅ <strong>Procedural checklist</strong> for every problem type — laminated on desk</li>
+      <li>✅ <strong>Faded worked examples</strong> before independent practice</li>
+      <li>✅ <strong>Sentence stems</strong> for math talk ("I noticed that…", "My first step is…")</li>
+      <li>✅ <strong>Anchor charts</strong> posted on wall for each day's concept</li>
+      <li>✅ <strong>Error analysis journals</strong> — students identify and correct mistakes</li>
+      <li>✅ <strong>Positive reinforcement</strong> — Praise effort, not just accuracy</li>
+      <li>✅ <strong>Culturally relevant contexts</strong> — Dallas landmarks, local food, community data</li>
+    </ul>
+  </div>
+
+  <h3>STAAR Test-Day Accommodations (IEP-Based)</h3>
+  <div class="callout callout-warn">
+    <span class="emoji">📌</span>
+    <div>Review each student's IEP for specific STAAR accommodations. Common allowable accommodations include: <strong>Extra time, oral/signed administration, spelling assistance, basic transcribing, individualized/small-group setting, reading aloud to self, and content/language supports (text-to-speech)</strong>. See the <a href="https://tea.texas.gov/student-assessment/test-administration/staar-accommodation-educator-guide.pdf" target="_blank">2025–2026 STAAR Accommodations Educator Guide</a> for full details.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DAY 1 -->
+<!-- ============================================================ -->
+<div class="day-header day1" id="day1">
+  <h2>📘 Day 1 — Proportional Relationships &amp; Slope</h2>
+  <p>TEKS 8.4(B) &amp; 8.4(C) | Readiness Standards | "How fast is Dallas growing?"</p>
+</div>
+<div class="day-resources" style="background:rgba(41,128,185,0.18); border-color:rgba(41,128,185,0.5);">
+  <span>📎 Day 1 Materials:</span>
+  <a href="Day1_Slides.html" target="_blank">🖥️ Slide Deck</a>
+  <a href="Day1_Worksheet.html" target="_blank">📄 Worksheet</a>
+</div>
+<div class="card">
+
+  <h3>🎯 Learning Objectives</h3>
+  <ul>
+    <li>Students will graph a proportional relationship and identify the unit rate as slope.</li>
+    <li>Students will determine slope and y-intercept from a table or graph.</li>
+  </ul>
+
+  <h3>🌍 Culturally Responsive Context</h3>
+  <div class="callout callout-tip">
+    <span class="emoji">🏙️</span>
+    <div><strong>Dallas Connection:</strong> Students explore proportional relationships using real scenarios: cost of DART bus passes per ride, price per taco at local Dallas taquerías, miles walked on the Katy Trail per hour, and growth of the Dallas Mavericks' win record over weeks. Data reflects students' everyday experiences in their Dallas community.</div>
+  </div>
+
+  <h3>⏱ 50-Minute Schedule</h3>
+  <div class="timeline">
+    <div class="time-block">
+      <span class="time-label">0:00 – 0:05</span>
+      <div><strong>Warm-Up / Hook (5 min)</strong> — "How much does a DART day pass cost? If you ride 3 times, how much per ride?" Quick-write or partner chat. Display DART pricing visual. <span class="badge badge-adhd">ADHD: Movement — students stand to share answers</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:05 – 0:20</span>
+      <div><strong>I Do — Explicit Instruction (15 min)</strong>
+        <ul>
+          <li>Model: "Tacos cost $2 each at a local taquería. Let's make a table &amp; graph."</li>
+          <li>Build table: 1 taco = $2, 2 = $4, 3 = $6</li>
+          <li>Connect: "Slope IS the unit rate — how much per one!"</li>
+          <li>Use anchor chart: <strong>Slope = Rise ÷ Run = Δy ÷ Δx</strong></li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>The Desmos Table + Regression Method — "Let Desmos find the equation!"</strong></li>
+        </ul>
+        <div class="desmos-box">
+          <h4>🖩 Desmos Steps — Finding Slope from a Table</h4>
+          <div class="desmos-lines">
+            <div class="desmos-line formula"><span class="line-num">1:</span> Pick any <strong>TWO points</strong> from the table</div>
+            <div class="desmos-line formula"><span class="line-num">2:</span> In Desmos, press the <strong>+ (plus sign)</strong> button</div>
+            <div class="desmos-line variable"><span class="line-num">3:</span> Click on <strong>"table"</strong> — a table appears!</div>
+            <div class="desmos-line variable"><span class="line-num">4:</span> Type your two points into the table (x₁, y₁) and (x₂, y₂)</div>
+            <div class="desmos-line result"><span class="line-num">5:</span> Click the <strong>"Add regression"</strong> symbol — Desmos gives you the equation!</div>
+          </div>
+          <div class="desmos-tip">💡 Desmos shows: <strong>y = 2x</strong> → The number in front of x IS the slope! "m = 2 means $2 per taco."</div>
+          <div class="desmos-tip">⚠️ <strong>Common student confusion:</strong> Some students struggle telling apart <strong>m (slope)</strong> and <strong>b (y-intercept)</strong> in y = mx + b. Remind them: <strong>"m is the MULTIPLIER — the number TOUCHING the x. b is the BONUS — the number all by itself."</strong></div>
+        </div>
+        <ul>
+        </ul>
+        <span class="badge badge-id">ID: Use physical graph paper and colored dots alongside Desmos</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:20 – 0:30</span>
+      <div><strong>We Do — Guided Practice with Faded Examples (10 min)</strong>
+        <ul>
+          <li>Problem: "Jaylen walks on the Katy Trail. He walks 3 miles per hour."</li>
+          <li>Students fill in partially completed table and graph using the faded example below</li>
+          <li>Use procedural checklist to verify each step</li>
+        </ul>
+        <span class="badge badge-adhd">ADHD: 2-min movement break after this segment</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:30 – 0:42</span>
+      <div><strong>You Do — Independent Practice (12 min)</strong>
+        <ul>
+          <li>3-4 problems (reduced set for ID) using Dallas contexts</li>
+          <li>Checklist at desk; calculator available; teacher circulates</li>
+          <li>Problems: Mavericks ticket prices per game, cost of elotes per cup</li>
+        </ul>
+        <span class="badge badge-id">ID: Reduced to 2-3 problems; enlarged font; read aloud</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:42 – 0:50</span>
+      <div><strong>Exit Ticket &amp; Closure (8 min)</strong>
+        <ul>
+          <li>2 STAAR-format questions (see below)</li>
+          <li>Review answers together; celebrate effort</li>
+          <li>Preview: "Tomorrow we learn to write the EQUATION for these relationships!"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 1 Low-Prep Activities -->
+  <div class="accommodation">
+    <h4>🎲 Low-Prep Activities — Day 1: Slope &amp; Proportional Relationships</h4>
+    <table>
+      <thead><tr><th>Activity</th><th>Time</th><th>Materials</th><th>How It Works</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Slope Scavenger Hunt</strong></td>
+          <td>8-10 min</td>
+          <td>Index cards, tape</td>
+          <td>Write 8-10 tables/graphs on index cards and tape them around the room. Students walk to each card, find the slope, and record on a recording sheet. <span class="badge badge-adhd">ADHD: Movement built in!</span> <span class="badge badge-id">ID: Pair with a buddy; provide checklist</span></td>
+        </tr>
+        <tr>
+          <td><strong>Slope Match-Up (Memory Game)</strong></td>
+          <td>5-8 min</td>
+          <td>Index cards (write tables on one set, slopes on another)</td>
+          <td>Lay cards face down. Students flip two at a time — match the table to its slope. Keep matched pairs. Most matches wins! Uses only index cards + marker.</td>
+        </tr>
+        <tr>
+          <td><strong>"What's My Rate?" Whiteboard Relay</strong></td>
+          <td>5-7 min</td>
+          <td>Mini whiteboards or scratch paper</td>
+          <td>Teacher reads a Dallas scenario aloud: "3 tacos cost $9. What's the unit rate?" Students write answer on whiteboard and hold up. Fastest correct answer gets a point for their team. <span class="badge badge-adhd">ADHD: Fast-paced, competitive, high engagement</span></td>
+        </tr>
+        <tr>
+          <td><strong>Desmos Table Race</strong> <span class="desmos-badge">DESMOS</span></td>
+          <td>5 min</td>
+          <td>Desmos calculator (device)</td>
+          <td>Teacher gives a table of values. Students race to enter it into Desmos, add regression, and call out the slope. First to correctly identify slope AND y-intercept wins. Builds Desmos fluency!</td>
+        </tr>
+        <tr>
+          <td><strong>Menu Math</strong></td>
+          <td>10 min</td>
+          <td>Printed or projected menu (real or made-up Dallas restaurant)</td>
+          <td>Give students a taquería/restaurant menu. "If 1 taco = $2.50, fill in the table for 2, 3, 4, 5 tacos. Graph it. Find the slope." Students create their own proportional relationships from the menu. <span class="badge badge-id">ID: Pre-fill part of the table</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Day 1 Faded Example -->
+  <div class="faded-example">
+    <h4>📐 Faded Worked Example — Finding Slope from a Table <span class="desmos-badge">WITH DESMOS</span></h4>
+    <p><strong>Context:</strong> A food truck near Fair Park charges a set price per taco. Use the table and Desmos to find the slope (unit rate).</p>
+    <table style="width:auto; margin: 10px 0;">
+      <tr><th>Tacos (x)</th><th>Cost (y)</th></tr>
+      <tr><td>1</td><td>$3</td></tr>
+      <tr><td>2</td><td>$6</td></tr>
+      <tr><td>3</td><td>$9</td></tr>
+      <tr><td>4</td><td>$12</td></tr>
+    </table>
+    <p style="margin-top:10px;"><strong>Problem 1 (Fully Worked):</strong></p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Pick any TWO points from the table: (1, 3) and (2, 6) ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Press the <strong>+ (plus sign)</strong> in Desmos and click <strong>"table"</strong> ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type the two points into the Desmos table:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line variable">x₁: 1 &nbsp;&nbsp; y₁: 3</div>
+          <div class="desmos-line variable">x₂: 2 &nbsp;&nbsp; y₂: 6</div>
+        </div> ✅
+      </div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">4</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Click the <strong>"Add regression"</strong> symbol — Desmos gives: <strong>y = 3x</strong> ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">5</div>
+      <div class="step-content">Read the equation: y = <strong>3</strong>x → The slope (m) is <strong>3</strong> → Unit rate = <strong>$3 per taco</strong> ✅
+        <br><em>Remember: m is the MULTIPLIER — the number touching the x!</em></div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 2 (Partially Faded — complete the last 2 steps):</strong></p>
+    <p>Katy Trail walking data: (1, 2.5), (2, 5)</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Pick two points: (1, 2.5) and (2, 5) ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Press <strong>+</strong> → click <strong>"table"</strong> → Type points into table ✅</div>
+    </div>
+    <div class="faded-step partial">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Click <strong>"Add regression"</strong> — Desmos gives: y = <span class="fill-blank">____</span>x</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">The slope (m) = <span class="fill-blank">____</span> → Unit rate = <span class="fill-blank">____</span> miles per hour</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 3 (Mostly Faded — complete steps 2 through 4):</strong></p>
+    <p>DART bus costs: (1, 1.75) and (3, 5.25)</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Pick two points: (1, 1.75) and (3, 5.25) ✅</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">2</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Press <span class="fill-blank">____</span> → click <span class="fill-blank">____</span> → Type points into the table</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Click <span class="fill-blank">________________</span> — Desmos gives: y = <span class="fill-blank">____</span>x + <span class="fill-blank">____</span></div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">The slope (m) = <span class="fill-blank">____</span> → The y-intercept (b) = <span class="fill-blank">____</span> → Unit rate = $<span class="fill-blank">____</span> per ride</div>
+    </div>
+  </div>
+
+  <!-- Daily Exit Ticket Form -->
+  <div style="margin-bottom:16px; padding:12px; background:#fff3e0; border:2px solid #e67e22; border-radius:10px;">
+    <p style="font-weight:700; color:#e67e22; font-size:0.9em; margin-bottom:8px;">🖼️ Daily Exit Ticket Form — Print &amp; use every day!</p>
+    <img src="cheatsheet_exit_ticket.png" alt="Daily Exit Ticket" style="width:100%; max-width:700px; border-radius:8px; border:1px solid #e67e22; display:block; margin:0 auto;">
+  </div>
+
+  <!-- Day 1 Exit Ticket -->
+  <div class="exit-ticket">
+    <h4>🎫 Exit Ticket — Day 1</h4>
+    <div class="question">
+      <p>1. The table shows the total cost for buying tamales at a Dallas market.</p>
+      <table style="width:auto;">
+        <tr><th>Tamales</th><th>Cost</th></tr>
+        <tr><td>2</td><td>$5.00</td></tr>
+        <tr><td>4</td><td>$10.00</td></tr>
+        <tr><td>6</td><td>$15.00</td></tr>
+      </table>
+      <p style="margin-top:8px;">What is the slope (unit rate) of this relationship?</p>
+      <div class="options">
+        <div>A. $5.00 per tamale</div>
+        <div class="correct">B. $2.50 per tamale ✓</div>
+        <div>C. $15.00 per tamale</div>
+        <div>D. $10.00 per tamale</div>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. A line passes through (0, 0) and (4, 12). What is the slope?</p>
+      <div class="options">
+        <div>A. 4</div>
+        <div class="correct">B. 3 ✓</div>
+        <div>C. 12</div>
+        <div>D. 1/3</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DAY 2 -->
+<!-- ============================================================ -->
+<div class="day-header day2" id="day2">
+  <h2>📗 Day 2 — Writing &amp; Solving Linear Equations</h2>
+  <p>TEKS 8.5(I) &amp; 8.8(C) | Readiness Standards | "Building equations from real life"</p>
+</div>
+<div class="day-resources" style="background:rgba(39,174,96,0.18); border-color:rgba(39,174,96,0.5);">
+  <span>📎 Day 2 Materials:</span>
+  <a href="Day2_Slides.html" target="_blank">🖥️ Slide Deck</a>
+  <a href="Day2_Worksheet.html" target="_blank">📄 Worksheet</a>
+</div>
+<div class="card">
+
+  <h3>🎯 Learning Objectives</h3>
+  <ul>
+    <li>Students will write a linear equation in y = mx + b form from a table, graph, or scenario.</li>
+    <li>Students will solve one-variable equations with variables on both sides.</li>
+  </ul>
+
+  <h3>🌍 Culturally Responsive Context</h3>
+  <div class="callout callout-tip">
+    <span class="emoji">🎶</span>
+    <div><strong>Dallas Connection:</strong> Students compare cell phone plans (T-Mobile vs. AT&T monthly costs with fees), calculate earnings from a weekend job at a Dallas flea market (La Pulga), and determine how many rides at the State Fair of Texas they can afford with different ticket packages. Real-world scenarios from students' lives make abstract equations tangible.</div>
+  </div>
+
+  <h3>⏱ 50-Minute Schedule</h3>
+  <div class="timeline">
+    <div class="time-block">
+      <span class="time-label">0:00 – 0:05</span>
+      <div><strong>Warm-Up (5 min)</strong> — Review: "What is slope? What is y-intercept?" Use hand signals (thumbs up = I remember, sideways = kinda, down = need help). Quick slope review with 2 table problems from Day 1.</div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:05 – 0:20</span>
+      <div><strong>I Do — Explicit Instruction (15 min)</strong>
+        <ul>
+          <li><strong>Part A: Writing y = mx + b</strong></li>
+          <li>Scenario: "You work at La Pulga and earn $10/hour plus $20 for setting up the booth."</li>
+          <li>m (slope) = $10/hour, b (y-intercept) = $20 start → <strong>y = 10x + 20</strong></li>
+          <li>From a table: find slope (Day 1 skill), find b where x = 0</li>
+          <li><strong>Part B: Solving equations with variables on both sides</strong></li>
+          <li>Example: "Two phone plans: Plan A costs 15x + 30, Plan B costs 10x + 55. When are they equal?"</li>
+          <li>15x + 30 = 10x + 55 → Model step-by-step with algebra tiles</li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>The Desmos Tilde Method for Solving Equations:</strong></li>
+        </ul>
+        <div class="desmos-box">
+          <h4>🖩 Desmos Steps — Solving Equations with Variables on Both Sides</h4>
+          <div class="desmos-lines">
+            <div class="desmos-line formula"><span class="line-num">1:</span> <code>15a + 30 ~ 10a + 55</code> &nbsp;&nbsp;← Type the WHOLE equation using ~ (tilde, NOT equals!)</div>
+            <div class="desmos-line result"><span class="line-num">2:</span> Desmos shows: <strong>a = 5</strong> &nbsp;&nbsp;← That's the answer!</div>
+          </div>
+          <div class="desmos-tip">⚠️ <strong>CRITICAL RULE — NO "x"!</strong> Students CANNOT use the letter "x" when solving equations this way. Desmos treats x as a graphing variable. <strong>Change x to ANY other letter</strong> (a, b, n, t, etc.) and Desmos will solve it! We use "a" in class.</div>
+          <div class="desmos-tip">💡 "Both plans cost the same at 5 months! We just typed ONE line and Desmos solved the whole thing!"</div>
+        </div>
+        <ul>
+          <li><span class="desmos-badge">DESMOS</span> <strong>Writing equations:</strong> After finding m and b using the table + regression method (Day 1 skill), type the equation in Desmos → Does the line pass through all our table points? If yes, our equation is correct!</li>
+        </ul>
+        <span class="badge badge-id">ID: Use color-coded equation mats (variables = green, constants = blue); Desmos as visual check</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:20 – 0:22</span>
+      <div><strong>Movement Break (2 min)</strong> — Stand, stretch, "Equation Shake" (shake body for each step you remember) <span class="badge badge-adhd">ADHD: Essential reset</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:22 – 0:35</span>
+      <div><strong>We Do — Guided Practice (13 min)</strong>
+        <ul>
+          <li>Faded worked examples for both writing equations AND solving</li>
+          <li>Students use procedural checklists at desks</li>
+          <li>State Fair context: "Admission is $18, and each ride costs $4. Write an equation for total cost."</li>
+          <li>Solve: "When does Plan A = Plan B?" with guided steps</li>
+        </ul>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:35 – 0:43</span>
+      <div><strong>You Do — Independent Practice (8 min)</strong>
+        <ul>
+          <li>3 problems: 1 write equation, 1 solve equation, 1 combined</li>
+          <li>Checklist on desk; teacher supports as needed</li>
+        </ul>
+        <span class="badge badge-id">ID: 2 problems; read aloud; allow oral explanation of steps</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:43 – 0:50</span>
+      <div><strong>Exit Ticket &amp; Closure (7 min)</strong></div>
+    </div>
+  </div>
+
+  <!-- Day 2 Low-Prep Activities -->
+  <div class="accommodation">
+    <h4>🎲 Low-Prep Activities — Day 2: Writing &amp; Solving Equations</h4>
+    <table>
+      <thead><tr><th>Activity</th><th>Time</th><th>Materials</th><th>How It Works</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Equation Auction</strong></td>
+          <td>8-10 min</td>
+          <td>Scratch paper, pencil</td>
+          <td>Teacher shows a scenario (e.g., "State Fair: $18 entry + $4/ride"). Students write the equation on paper. Teacher "auctions" — students hold up answers. Correct equations earn play money points. Students love the bidding energy! <span class="badge badge-adhd">ADHD: Game format keeps attention</span></td>
+        </tr>
+        <tr>
+          <td><strong>Equation Builder Cards</strong></td>
+          <td>5-8 min</td>
+          <td>Index cards (write m values on some, b values on others)</td>
+          <td>Students draw one "slope" card (e.g., m = 4), one "y-intercept" card (e.g., b = 18), and build the equation y = 4x + 18. Then create a Dallas story to match: "You pay $18 to get in and $4 per ride." <span class="badge badge-id">ID: Provide sentence frame: "You start with $___ and earn/pay $___ per ___."</span></td>
+        </tr>
+        <tr>
+          <td><strong>Step-by-Step Whiteboard Solve</strong></td>
+          <td>5-7 min</td>
+          <td>Mini whiteboards or scratch paper</td>
+          <td>Teacher writes an equation (e.g., 5x + 10 = 3x + 24). Students solve ONE STEP at a time on whiteboards. After each step, hold up board for check before moving on. Builds procedural fluency one step at a time. <span class="badge badge-adhd">ADHD: Frequent check-ins prevent drifting</span></td>
+        </tr>
+        <tr>
+          <td><strong>Desmos Intersection Detective</strong> <span class="desmos-badge">DESMOS</span></td>
+          <td>5-8 min</td>
+          <td>Desmos calculator (device)</td>
+          <td>Give students two equations. Graph both in Desmos, find where lines cross. "At what x are both plans equal?" Then verify by plugging x back into both equations by hand. Connects visual to algebraic!</td>
+        </tr>
+        <tr>
+          <td><strong>"Two Truths and a Lie" — Equations</strong></td>
+          <td>5 min</td>
+          <td>Nothing — just verbal!</td>
+          <td>Show 3 equations for a scenario. Two are correct, one is wrong. Students discuss with a partner and spot the "lie." Great error analysis with ZERO prep. <span class="badge badge-id">ID: Reduce to "Truth or Lie" with just 2 choices</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Day 2 Faded Example -->
+  <div class="faded-example">
+    <h4>📐 Faded Worked Example — Solving Equations with Variables on Both Sides <span class="desmos-badge">WITH DESMOS</span></h4>
+    <p><strong>Problem 1 (Fully Worked):</strong> Solve 5x + 10 = 3x + 24</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Change "x" to another letter!</strong> We can't use x in Desmos for this. Let's use "a" → Rewrite: <strong>5a + 10 = 3a + 24</strong> ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type the equation using <strong>~ (tilde)</strong> instead of =:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line formula"><code>5a + 10 ~ 3a + 24</code></div>
+        </div> ✅
+      </div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">3</div>
+      <div class="step-content">Read the answer from Desmos: <strong>a = 7</strong> → so <strong>x = 7</strong> ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">4</div>
+      <div class="step-content">Check: 5(7) + 10 = 45 ✓ and 3(7) + 24 = 45 ✓ → <strong>Both sides equal!</strong> ✅</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 2 (Partially Faded):</strong> Solve 4x + 8 = 2x + 20</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Change "x" to "a" → <strong>4a + 8 = 2a + 20</strong> ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type with tilde: <code>4a + 8 ~ 2a + 20</code> ✅</div>
+    </div>
+    <div class="faded-step partial">
+      <div class="step-num">3</div>
+      <div class="step-content">Desmos shows: a = <span class="fill-blank">____</span> → so x = <span class="fill-blank">____</span></div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">Check: 4(<span class="fill-blank">__</span>) + 8 = <span class="fill-blank">____</span> and 2(<span class="fill-blank">__</span>) + 20 = <span class="fill-blank">____</span> → Equal? <span class="fill-blank">____</span></div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 3 (Mostly Faded):</strong> Solve 6x + 5 = 2x + 25</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Change "x" to another letter: <span class="fill-blank">____</span> ✅</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">2</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type with tilde: <span class="fill-blank">________________________________</span></div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">3</div>
+      <div class="step-content">Desmos shows: <span class="fill-blank">____</span> = <span class="fill-blank">____</span> → so x = <span class="fill-blank">____</span></div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">Check: <span class="fill-blank">________________________________________</span></div>
+    </div>
+  </div>
+
+  <!-- Day 2 Exit Ticket -->
+  <div class="exit-ticket">
+    <h4>🎫 Exit Ticket — Day 2</h4>
+    <div class="question">
+      <p>1. At the State Fair of Texas, admission costs $18 and each ride costs $4. Which equation represents the total cost (y) for x rides?</p>
+      <div class="options">
+        <div>A. y = 18x + 4</div>
+        <div class="correct">B. y = 4x + 18 ✓</div>
+        <div>C. y = 22x</div>
+        <div>D. y = 4x − 18</div>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. Solve: 3x + 12 = x + 28</p>
+      <div class="options">
+        <div>A. x = 4</div>
+        <div class="correct">B. x = 8 ✓</div>
+        <div>C. x = 16</div>
+        <div>D. x = 20</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DAY 3 -->
+<!-- ============================================================ -->
+<div class="day-header day3" id="day3">
+  <h2>📙 Day 3 — Functions &amp; Scatterplots</h2>
+  <p>TEKS 8.5(G) &amp; 8.5(D) | Readiness Standards | "Is this a function? What's the trend?"</p>
+</div>
+<div class="day-resources" style="background:rgba(142,68,173,0.18); border-color:rgba(142,68,173,0.5);">
+  <span>📎 Day 3 Materials:</span>
+  <a href="Day3_Slides.html" target="_blank">🖥️ Slide Deck</a>
+  <a href="Day3_Worksheet.html" target="_blank">📄 Worksheet</a>
+</div>
+<div class="card">
+
+  <h3>🎯 Learning Objectives</h3>
+  <ul>
+    <li>Students will identify functions using ordered pairs, tables, mappings, and graphs (vertical line test).</li>
+    <li>Students will use a trend line to make predictions from scatterplot data.</li>
+  </ul>
+
+  <h3>🌍 Culturally Responsive Context</h3>
+  <div class="callout callout-tip">
+    <span class="emoji">🏀</span>
+    <div><strong>Dallas Connection:</strong> Students analyze whether real data is a function: Dallas Mavericks player stats (does each jersey number map to one player?), student survey data (shoe size vs. height for classmates), and local temperature trends in Dallas by month. Scatterplot data uses real Dallas weather data and local restaurant ratings.</div>
+  </div>
+
+  <h3>⏱ 50-Minute Schedule</h3>
+  <div class="timeline">
+    <div class="time-block">
+      <span class="time-label">0:00 – 0:05</span>
+      <div><strong>Warm-Up (5 min)</strong> — "Function or Not?" card sort activity. Students sort 4 tables into "Function" and "Not a Function" piles at their desks. <span class="badge badge-adhd">ADHD: Hands-on sorting = kinesthetic engagement</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:05 – 0:18</span>
+      <div><strong>I Do — Explicit Instruction: Functions (13 min)</strong>
+        <ul>
+          <li>"A function is like a vending machine — each button gives you EXACTLY one item."</li>
+          <li>Show 4 representations: ordered pairs, table, mapping, graph</li>
+          <li>Key rule: <strong>Each input (x) can only have ONE output (y)</strong></li>
+          <li>Vertical Line Test on graph: "If a vertical line touches the graph more than once, it's NOT a function."</li>
+          <li>Dallas context: "Each student ID number → one student name = function. One phone number → multiple people = NOT a function."</li>
+        </ul>
+        <span class="badge badge-id">ID: Use color coding — green border = function, red border = not</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:18 – 0:20</span>
+      <div><strong>Movement Break (2 min)</strong> — "Stand if it's a function, sit if it's not" — teacher shows quick examples <span class="badge badge-adhd">ADHD: Total Physical Response engagement</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:20 – 0:30</span>
+      <div><strong>I Do / We Do — Scatterplots &amp; Trend Lines (10 min)</strong>
+        <ul>
+          <li>Show scatterplot of Dallas monthly temperatures vs. ice cream sales</li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>Build a scatterplot in Desmos:</strong> Press the <strong>+ (plus sign)</strong> → click <strong>"table"</strong>. Enter x-values (temperatures) and y-values (ice cream sales). Desmos plots the points automatically!</li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>Add a trend line:</strong> Click the <strong>"Add regression"</strong> symbol → Desmos draws the best-fit line AND gives you the equation! Remember: <strong>m = MULTIPLIER (slope),</strong> <strong>b = BONUS (y-intercept).</strong> Use the line to predict: "If it's 95°F in July, trace up to the line — how many ice cream cones?"</li>
+          <li>Key vocab: positive association, negative association, no association</li>
+          <li>Guided practice with faded example</li>
+        </ul>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:30 – 0:42</span>
+      <div><strong>You Do — Independent Practice (12 min)</strong>
+        <ul>
+          <li>3-4 mixed problems: identify functions (2) + scatterplot prediction (1-2)</li>
+          <li>Checklist at desk; teacher circulates for check-ins every 3-4 problems</li>
+        </ul>
+        <span class="badge badge-id">ID: 2 problems; visual aids with arrows on mapping diagrams</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:42 – 0:50</span>
+      <div><strong>Exit Ticket &amp; Closure (8 min)</strong></div>
+    </div>
+  </div>
+
+  <!-- Day 3 Low-Prep Activities -->
+  <div class="accommodation">
+    <h4>🎲 Low-Prep Activities — Day 3: Functions &amp; Scatterplots</h4>
+    <table>
+      <thead><tr><th>Activity</th><th>Time</th><th>Materials</th><th>How It Works</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Function or Not? Four Corners</strong></td>
+          <td>5-7 min</td>
+          <td>Nothing — just space!</td>
+          <td>Label room corners: "Function," "Not a Function," "I Think Function," "I Think Not." Teacher shows a set of ordered pairs or a table. Students walk to the corner matching their answer. Discuss. <span class="badge badge-adhd">ADHD: Full-body movement + decision making</span> <span class="badge badge-id">ID: Allow buddy system; show only 2 corners (Function / Not)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vending Machine Analogy Sort</strong></td>
+          <td>5-8 min</td>
+          <td>Index cards or sticky notes</td>
+          <td>Write real-life mappings on cards: "Student ID → Student Name," "Phone Number → Multiple People," "Jersey Number → Player." Students sort into "Function" and "Not a Function" piles using the vending machine rule: one button = one item only. Dallas context: use Mavericks jersey numbers!</td>
+        </tr>
+        <tr>
+          <td><strong>Human Scatterplot</strong></td>
+          <td>8-10 min</td>
+          <td>Masking tape on the floor (make an x/y axis)</td>
+          <td>Tape a large coordinate plane on the floor. Give each student a sticky note with their data point (e.g., shoe size vs. height). Students physically stand on their point. Class observes: "Do you see a positive trend? Negative? No trend?" Then lay a jump rope as the trend line. <span class="badge badge-adhd">ADHD: Total Physical Response — students ARE the data!</span></td>
+        </tr>
+        <tr>
+          <td><strong>Desmos Scatterplot Builder</strong> <span class="desmos-badge">DESMOS</span></td>
+          <td>5-8 min</td>
+          <td>Desmos calculator (device)</td>
+          <td>Students survey 5 classmates (e.g., "How many hours of sleep last night?" vs. "How many snacks today?"). Enter data into a Desmos table. Add regression line with <code>y₁ ~ mx₁ + b</code>. Describe the association. Real data = real engagement!</td>
+        </tr>
+        <tr>
+          <td><strong>Vertical Line Test Tracing</strong></td>
+          <td>3-5 min</td>
+          <td>Printed graphs + a pencil or ruler</td>
+          <td>Give students 6 printed graphs. They hold a pencil/ruler vertically and slide it across each graph. If the pencil touches more than one point at any spot → NOT a function. Circle the answer. Simple, tactile, effective. <span class="badge badge-id">ID: Use large-print graphs; highlight the "double-touch" spots in color</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Day 3 Faded Example -->
+  <div class="faded-example">
+    <h4>📐 Faded Worked Example — Identifying a Function</h4>
+    <p><strong>Problem 1 (Fully Worked):</strong> Is this a function? {(2, 5), (3, 7), (4, 9), (5, 11)}</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">List all x-values: 2, 3, 4, 5 ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content">Check: Does any x-value repeat? <strong>No</strong> ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">3</div>
+      <div class="step-content">Each x has exactly one y → <strong>YES, it IS a function</strong> ✅</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 2 (Partially Faded):</strong> Is this a function? {(1, 4), (2, 7), (1, 9), (3, 5)}</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">List all x-values: 1, 2, 1, 3 ✅</div>
+    </div>
+    <div class="faded-step partial">
+      <div class="step-num">2</div>
+      <div class="step-content">Does any x-value repeat? <span class="fill-blank">____</span> Which one? <span class="fill-blank">____</span></div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">3</div>
+      <div class="step-content">Is it a function? <span class="fill-blank">____</span> Why? <span class="fill-blank">________________________________</span></div>
+    </div>
+  </div>
+
+  <!-- Day 3 Exit Ticket -->
+  <div class="exit-ticket">
+    <h4>🎫 Exit Ticket — Day 3</h4>
+    <div class="question">
+      <p>1. Which set of ordered pairs represents a function?</p>
+      <div class="options">
+        <div>A. {(1, 3), (2, 5), (1, 7), (4, 9)}</div>
+        <div class="correct">B. {(1, 3), (2, 5), (3, 7), (4, 9)} ✓</div>
+        <div>C. {(5, 1), (5, 2), (5, 3), (5, 4)}</div>
+        <div>D. {(2, 4), (3, 6), (2, 8), (4, 10)}</div>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. A scatterplot shows that as the temperature in Dallas increases, water park attendance also increases. What type of association does this show?</p>
+      <div class="options">
+        <div class="correct">A. Positive association ✓</div>
+        <div>B. Negative association</div>
+        <div>C. No association</div>
+        <div>D. Non-linear association</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DAY 4 -->
+<!-- ============================================================ -->
+<div class="day-header day4" id="day4">
+  <h2>📕 Day 4 — Pythagorean Theorem &amp; Transformations</h2>
+  <p>TEKS 8.7(C) &amp; 8.10(A) | Readiness Standards | "Measuring Dallas &amp; moving shapes"</p>
+</div>
+<div class="day-resources" style="background:rgba(230,126,34,0.18); border-color:rgba(230,126,34,0.5);">
+  <span>📎 Day 4 Materials:</span>
+  <a href="Day4_Slides.html" target="_blank">🖥️ Slide Deck</a>
+  <a href="Day4_Worksheet.html" target="_blank">📄 Worksheet</a>
+</div>
+<div class="card">
+
+  <h3>🎯 Learning Objectives</h3>
+  <ul>
+    <li>Students will use the Pythagorean Theorem (a² + b² = c²) to find missing side lengths.</li>
+    <li>Students will identify and describe transformations (translations, reflections, rotations).</li>
+  </ul>
+
+  <h3>🌍 Culturally Responsive Context</h3>
+  <div class="callout callout-tip">
+    <span class="emoji">🏗️</span>
+    <div><strong>Dallas Connection:</strong> Pythagorean Theorem applied to real Dallas scenarios: finding the diagonal distance across Klyde Warren Park, calculating the height of Reunion Tower using its shadow, measuring screen diagonals at AT&T Stadium. Transformations use Dallas map grids — translate the Cowboys star logo, reflect shapes across the Trinity River, rotate patterns from local murals in Deep Ellum.</div>
+  </div>
+
+  <h3>⏱ 50-Minute Schedule</h3>
+  <div class="timeline">
+    <div class="time-block">
+      <span class="time-label">0:00 – 0:05</span>
+      <div><strong>Warm-Up (5 min)</strong> — Show a photo of Reunion Tower. "If the tower casts a shadow 300 feet long and a wire from the top to the end of the shadow is 500 feet... how tall is the tower?" Activate curiosity. <span class="badge badge-adhd">ADHD: Visual hook with real photo</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:05 – 0:18</span>
+      <div><strong>I Do — Pythagorean Theorem with STAAR Desmos (13 min)</strong>
+        <ul>
+          <li>Reference chart connection: <strong>a² + b² = c²</strong> — "It's ON your reference chart!"</li>
+          <li>Label: a = leg, b = leg, c = hypotenuse (LONGEST side, across from the right angle)</li>
+          <li>Anchor chart: "Hypotenuse Hunter" — Always identify the hypotenuse FIRST</li>
+          <li>Model: "A TV at AT&T Stadium is 48 inches wide and 36 inches tall. What's the diagonal?"</li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>The Desmos Method — "Let Desmos do the math!"</strong></li>
+        </ul>
+        <div class="desmos-box">
+          <h4>🖩 Desmos Steps — Pythagorean Theorem</h4>
+          <div class="desmos-lines">
+            <div class="desmos-line formula"><span class="line-num">1:</span> <code>a² + b² ~ c²</code> &nbsp;&nbsp;← Type the formula using ~ (tilde, not equals!)</div>
+            <div class="desmos-line variable"><span class="line-num">2:</span> <code>a = 48</code> &nbsp;&nbsp;← Plug in the first leg</div>
+            <div class="desmos-line variable"><span class="line-num">3:</span> <code>b = 36</code> &nbsp;&nbsp;← Plug in the second leg</div>
+            <div class="desmos-line variable"><span class="line-num">4:</span> <code>c = </code> &nbsp;&nbsp;← Leave this BLANK — Desmos will solve for c!</div>
+          </div>
+          <div class="desmos-tip">💡 <strong>Teacher tip:</strong> When you leave one variable blank, Desmos uses regression (~) to solve for it! The answer appears as a slider value. For this problem, Desmos shows <strong>c = 60 inches</strong>. "See? Desmos did the squaring, adding, AND square root for us!"</div>
+          <div class="desmos-tip">💡 <strong>Finding a LEG instead?</strong> Same method! If c = 13 and a = 5, just type: Line 1: <code>a² + b² ~ c²</code>, Line 2: <code>a = 5</code>, Line 3: <code>b = </code> (leave blank), Line 4: <code>c = 13</code> → Desmos gives you <strong>b = 12</strong>!</div>
+        </div>
+        <span class="badge badge-id">ID: Provide pre-labeled triangle diagrams; teacher projects Desmos on screen while students follow along on their devices</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:18 – 0:20</span>
+      <div><strong>Movement Break (2 min)</strong> — "Transformation Dance" — Teacher says "translate" (slide left), "reflect" (mirror pose), "rotate" (turn 90°) <span class="badge badge-adhd">ADHD: Kinesthetic vocabulary building</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:20 – 0:32</span>
+      <div><strong>I Do / We Do — Transformations (12 min)</strong>
+        <ul>
+          <li>Translation: slide shape → add/subtract to coordinates → (x + a, y + b)</li>
+          <li>Reflection: flip across x-axis → (x, −y); y-axis → (−x, y)</li>
+          <li>Rotation 90° clockwise → (y, −x)</li>
+          <li>Use Dallas map grid overlay; students transform the Cowboys star logo</li>
+          <li>Faded worked example with coordinate rules</li>
+        </ul>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:32 – 0:42</span>
+      <div><strong>You Do (10 min)</strong> — 4 problems: 2 Pythagorean, 2 transformations. Checklist available.
+        <span class="badge badge-id">ID: 2-3 problems; enlarged grid paper; pre-labeled diagrams</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:42 – 0:50</span>
+      <div><strong>Exit Ticket &amp; Closure (8 min)</strong></div>
+    </div>
+  </div>
+
+  <!-- Day 4 Low-Prep Activities -->
+  <div class="accommodation">
+    <h4>🎲 Low-Prep Activities — Day 4: Pythagorean Theorem &amp; Transformations</h4>
+    <table>
+      <thead><tr><th>Activity</th><th>Time</th><th>Materials</th><th>How It Works</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Pythagorean Theorem Desmos Race</strong> <span class="desmos-badge">DESMOS</span></td>
+          <td>5-8 min</td>
+          <td>Desmos calculator (device), scratch paper</td>
+          <td>Teacher calls out: "a = 9, b = 12 — find c!" Students race to set up <code>a² + b² ~ c²</code> in Desmos and call out the answer. First correct answer earns a point. Then switch: "c = 25, a = 7 — find b!" Builds speed AND Desmos fluency for test day. <span class="badge badge-adhd">ADHD: Competitive, fast-paced</span></td>
+        </tr>
+        <tr>
+          <td><strong>Classroom Measurement Challenge</strong></td>
+          <td>8-10 min</td>
+          <td>Measuring tape or ruler, scratch paper</td>
+          <td>Students measure the length and width of real objects (desk, whiteboard, floor tiles). Then use Desmos to find the diagonal. "Measure your desk — 24 inches by 18 inches. What's the diagonal?" Students physically measure to verify their Desmos answer! <span class="badge badge-adhd">ADHD: Hands-on, out of seat</span> <span class="badge badge-id">ID: Work in pairs; teacher pre-measures for accuracy</span></td>
+        </tr>
+        <tr>
+          <td><strong>Transformation Dance-Off</strong></td>
+          <td>5 min</td>
+          <td>Nothing — just space!</td>
+          <td>Students stand. Teacher calls a transformation + direction: "Translate 3 steps right!" (students slide right) "Reflect across the y-axis!" (students mirror/face opposite) "Rotate 90° clockwise!" (students quarter-turn). Speed up the calls. Last one standing without a mistake wins! <span class="badge badge-adhd">ADHD: Full-body kinesthetic vocabulary</span></td>
+        </tr>
+        <tr>
+          <td><strong>Coordinate Grid Battleship</strong></td>
+          <td>8-10 min</td>
+          <td>Graph paper (2 grids per student) or printed grids</td>
+          <td>Students draw a triangle on their "secret" grid. Partner must guess vertices by calling coordinates. Once found, partner must perform a transformation (e.g., "Reflect it across the x-axis — what are the new coordinates?"). Combines coordinate practice with transformation rules.</td>
+        </tr>
+        <tr>
+          <td><strong>Right Triangle or Not? Card Sort</strong></td>
+          <td>5-7 min</td>
+          <td>Index cards with 3 side lengths written on each</td>
+          <td>Write sets of 3 numbers on cards (e.g., 3-4-5, 5-7-10, 8-15-17). Students use Desmos to check: type <code>a² + b² ~ c²</code> with the values. If Desmos confirms, it's a right triangle! Sort into "Right Triangle" and "Not" piles. <span class="badge badge-id">ID: Pre-label which number is the longest (potential c)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Day 4 Faded Example -->
+  <div class="faded-example">
+    <h4>📐 Faded Worked Example — Pythagorean Theorem <span class="desmos-badge">WITH DESMOS</span></h4>
+    <p><strong>Problem 1 (Fully Worked):</strong> A ramp at a Dallas skate park has a base of 6 ft and height of 8 ft. Find the length of the ramp (hypotenuse).</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Find formula on REFERENCE CHART: a² + b² = c² ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content">LABEL: a = 6 (base/leg), b = 8 (height/leg), c = ? (hypotenuse — what we're solving for) ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type into Desmos:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line formula">Line 1: <code>a² + b² ~ c²</code></div>
+          <div class="desmos-line variable">Line 2: <code>a = 6</code></div>
+          <div class="desmos-line variable">Line 3: <code>b = 8</code></div>
+          <div class="desmos-line variable">Line 4: <code>c = </code> (leave blank — let Desmos solve!)</div>
+        </div> ✅
+      </div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">4</div>
+      <div class="step-content">Read answer from Desmos: <strong>c = 10 feet</strong> ✅ → The ramp is 10 feet long!</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 2 (Partially Faded):</strong> A ladder leans against a Dallas building. The base is 5 ft from the wall and the ladder is 13 ft long. How high does it reach?</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Find formula: a² + b² = c² ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content">LABEL: a = 5 (base), b = ? (height — solving for this!), c = 13 (ladder = hypotenuse) ✅</div>
+    </div>
+    <div class="faded-step partial">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type into Desmos:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line formula">Line 1: <code>a² + b² ~ c²</code></div>
+          <div class="desmos-line variable">Line 2: <code>a = <span class="fill-blank">____</span></code></div>
+          <div class="desmos-line student-fill">Line 3: <code>b = </code> (leave <span class="fill-blank">________</span>)</div>
+          <div class="desmos-line variable">Line 4: <code>c = <span class="fill-blank">____</span></code></div>
+        </div>
+      </div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">Read answer from Desmos: b = <span class="fill-blank">____</span> feet</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 3 (Mostly Faded):</strong> A diagonal path across Klyde Warren Park goes from one corner to the opposite. The park is 240 ft long and 70 ft wide. How long is the diagonal path?</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Find formula on reference chart: a² + b² = c² ✅</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">2</div>
+      <div class="step-content">LABEL: a = <span class="fill-blank">____</span>, b = <span class="fill-blank">____</span>, c = <span class="fill-blank">____</span> (which one are you solving for?)</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type all 4 lines into Desmos on your own:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line student-fill">Line 1: <span class="fill-blank">________________</span></div>
+          <div class="desmos-line student-fill">Line 2: <span class="fill-blank">________________</span></div>
+          <div class="desmos-line student-fill">Line 3: <span class="fill-blank">________________</span></div>
+          <div class="desmos-line student-fill">Line 4: <span class="fill-blank">________________</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">Answer: The diagonal path is <span class="fill-blank">____</span> feet</div>
+    </div>
+  </div>
+
+  <!-- Day 4 Exit Ticket -->
+  <div class="exit-ticket">
+    <h4>🎫 Exit Ticket — Day 4</h4>
+    <div class="question">
+      <p>1. A football field at AT&T Stadium is 100 yards long and 53 yards wide. What is the approximate diagonal distance across the field?</p>
+      <div class="options">
+        <div>A. 153 yards</div>
+        <div class="correct">B. 113.2 yards ✓</div>
+        <div>C. 76.5 yards</div>
+        <div>D. 130 yards</div>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. Triangle ABC has vertices A(2, 3), B(5, 3), and C(2, 7). If the triangle is reflected across the y-axis, what are the new coordinates of point B?</p>
+      <div class="options">
+        <div>A. (5, −3)</div>
+        <div class="correct">B. (−5, 3) ✓</div>
+        <div>C. (−3, 5)</div>
+        <div>D. (3, −5)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DAY 5 -->
+<!-- ============================================================ -->
+<div class="day-header day5" id="day5">
+  <h2>📓 Day 5 — Mixed Review, Strategies &amp; Confidence Building</h2>
+  <p>TEKS 8.7(A), 8.2(D) + All Week's TEKS | "You are READY for STAAR!"</p>
+</div>
+<div class="day-resources" style="background:rgba(231,76,60,0.18); border-color:rgba(231,76,60,0.5);">
+  <span>📎 Day 5 Materials:</span>
+  <a href="Day5_Slides.html" target="_blank">🖥️ Slide Deck</a>
+  <a href="Day5_Worksheet.html" target="_blank">📄 Worksheet</a>
+</div>
+<div class="card">
+
+  <h3>🎯 Learning Objectives</h3>
+  <ul>
+    <li>Students will calculate volume of cylinders, cones, and spheres using reference chart formulas.</li>
+    <li>Students will order real numbers on a number line.</li>
+    <li>Students will apply test-taking strategies to mixed STAAR-format problems.</li>
+  </ul>
+
+  <h3>🌍 Culturally Responsive Context</h3>
+  <div class="callout callout-tip">
+    <span class="emoji">🎉</span>
+    <div><strong>Dallas Connection:</strong> Volume problems use real Dallas objects — the cylindrical water tower near Fair Park, a cone of raspas (snow cones) from a Dallas raspas stand, a basketball (sphere) from a Mavericks game. Ordering real numbers uses distances between Dallas landmarks. Final review builds confidence: "Dallas students are strong and prepared!"</div>
+  </div>
+
+  <h3>⏱ 50-Minute Schedule</h3>
+  <div class="timeline">
+    <div class="time-block">
+      <span class="time-label">0:00 – 0:05</span>
+      <div><strong>Warm-Up / Confidence Builder (5 min)</strong> — "Brain Dump" — Students write down everything they remember from the week on a whiteboard. Celebrate what they know! <span class="badge badge-adhd">ADHD: Low-stakes, high-energy start</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:05 – 0:15</span>
+      <div><strong>I Do — Volume with STAAR Desmos &amp; Ordering Numbers (10 min)</strong>
+        <ul>
+          <li><strong>Volume:</strong> "Formulas are on your reference chart! Let's find them AND put them in Desmos!"</li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>The Desmos Volume Method — Cylinder example:</strong></li>
+        </ul>
+        <div class="desmos-box">
+          <h4>🖩 Desmos Steps — Volume of a Cylinder</h4>
+          <p style="margin-bottom:8px;">"A Dallas water tank is a cylinder with radius 5 ft and height 12 ft. Find the volume."</p>
+          <p style="margin-bottom:8px;"><strong>Step 1: Find the formula on reference chart → V = Bh (for cylinder)</strong></p>
+          <p style="margin-bottom:8px;"><strong>Step 2: Ask — "What does B mean?" → B = Area of the Base → "What shape is the base of a cylinder?" → A CIRCLE! → "What's the area of a circle?" → πr²</strong></p>
+          <p style="margin-bottom:8px;"><strong>Step 3: Type it all into Desmos:</strong></p>
+          <div class="desmos-lines">
+            <div class="desmos-line formula"><span class="line-num">1:</span> <code>V ~ B · h</code> &nbsp;&nbsp;← The volume formula (use ~ tilde!)</div>
+            <div class="desmos-line variable"><span class="line-num">2:</span> <code>V = </code> &nbsp;&nbsp;← Leave blank — this is what we're SOLVING for!</div>
+            <div class="desmos-line formula"><span class="line-num">3:</span> <code>B ~ π · r²</code> &nbsp;&nbsp;← B = Area of the Base = area of a circle!</div>
+            <div class="desmos-line variable"><span class="line-num">4:</span> <code>h = 12</code> &nbsp;&nbsp;← Plug in the height</div>
+            <div class="desmos-line variable"><span class="line-num">5:</span> <code>r = 5</code> &nbsp;&nbsp;← Plug in the radius</div>
+          </div>
+          <div class="desmos-tip">💡 Desmos calculates: B = π(5²) = 78.54, then V = 78.54 × 12 = <strong>V ≈ 942.48 ft³</strong>. "We just told Desmos WHAT the formulas are and WHAT the values are, and it did ALL the math!"</div>
+        </div>
+        <div class="desmos-box" style="margin-top:10px;">
+          <h4>🖩 Desmos Steps — Volume of a Cone</h4>
+          <p style="margin-bottom:8px;">"A raspa cone from a Dallas raspas stand has r = 3 in, h = 6 in."</p>
+          <p style="margin-bottom:8px;"><strong>"What's different about a cone? → V = ⅓Bh (it's one-third!) → Base is still a circle!"</strong></p>
+          <div class="desmos-lines">
+            <div class="desmos-line formula"><span class="line-num">1:</span> <code>V ~ (1/3) · B · h</code> &nbsp;&nbsp;← Cone formula has the ⅓!</div>
+            <div class="desmos-line variable"><span class="line-num">2:</span> <code>V = </code> &nbsp;&nbsp;← Leave blank to solve</div>
+            <div class="desmos-line formula"><span class="line-num">3:</span> <code>B ~ π · r²</code> &nbsp;&nbsp;← Base is still a circle</div>
+            <div class="desmos-line variable"><span class="line-num">4:</span> <code>h = 6</code></div>
+            <div class="desmos-line variable"><span class="line-num">5:</span> <code>r = 3</code></div>
+          </div>
+          <div class="desmos-tip">💡 Desmos gives us <strong>V ≈ 56.55 in³</strong>. "The cone holds way less than a cylinder because of that ⅓!"</div>
+        </div>
+        <ul style="margin-top:12px;">
+          <li><strong>Ordering Real Numbers — The Desmos x= Number Line Method:</strong></li>
+          <li><span class="desmos-badge">DESMOS</span> <strong>"Type each number as x= and Desmos puts them on a number line for you!"</strong></li>
+        </ul>
+        <div class="desmos-box">
+          <h4>🖩 Desmos Steps — Ordering Real Numbers</h4>
+          <p style="margin-bottom:8px;">"Order these from least to greatest: 0.5, √7, 2², 26/5"</p>
+          <div class="desmos-lines">
+            <div class="desmos-line variable"><span class="line-num">1:</span> <code>x = 0.5</code></div>
+            <div class="desmos-line variable"><span class="line-num">2:</span> <code>x = √7</code> &nbsp;&nbsp;← Desmos will calculate this automatically!</div>
+            <div class="desmos-line variable"><span class="line-num">3:</span> <code>x = 2²</code> &nbsp;&nbsp;← Same as x = 4</div>
+            <div class="desmos-line variable"><span class="line-num">4:</span> <code>x = 26/5</code> &nbsp;&nbsp;← Same as x = 5.2</div>
+          </div>
+          <div class="desmos-tip">💡 Each <code>x =</code> line draws a <strong>vertical line</strong> on the graph. Now look at the number line — the vertical lines appear from <strong>left to right = least to greatest!</strong> Read them off: 0.5, √7 (≈2.65), 2² (= 4), 26/5 (= 5.2). Done!</div>
+          <div class="desmos-tip">💡 <strong>Teacher tip:</strong> Have students point to each vertical line from left to right and write the original number underneath. "Left to right, least to greatest!"</div>
+        </div>
+        <span class="badge badge-id">ID: Pre-printed reference chart with formulas highlighted; teacher projects Desmos step-by-step</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:15 – 0:17</span>
+      <div><strong>Movement Break (2 min)</strong> <span class="badge badge-adhd">ADHD: Essential reset before test practice</span></div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:17 – 0:30</span>
+      <div><strong>STAAR Strategy Station Rotation (13 min)</strong>
+        <ul>
+          <li><strong>First:</strong> Everyone folds scratch paper into <strong>8 boxes</strong> — "Each problem gets its own box!"</li>
+          <li><strong>Station 1:</strong> "Screen to Scratch" — Practice reading a problem on screen and writing keywords + drawing shapes/tables onto scratch paper</li>
+          <li><strong>Station 2:</strong> "Plug It In" — Test answer choices by substituting</li>
+          <li><strong>Station 3:</strong> "Eliminate the Impostor" — Cross out wrong answers first</li>
+          <li>Each station has 2 mixed STAAR-format problems + strategy card</li>
+          <li>Rotate every 4 minutes with timer visible</li>
+        </ul>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:30 – 0:42</span>
+      <div><strong>Mini Practice Test (12 min)</strong>
+        <ul>
+          <li>6 STAAR-format questions covering all 5 days' TEKS</li>
+          <li>Simulates test conditions (but with accommodations in place)</li>
+          <li>Students use <strong>Screen to Scratch</strong> — fold scratch paper into 8 boxes, write keywords and draw diagrams from each problem</li>
+          <li>Checklists and reference chart available</li>
+        </ul>
+        <span class="badge badge-id">ID: 4 questions; read aloud; extended time</span>
+      </div>
+    </div>
+    <div class="time-block">
+      <span class="time-label">0:42 – 0:50</span>
+      <div><strong>Review, Celebrate &amp; Closure (8 min)</strong>
+        <ul>
+          <li>Go over mini test answers together</li>
+          <li>Each student shares ONE thing they feel confident about</li>
+          <li>Positive affirmation: "You have worked hard this week. You ARE ready!"</li>
+          <li>Hand out personalized "STAAR Survival Kit" — Screen to Scratch reminder card + checklist of strategies + reference sheet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 Low-Prep Activities -->
+  <div class="accommodation">
+    <h4>🎲 Low-Prep Activities — Day 5: Volume, Mixed Review &amp; Test Strategies</h4>
+    <table>
+      <thead><tr><th>Activity</th><th>Time</th><th>Materials</th><th>How It Works</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Volume Desmos Challenge: "Can vs. Cone vs. Ball"</strong> <span class="desmos-badge">DESMOS</span></td>
+          <td>8-10 min</td>
+          <td>Desmos calculator (device), real objects (optional: soda can, party hat, tennis ball)</td>
+          <td>Bring in (or just describe) 3 objects: a soda can (cylinder), a party hat (cone), and a tennis ball (sphere). Students measure or are given dimensions, then race to find each volume in Desmos using the V~Bh method. "Which holds the most? Which holds the least?" <span class="badge badge-adhd">ADHD: Real objects + competition = high engagement</span> <span class="badge badge-id">ID: Provide the Desmos template pre-typed; students just change the numbers</span></td>
+        </tr>
+        <tr>
+          <td><strong>Number Line Clothesline</strong></td>
+          <td>5-7 min</td>
+          <td>String/yarn + clothespins (or tape on wall) + index cards</td>
+          <td>Hang a string across the room as a number line. Write numbers on cards: √9, 2.8, π, 7/4, 3.5. Students use Desmos to convert to decimals, then clothespin each card in the correct order on the line. Walk along the line to check. <span class="badge badge-adhd">ADHD: Out of seat, tactile</span></td>
+        </tr>
+        <tr>
+          <td><strong>STAAR Strategy Relay Race</strong></td>
+          <td>8-10 min</td>
+          <td>Printed STAAR-format problems (1 per team per round), pencils</td>
+          <td>Teams of 2-3. Each round: team gets one STAAR problem. They must NAME the strategy they'll use (eliminate, plug in, estimate, use reference chart, Desmos) BEFORE solving. Correct strategy + correct answer = 2 points. Correct answer only = 1 point. Builds metacognition about test-taking!</td>
+        </tr>
+        <tr>
+          <td><strong>"Beat the Teacher" Quiz Show</strong></td>
+          <td>5-8 min</td>
+          <td>Nothing — just the board/projector!</td>
+          <td>Teacher intentionally makes mistakes solving problems on the board. Students catch the errors. "I got c = 8 for a triangle with legs 6 and 10... am I right?" Students check with Desmos and explain the mistake. Builds error analysis skills with ZERO prep. <span class="badge badge-id">ID: Make errors obvious at first; gradually make them subtler</span></td>
+        </tr>
+        <tr>
+          <td><strong>Confidence Card Sort</strong></td>
+          <td>5 min</td>
+          <td>3 index cards per student (green, yellow, red — or just write G/Y/R)</td>
+          <td>Teacher names each topic from the week: "Slope... Equations... Functions... Pythagorean... Volume..." Students hold up green (got it!), yellow (kinda), or red (need help). Use this data to form flexible groups for the mini practice test. Also builds student self-awareness. <span class="badge badge-adhd">ADHD: Quick, active, no writing required</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Day 5 Faded Example -->
+  <div class="faded-example">
+    <h4>📐 Faded Worked Example — Volume with Desmos <span class="desmos-badge">WITH DESMOS</span></h4>
+
+    <p><strong>Problem 1 (Fully Worked):</strong> A Dallas water tank is a cylinder with r = 5 ft, h = 12 ft. Find the volume.</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Find formula on REFERENCE CHART: V = Bh (cylinder). B = Area of Base. What shape is the base? <strong>Circle!</strong> Area of circle = πr² ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content">Identify values: r = 5, h = 12, V = ? (solving for volume) ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type into Desmos:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line formula">Line 1: <code>V ~ B · h</code></div>
+          <div class="desmos-line variable">Line 2: <code>V = </code> (leave blank)</div>
+          <div class="desmos-line formula">Line 3: <code>B ~ π · r²</code></div>
+          <div class="desmos-line variable">Line 4: <code>h = 12</code></div>
+          <div class="desmos-line variable">Line 5: <code>r = 5</code></div>
+        </div> ✅
+      </div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">4</div>
+      <div class="step-content">Read from Desmos: <strong>V ≈ 942.48 ft³</strong> ✅</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 2 (Partially Faded):</strong> A raspa cone has r = 3 in and h = 6 in. Find the volume.</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Find formula: V = ⅓Bh (cone — it has the ⅓!). Base = circle = πr² ✅</div>
+    </div>
+    <div class="faded-step given">
+      <div class="step-num">2</div>
+      <div class="step-content">Identify: r = 3, h = 6, V = ? ✅</div>
+    </div>
+    <div class="faded-step partial">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type into Desmos:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line formula">Line 1: <code>V ~ (1/3) · B · h</code></div>
+          <div class="desmos-line student-fill">Line 2: <code>V = </code> <span class="fill-blank">(leave ____)</span></div>
+          <div class="desmos-line formula">Line 3: <code>B ~ π · r²</code></div>
+          <div class="desmos-line student-fill">Line 4: <code>h = <span class="fill-blank">____</span></code></div>
+          <div class="desmos-line student-fill">Line 5: <code>r = <span class="fill-blank">____</span></code></div>
+        </div>
+      </div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">Read from Desmos: V ≈ <span class="fill-blank">________</span> in³</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>Problem 3 (Mostly Faded):</strong> A Mavericks basketball (sphere) has r = 4.7 in. Find the volume. (Hint: V = ⁴⁄₃πr³ — no height needed for a sphere!)</p>
+    <div class="faded-step given">
+      <div class="step-num">1</div>
+      <div class="step-content">Find formula on reference chart: V = ⁴⁄₃πr³ (sphere — no B or h, just radius!) ✅</div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">2</div>
+      <div class="step-content">Identify: r = <span class="fill-blank">____</span>, V = <span class="fill-blank">____</span></div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">3</div>
+      <div class="step-content"><span class="desmos-badge">DESMOS</span> Type into Desmos on your own:
+        <div class="desmos-lines" style="margin-top:6px;">
+          <div class="desmos-line student-fill">Line 1: <span class="fill-blank">____________________</span></div>
+          <div class="desmos-line student-fill">Line 2: <span class="fill-blank">____________________</span></div>
+          <div class="desmos-line student-fill">Line 3: <span class="fill-blank">____________________</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="faded-step blank">
+      <div class="step-num">4</div>
+      <div class="step-content">Read from Desmos: V ≈ <span class="fill-blank">________</span> in³</div>
+    </div>
+  </div>
+
+  <!-- Day 5 Exit Ticket -->
+  <div class="exit-ticket">
+    <h4>🎫 Exit Ticket — Day 5 (Mini Mixed Review)</h4>
+    <div class="question">
+      <p>1. A cylindrical trash can in downtown Dallas has a radius of 2 feet and a height of 4 feet. What is the approximate volume? (Use π ≈ 3.14)</p>
+      <div class="options">
+        <div>A. 25.12 ft³</div>
+        <div class="correct">B. 50.24 ft³ ✓</div>
+        <div>C. 100.48 ft³</div>
+        <div>D. 16.56 ft³</div>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. Which list shows the numbers in order from LEAST to GREATEST?</p>
+      <p style="font-size:0.9em;">Numbers: √4, 1.5, 7/4, π</p>
+      <div class="options">
+        <div>A. π, √4, 7/4, 1.5</div>
+        <div class="correct">B. 1.5, 7/4, √4, π ✓</div>
+        <div>C. 1.5, √4, 7/4, π</div>
+        <div>D. 7/4, 1.5, √4, π</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PROCEDURAL CHECKLISTS BANK -->
+<!-- ============================================================ -->
+<div class="section-header" id="checklists">✅ Procedural Checklists Bank</div>
+<div class="card">
+  <p>Print, laminate, and place on each student's desk. Students check off each step as they complete it.</p>
+
+  <div class="two-col">
+    <div class="checklist">
+      <h4>📋 Finding Slope from a Table <span class="desmos-badge">DESMOS</span></h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Pick any <strong>TWO points</strong> from the table</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Press the <strong>+ (plus sign)</strong> button</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Click on <strong>"table"</strong></div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Type your two points into the table</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Click the <strong>"Add regression"</strong> symbol — Desmos gives the equation!</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Read the equation: y = <strong>m</strong>x + <strong>b</strong> → <strong>m is the MULTIPLIER (slope)</strong> = the number touching x. <strong>b is the BONUS (y-intercept)</strong> = the number by itself</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Check: Does the slope make sense for the context?</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Writing y = mx + b <span class="desmos-badge">DESMOS</span></h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Use the <strong>Desmos Table + Regression method</strong> (same as Finding Slope checklist)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Desmos gives you the full equation: y = mx + b</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Read <strong>m</strong> (MULTIPLIER = slope = number touching x)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Read <strong>b</strong> (BONUS = y-intercept = number by itself)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Check: Does the line in Desmos pass through all the points? If yes, your equation is correct!</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Solving Equations (Variables on Both Sides) <span class="desmos-badge">DESMOS</span></h4>
+      <div class="checklist-item"><div class="checkbox"></div><div><strong>⚠️ CHANGE "x" TO ANOTHER LETTER!</strong> Use "a" or any letter EXCEPT x. (Desmos treats x as a graphing variable.)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Type the WHOLE equation using <strong>~ (tilde)</strong> instead of = sign</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Example: 3x + 56 = 17x becomes → <code>3a + 56 ~ 17a</code></div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>READ the answer from Desmos (e.g., <strong>a = 4</strong>)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Write your answer as x = (the number Desmos gave you)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>CHECK: Plug your answer back into BOTH sides of the original equation — do they match?</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Is It a Function?</h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Look at all the X-VALUES (inputs)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Ask: "Does any x-value REPEAT?"</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>If YES → check if that x gives DIFFERENT y-values → NOT a function</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>If NO repeats → IT IS a function!</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>For graphs: Use VERTICAL LINE TEST — does any vertical line cross more than once?</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Pythagorean Theorem <span class="desmos-badge">DESMOS</span></h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Find the formula on the REFERENCE CHART: a² + b² = c²</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>LABEL the triangle: c = hypotenuse (LONGEST side, across from right angle), a &amp; b = legs</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Which value are you SOLVING for? (a, b, or c?) — that one stays BLANK in Desmos</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Line 1: Type <code>a² + b² ~ c²</code> (use the TILDE ~, not =)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Line 2: Type <code>a = </code> (plug in value OR leave blank if solving for a)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Line 3: Type <code>b = </code> (plug in value OR leave blank if solving for b)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> Line 4: Type <code>c = </code> (plug in value OR leave blank if solving for c)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>READ the answer from Desmos — the blank variable now has a value!</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>CHECK: Does the answer make sense? (c should always be the BIGGEST number)</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Volume (Cylinder, Cone, Sphere) <span class="desmos-badge">DESMOS</span></h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Identify the 3D SHAPE: Cylinder? Cone? Sphere?</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Find the correct FORMULA on reference chart</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Ask: "What does B stand for?" → B = Area of the BASE → "What shape is the base?"</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Identify r (radius) and h (height) from the problem</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> <strong>For CYLINDER:</strong>
+        <ul style="margin-top:4px; font-size:0.9em; font-family: 'Fira Code', monospace;">
+          <li>Line 1: <code>V ~ B · h</code></li>
+          <li>Line 2: <code>V = </code> (leave blank)</li>
+          <li>Line 3: <code>B ~ π · r²</code> (base = circle!)</li>
+          <li>Line 4: <code>h = ___</code></li>
+          <li>Line 5: <code>r = ___</code></li>
+        </ul>
+      </div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> <strong>For CONE:</strong> Same as cylinder BUT Line 1 is: <code>V ~ (1/3) · B · h</code> (add the ⅓!)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div><span class="desmos-badge">DESMOS</span> <strong>For SPHERE:</strong>
+        <ul style="margin-top:4px; font-size:0.9em; font-family: 'Fira Code', monospace;">
+          <li>Line 1: <code>V ~ (4/3) · π · r³</code> (no B or h needed!)</li>
+          <li>Line 2: <code>V = </code> (leave blank)</li>
+          <li>Line 3: <code>r = ___</code></li>
+        </ul>
+      </div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>READ the answer from Desmos &amp; include UNITS (ft³, in³, cm³, etc.)</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Transformations (Coordinate Rules)</h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Read: What TYPE of transformation? (translate, reflect, rotate)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Write the ORIGINAL coordinates of each vertex</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Apply the RULE:
+        <ul style="margin-top:4px; font-size:0.9em;">
+          <li>Translate: (x + a, y + b)</li>
+          <li>Reflect x-axis: (x, −y)</li>
+          <li>Reflect y-axis: (−x, y)</li>
+          <li>Rotate 90° CW: (y, −x)</li>
+        </ul>
+      </div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Write the NEW coordinates</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Plot and CHECK — does the new shape look correct?</div></div>
+    </div>
+
+    <div class="checklist">
+      <h4>📋 Ordering Real Numbers <span class="desmos-badge">DESMOS</span></h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Type each number on its own line as <strong>x = (number)</strong></div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Examples:
+        <ul style="margin-top:4px; font-size:0.9em; font-family: 'Fira Code', monospace;">
+          <li><code>x = 0.5</code></li>
+          <li><code>x = √7</code> (Desmos calculates automatically!)</li>
+          <li><code>x = 2²</code> (exponents work too!)</li>
+          <li><code>x = 26/5</code> (fractions work too!)</li>
+        </ul>
+      </div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Look at the graph — each value shows as a <strong>vertical line</strong></div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Read the vertical lines from <strong>LEFT to RIGHT = LEAST to GREATEST</strong></div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Write the numbers in order from left to right</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FADED WORKED EXAMPLES BANK -->
+<!-- ============================================================ -->
+<div class="section-header" id="faded-bank">📝 Faded Worked Examples — Design Principles</div>
+<div class="card">
+  <h3>What Are Faded Worked Examples?</h3>
+  <p>Faded worked examples are an evidence-based scaffolding strategy grounded in <strong>Cognitive Load Theory</strong>. They reduce the demand on working memory by gradually removing solution steps, requiring students to complete increasingly more of the problem independently.</p>
+
+  <div class="callout callout-info">
+    <span class="emoji">🧠</span>
+    <div><strong>How Backward Fading Works:</strong>
+      <ul>
+        <li><strong>Problem 1:</strong> ALL steps shown (fully worked) — student studies it</li>
+        <li><strong>Problem 2:</strong> Last 1-2 steps removed — student completes them</li>
+        <li><strong>Problem 3:</strong> Last 3-4 steps removed — student does most of the work</li>
+        <li><strong>Problem 4:</strong> Only the problem is given — full independence</li>
+      </ul>
+      This backward fading has been shown to be more effective than forward fading for students with learning disabilities.
+    </div>
+  </div>
+
+  <h3>Key for Color-Coded Steps</h3>
+  <table style="width:auto;">
+    <tr><td style="background:#d5f5e3; width:30px; border-left: 4px solid #27ae60;"></td><td><strong>GREEN = Given</strong> — Step is fully completed for the student</td></tr>
+    <tr><td style="background:#fef9e7; width:30px; border-left: 4px solid #f1c40f;"></td><td><strong>YELLOW = Partial</strong> — Part is given, student fills in the rest</td></tr>
+    <tr><td style="background:#fadbd8; width:30px; border-left: 4px solid #e74c3c;"></td><td><strong>RED = Blank</strong> — Student completes the entire step independently</td></tr>
+  </table>
+
+  <div class="callout callout-tip">
+    <span class="emoji">💡</span>
+    <div><strong>Teacher Tips:</strong>
+      <ul>
+        <li>For students with <strong>ID</strong>: Stay on Problem 1 and 2 longer; may need 3-4 fully worked examples before fading</li>
+        <li>For students with <strong>ADHD</strong>: The step-by-step format helps maintain focus; use a pointer or finger to track each step</li>
+        <li>Pair with <strong>procedural checklists</strong> so students can self-monitor which step they're on</li>
+        <li>Use <strong>think-alouds</strong> during I Do: verbalize your reasoning at each step</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DESMOS QUICK REFERENCE -->
+<!-- ============================================================ -->
+<div class="section-header" id="desmos-ref">🖩 STAAR Desmos Calculator — Quick Reference</div>
+<div class="card">
+  <div class="callout callout-info">
+    <span class="emoji">🎯</span>
+    <div><strong>Why Desmos?</strong> The STAAR Desmos calculator is the SAME calculator students use on the actual STAAR test. By practicing with it during review, students build familiarity and confidence. The tilde (~) regression method lets Desmos solve formulas for any missing variable — a game-changer for students who struggle with algebraic manipulation.</div>
+  </div>
+
+  <h3>The Tilde (~) Method — "Let Desmos Solve It!"</h3>
+  <p>The <strong>tilde (~)</strong> tells Desmos to use regression to find the best value for any undefined variable. Instead of doing all the algebra by hand, students type the formula and the known values, and Desmos solves for the unknown.</p>
+
+  <table>
+    <thead>
+      <tr><th>When You See This on STAAR...</th><th>Type This in Desmos</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pythagorean Theorem</strong><br>Find a missing side</td>
+        <td>
+          <code>a² + b² ~ c²</code><br>
+          <code>a = ___</code> (plug in or leave blank)<br>
+          <code>b = ___</code> (plug in or leave blank)<br>
+          <code>c = ___</code> (plug in or leave blank)<br>
+          <em>Leave the UNKNOWN one blank!</em>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Volume of Cylinder</strong><br>V = Bh, B = πr²</td>
+        <td>
+          <code>V ~ B · h</code><br>
+          <code>V = </code> (leave blank to solve)<br>
+          <code>B ~ π · r²</code><br>
+          <code>h = ___</code><br>
+          <code>r = ___</code>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Volume of Cone</strong><br>V = ⅓Bh, B = πr²</td>
+        <td>
+          <code>V ~ (1/3) · B · h</code><br>
+          <code>V = </code> (leave blank)<br>
+          <code>B ~ π · r²</code><br>
+          <code>h = ___</code><br>
+          <code>r = ___</code>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Volume of Sphere</strong><br>V = ⁴⁄₃πr³</td>
+        <td>
+          <code>V ~ (4/3) · π · r³</code><br>
+          <code>V = </code> (leave blank)<br>
+          <code>r = ___</code>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Find slope / equation from a table</strong><br>y = mx + b</td>
+        <td>
+          Press <strong>+</strong> → click <strong>"table"</strong> → enter points<br>
+          Click <strong>"Add regression"</strong> symbol<br>
+          Desmos gives: <code>y = mx + b</code><br>
+          <em>m = MULTIPLIER (slope), b = BONUS (y-intercept)</em>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Solve equations</strong><br>(variables on both sides)</td>
+        <td>
+          <strong>⚠️ Change x to another letter (use "a")!</strong><br>
+          <code>3a + 56 ~ 17a</code> → Desmos shows <strong>a = 4</strong><br>
+          Use <strong>~ (tilde)</strong> not = sign!<br>
+          <em>Cannot use "x" — use any other letter</em>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Order real numbers</strong><br>least to greatest</td>
+        <td>
+          Type each number as <code>x = ___</code> on its own line:<br>
+          <code>x = 0.5</code><br>
+          <code>x = √7</code><br>
+          <code>x = 2²</code><br>
+          <code>x = 26/5</code><br>
+          Vertical lines appear → <strong>left to right = least to greatest!</strong>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Key Desmos Tips for Students</h3>
+  <div class="two-col">
+    <div class="checklist">
+      <h4>📋 Desmos Do's ✅</h4>
+      <div class="checklist-item"><div class="checkbox"></div><div>Use <strong>~</strong> (tilde) when you want Desmos to SOLVE for something</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Use <strong>=</strong> (equals) when you're DEFINING a value you already know</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Type <strong>pi</strong> for π (Desmos recognizes it!)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Use <strong>^</strong> for exponents: r^2 means r²</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Use <strong>sqrt()</strong> for square roots: sqrt(144) = 12</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Click the <strong>wrench icon</strong> to change graph settings</div></div>
+    </div>
+    <div class="checklist">
+      <h4>📋 Desmos Don'ts ❌</h4>
+      <div class="checklist-item"><div class="checkbox"></div><div><strong>⚠️ Don't use "x" when solving equations with ~</strong> — Desmos treats x as a graphing variable! Change x to "a" or any other letter</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Don't use × for multiply — use <strong>·</strong> (dot) or just put numbers next to variables</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Don't forget to leave the UNKNOWN variable blank (no number after =)</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Don't panic if you see orange/red — just check your typing!</div></div>
+      <div class="checklist-item"><div class="checkbox"></div><div>Don't use the same letter for two different things on different lines</div></div>
+    </div>
+  </div>
+
+  <h3>Practice Link</h3>
+  <div class="callout callout-tip">
+    <span class="emoji">🔗</span>
+    <div>Students can practice at home with the <strong>exact same Desmos calculator</strong> used on STAAR:<br>
+    <a href="https://www.desmos.com/testing/texas/graphing" target="_blank"><strong>https://www.desmos.com/testing/texas/graphing</strong></a><br>
+    <em>Bookmark this link! It's the Texas testing version — same features, same layout, same buttons.</em></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PROGRESS MONITORING -->
+<!-- ============================================================ -->
+<div class="section-header" id="progress">📊 Progress Monitoring &amp; Data Tracking</div>
+<div class="card">
+  <h3>Daily Exit Ticket Tracking Sheet</h3>
+  <p>Record each student's score on exit tickets to monitor growth across the 5-day review.</p>
+
+  <table class="progress-table">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Day 1<br><span style="font-weight:400;font-size:0.8em;">Slope</span></th>
+        <th>Day 2<br><span style="font-weight:400;font-size:0.8em;">Equations</span></th>
+        <th>Day 3<br><span style="font-weight:400;font-size:0.8em;">Functions</span></th>
+        <th>Day 4<br><span style="font-weight:400;font-size:0.8em;">Geometry</span></th>
+        <th>Day 5<br><span style="font-weight:400;font-size:0.8em;">Mixed</span></th>
+        <th>Notes / Next Steps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>_____________</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td></td></tr>
+      <tr><td>_____________</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td></td></tr>
+      <tr><td>_____________</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td></td></tr>
+      <tr><td>_____________</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td></td></tr>
+      <tr><td>_____________</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td></td></tr>
+      <tr><td>_____________</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td>__ / 2</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Scoring Key</h3>
+  <table style="width:auto;">
+    <tr><td><strong>2/2</strong></td><td style="background:#d5f5e3;">✅ Mastered — Ready to move on</td></tr>
+    <tr><td><strong>1/2</strong></td><td style="background:#fef9e7;">⚠️ Approaching — Needs targeted reteach</td></tr>
+    <tr><td><strong>0/2</strong></td><td style="background:#fadbd8;">🔴 Not Yet — Requires intensive re-instruction</td></tr>
+  </table>
+
+  <h3>Observation Checklist (Daily)</h3>
+  <table>
+    <thead>
+      <tr><th>Behavior / Indicator</th><th>Student 1</th><th>Student 2</th><th>Student 3</th><th>Student 4</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Used procedural checklist independently</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Completed faded example with support</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Completed faded example independently</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Stayed on task during independent practice</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Used calculator appropriately</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Referenced the STAAR reference chart</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Attempted all problems before asking for help</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+      <tr><td>Verbalized reasoning / math talk</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- TEST-TAKING STRATEGIES -->
+<!-- ============================================================ -->
+<div class="section-header" id="strategies">🎯 STAAR Test-Taking Strategies</div>
+<div class="card">
+
+  <div class="two-col">
+    <div class="accommodation">
+      <h4>🧩 Strategies for Students with ID</h4>
+      <ul>
+        <li><strong>1. "Screen to Scratch"</strong> — Since the test is online, you can't highlight or underline on screen. Instead, write down your <strong>keywords</strong> on scratch paper. Draw the shapes, tables, or diagrams you see. Your scratch paper IS your workspace!</li>
+        <li><strong>2. "Find It on the Chart"</strong> — Before solving, check the reference chart. If a formula is needed, it's there!</li>
+        <li><strong>3. "Read Twice, Solve Once"</strong> — Read the problem. Read it again. THEN solve.</li>
+        <li><strong>4. "Plug In the Answers"</strong> — Try each answer choice in the problem to see which one works.</li>
+        <li><strong>5. "Fold into 8 Boxes"</strong> — Fold your scratch paper into 8 boxes. Each problem gets its own box to stay organized.</li>
+        <li><strong>6. "Skip and Come Back"</strong> — If stuck, put a star ★ and move to the next one. Come back later.</li>
+        <li><strong>7. "No Blanks"</strong> — Always choose an answer, even if guessing. Eliminate one obviously wrong answer first.</li>
+      </ul>
+    </div>
+
+    <div class="accommodation">
+      <h4>⚡ Strategies for Students with ADHD</h4>
+      <ul>
+        <li><strong>1. "Screen to Scratch"</strong> — Write down keywords from the screen onto your scratch paper. When possible, draw the shapes, tables, or other important info you see. Your scratch paper is your workspace!</li>
+        <li><strong>2. "5-5-5 Rule"</strong> — Work for 5 problems, take 5 deep breaths, then do 5 more.</li>
+        <li><strong>3. "Fold Your Paper into 8 Boxes"</strong> — Fold scratch paper into 8 boxes. Do the work for each problem in its own box — keeps things organized!</li>
+        <li><strong>4. "Touch Each Answer"</strong> — Point to each answer choice and ask "Could this be right?" before selecting.</li>
+        <li><strong>5. "Body Check"</strong> — Every 10 questions, check your body: feet on floor, sit up straight, take 3 breaths.</li>
+        <li><strong>6. "Flag and Move"</strong> — Use the online flag tool to mark questions to review; don't get stuck.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>General STAAR Math Strategies (All Students)</h3>
+  <div class="checklist">
+    <h4>📋 STAAR Day Checklist</h4>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Before the test:</strong> Get a good night's sleep, eat breakfast, bring a pencil for scratch paper</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Fold scratch paper into 8 BOXES</strong> — each problem gets its own box!</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Read the WHOLE question</strong> before looking at answer choices</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>"Screen to Scratch"</strong> — Write down <strong>keywords</strong> from the screen onto your scratch paper. Draw any shapes, tables, or diagrams you see. You can't highlight on the screen, so your scratch paper is your workspace!</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Check the reference chart</strong> for formulas you need</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Show your work</strong> in your scratch paper box — even for multiple choice</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Eliminate wrong answers</strong> — mentally cross out choices you know are wrong</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Estimate first</strong> — Does your answer make sense?</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Never leave a blank</strong> — Guess if you have to!</div></div>
+    <div class="checklist-item"><div class="checkbox"></div><div><strong>Check your work</strong> if you finish early — go back to starred/flagged questions</div></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- RESOURCE LINKS -->
+<!-- ============================================================ -->
+<div class="section-header" id="resources">🔗 Resource Links</div>
+<div class="card">
+
+  <h3>Official TEA Resources</h3>
+  <table>
+    <tr><td><strong>STAAR Grade 8 Math Blueprint</strong></td><td><a href="https://tea.texas.gov/student-assessment/staar/staar-8-math-blueprint.pdf" target="_blank">tea.texas.gov — Blueprint PDF</a></td></tr>
+    <tr><td><strong>STAAR Reference Materials (Grade 8)</strong></td><td><a href="https://tea.texas.gov/student-assessment/staar/staar-8-math-reference-materials.pdf" target="_blank">tea.texas.gov — Reference Chart</a></td></tr>
+    <tr><td><strong>Released STAAR Tests (Practice)</strong></td><td><a href="https://tea.texas.gov/student-assessment/staar/staar-released-test-questions" target="_blank">tea.texas.gov — Released Tests</a></td></tr>
+    <tr><td><strong>2023 STAAR Redesign Practice Test</strong></td><td><a href="https://tea.texas.gov/student-assessment/staar/released-test-questions/2023-staar-redesign-8-math-practice-test.pdf" target="_blank">tea.texas.gov — 2023 Practice Test</a></td></tr>
+    <tr><td><strong>STAAR Accommodations Educator Guide 2025-26</strong></td><td><a href="https://tea.texas.gov/student-assessment/test-administration/staar-accommodation-educator-guide.pdf" target="_blank">tea.texas.gov — Accommodations Guide</a></td></tr>
+    <tr><td><strong>Assessments for Special Populations</strong></td><td><a href="https://tea.texas.gov/student-assessment/assessments-for-special-populations" target="_blank">tea.texas.gov — Special Populations</a></td></tr>
+  </table>
+
+  <h3>TEKS Alignment &amp; Snapshots</h3>
+  <table>
+    <tr><td><strong>lead4ward TEKS Snapshot (Grade 8 Math)</strong></td><td><a href="https://lead4ward.com/docs/resources/snapshots/math/teks_snapshot_math_gr_08.pdf" target="_blank">lead4ward.com — Snapshot</a></td></tr>
+    <tr><td><strong>lead4ward TEKS Tree (Grade 8 Math)</strong></td><td><a href="https://fg.lead4ward.com/content/math/g8/m_8_teks_tree_fg.pdf" target="_blank">lead4ward.com — TEKS Tree</a></td></tr>
+    <tr><td><strong>TEKS Guide by TEA</strong></td><td><a href="https://teksguide.org/" target="_blank">teksguide.org</a></td></tr>
+    <tr><td><strong>IXL Texas 8th Grade Math Standards</strong></td><td><a href="https://www.ixl.com/standards/texas/math/grade-8" target="_blank">ixl.com — TX Standards</a></td></tr>
+  </table>
+
+  <h3>Free Practice Worksheets &amp; Activities</h3>
+  <table>
+    <tr><td><strong>Effortless Math — Free STAAR 8 Worksheets</strong></td><td><a href="https://www.effortlessmath.com/blog/staar-8-math-worksheets/" target="_blank">effortlessmath.com</a></td></tr>
+    <tr><td><strong>Lumos Learning — Free STAAR Practice</strong></td><td><a href="https://www.lumoslearning.com/llwp/resources/free-printable-math-and-english-worksheets-for-kids-staar-practice-worksheets.html" target="_blank">lumoslearning.com</a></td></tr>
+    <tr><td><strong>NewPath Worksheets — STAAR 8th Math</strong></td><td><a href="https://newpathworksheets.com/math/grade-8/texas-assessments-standards-staar" target="_blank">newpathworksheets.com</a></td></tr>
+    <tr><td><strong>Maneuvering the Middle — STAAR Review</strong></td><td><a href="https://www.maneuveringthemiddle.com/product/test-prep-unit-8th-grade-teks/" target="_blank">maneuveringthemiddle.com</a></td></tr>
+  </table>
+
+  <h3>Special Education &amp; Accommodations</h3>
+  <table>
+    <tr><td><strong>ADDitude — Math Accommodations for ADHD</strong></td><td><a href="https://www.additudemag.com/math-accommodations-for-children-with-adhd-or-dyscalculia/" target="_blank">additudemag.com</a></td></tr>
+    <tr><td><strong>CHADD — Classroom Accommodations</strong></td><td><a href="https://chadd.org/for-educators/classroom-accommodations/" target="_blank">chadd.org</a></td></tr>
+    <tr><td><strong>CHADD — Math Assignment Accommodations (PDF)</strong></td><td><a href="https://chadd.org/wp-content/uploads/2018/05/AccommodationsforMathAssignments.pdf" target="_blank">chadd.org — PDF</a></td></tr>
+    <tr><td><strong>CDC — ADHD in the Classroom</strong></td><td><a href="https://www.cdc.gov/adhd/treatment/classroom.html" target="_blank">cdc.gov</a></td></tr>
+    <tr><td><strong>Intervention Central — Math Self-Correction Checklists</strong></td><td><a href="https://www.interventioncentral.org/academic-interventions/math/self-monitoring-customized-math-self-correction-checklists" target="_blank">interventioncentral.org</a></td></tr>
+    <tr><td><strong>TTAC — Proceduralizing Strategy</strong></td><td><a href="https://ttaclinklines.pages.wm.edu/mastering-math-using-proceduralizing-strategy/" target="_blank">ttaclinklines.pages.wm.edu</a></td></tr>
+    <tr><td><strong>Curriculum for Autism — Scaffolded Equations</strong></td><td><a href="https://www.curriculumforautism.com/math/p/one-step-amp-two-step-equations-with-scaffolding-autism-math" target="_blank">curriculumforautism.com</a></td></tr>
+    <tr><td><strong>Made for Math — Accommodations Generator</strong></td><td><a href="https://madeformath.com/math-accommodations/" target="_blank">madeformath.com</a></td></tr>
+  </table>
+
+  <h3>Culturally Responsive Teaching</h3>
+  <table>
+    <tr><td><strong>EdWeek — 12 Ways to Make Math Culturally Responsive</strong></td><td><a href="https://www.edweek.org/teaching-learning/opinion-twelve-ways-to-make-math-more-culturally-responsive/2020/12" target="_blank">edweek.org</a></td></tr>
+    <tr><td><strong>Edutopia — CRT in Math Classroom</strong></td><td><a href="https://www.edutopia.org/article/5-tips-culturally-responsive-teaching-math-classroom/" target="_blank">edutopia.org</a></td></tr>
+    <tr><td><strong>ACE-Ed — CRT Strategies for Inclusive Math</strong></td><td><a href="https://ace-ed.org/culturally-responsive-teaching-strategies-for-inclusive-math/" target="_blank">ace-ed.org</a></td></tr>
+    <tr><td><strong>EdTX — Equitable Secondary Math Instruction (PDF)</strong></td><td><a href="https://edtx.org/wp-content/uploads/2024/08/Practices-for-Equitable-and-Culturally-Responsive-Secondary-Math-Instruction.pdf" target="_blank">edtx.org — PDF</a></td></tr>
+    <tr><td><strong>NCTM — Culturally Responsive Pedagogy</strong></td><td><a href="https://www.nctm.org/Membership/Culturally-Responsive-Pedagogy/" target="_blank">nctm.org</a></td></tr>
+  </table>
+
+  <h3>STAAR Desmos Calculator</h3>
+  <table>
+    <tr><td><strong>STAAR Desmos Texas Testing Calculator</strong></td><td><a href="https://www.desmos.com/testing/texas/graphing" target="_blank">desmos.com — Texas Testing Graphing</a></td></tr>
+    <tr><td><strong>Desmos Classroom Activities</strong></td><td><a href="https://teacher.desmos.com/" target="_blank">teacher.desmos.com</a></td></tr>
+    <tr><td><strong>Desmos User Guide</strong></td><td><a href="https://desmos.com/calculator" target="_blank">desmos.com/calculator</a></td></tr>
+    <tr><td><strong>TEA — STAAR Online Testing Tools (Desmos Info)</strong></td><td><a href="https://tea.texas.gov/student-assessment/staar/staar-online-testing" target="_blank">tea.texas.gov — Online Testing</a></td></tr>
+  </table>
+
+  <h3>Faded Worked Examples &amp; Scaffolding Research</h3>
+  <table>
+    <tr><td><strong>n2y — Best Practices: Math Examples &amp; Scaffolding</strong></td><td><a href="https://www.n2y.com/blog/best-practices-teaching-math-examples-scaffolding/" target="_blank">n2y.com</a></td></tr>
+    <tr><td><strong>EEF — Supporting Pupils with Worked Examples</strong></td><td><a href="https://educationendowmentfoundation.org.uk/news/supporting-pupils-with-worked-examples" target="_blank">educationendowmentfoundation.org.uk</a></td></tr>
+    <tr><td><strong>Backward Faded Math Resources</strong></td><td><a href="https://taylorda01.weebly.com/backward-faded-maths.html" target="_blank">taylorda01.weebly.com</a></td></tr>
+    <tr><td><strong>MiddleWeb — Math Strategies for Students with Disabilities</strong></td><td><a href="https://www.middleweb.com/46245/2-key-math-strategies-for-students-with-disabilities/" target="_blank">middleweb.com</a></td></tr>
+  </table>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center; padding: 30px; color: var(--text-light); font-size: 0.85em;">
+  <hr style="margin-bottom: 15px; border: none; border-top: 1px solid var(--border);">
+  <p><strong>8th Grade STAAR Math Review — 5-Day Special Education Lesson Plan</strong></p>
+  <p>Dallas ISD &bull; Spring 2026 &bull; Created for SpEd Small Group Pull-Out (ID &amp; OHI/ADHD)</p>
+  <p style="margin-top:8px;">Built with research from TEA, lead4ward, CHADD, ADDitude, CDC, EEF, NCTM, and Edutopia</p>
+  <p><a href="#top">↑ Back to Top</a></p>
+</div>
+
+</div>
+</body>
+</html>
