@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAAR Desmos Simulator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 { color: #00538C; margin-bottom: 10px; }
+        p { font-size: 1.1em; margin-bottom: 20px; color: #555; }
+        
+        .examples {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        .examples ul { margin: 5px 0 0 20px; padding: 0; }
+        
+        .keyboard {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .key-btn {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1.2em;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .key-btn:hover { background-color: #bdbdbd; }
+
+        input {
+            width: 90%;
+            padding: 15px;
+            font-size: 1.5em;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .check-btn {
+            background-color: #00538C;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .check-btn:hover { background-color: #003b66; }
+        .feedback {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none;
+        }
+        .error { background-color: #ffebee; color: #c62828; border: 2px solid #ef9a9a; }
+        .success { background-color: #e8f5e9; color: #2e7d32; border: 2px solid #a5d6a7; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>STAAR Desmos Simulator</h1>
+        <p>Practice formatting your equations for the Desmos Calculator!</p>
+        
+        <div class="examples">
+            <strong>Try typing these formats:</strong>
+            <ul>
+                <li><strong>Equations:</strong> 3a + 56 ~ 17a</li>
+                <li><strong>Pythagorean:</strong> a² + 8² ~ 10²</li>
+                <li><strong>Volume:</strong> V ~ π · 5² · 12</li>
+            </ul>
+        </div>
+
+        <div class="keyboard">
+            <button class="key-btn" onclick="insertText('²')">²</button>
+            <button class="key-btn" onclick="insertText('³')">³</button>
+            <button class="key-btn" onclick="insertText('π')">π</button>
+            <button class="key-btn" onclick="insertText('√')">√</button>
+            <button class="key-btn" onclick="insertText('~')">~</button>
+        </div>
+        
+        <input type="text" id="equationInput" placeholder="Type your equation here..." autocomplete="off">
+        <br>
+        <button class="check-btn" onclick="checkEquation()">Check My Equation</button>
+
+        <div id="feedbackBox" class="feedback"></div>
+    </div>
+
+    <script>
+        function insertText(text) {
+            let input = document.getElementById("equationInput");
+            input.value += text;
+            input.focus();
+        }
+
+        function checkEquation() {
+            let input = document.getElementById("equationInput").value.toLowerCase();
+            let feedbackBox = document.getElementById("feedbackBox");
+            
+            feedbackBox.style.display = "block";
+
+            if (input.trim() === "") {
+                feedbackBox.className = "feedback error";
+                feedbackBox.innerHTML = "Oops! Please type an equation first.";
+                return;
+            }
+
+            // Check for illegal graphing variables (x and y)
+            // Using regex to make sure we don't flag words, just standalone letters if possible, 
+            // but for safety in this simple sim, we check if x or y exists anywhere.
+            let hasX = input.includes("x");
+            let hasY = input.includes("y");
+            let hasEquals = input.includes("=");
+            let hasTilde = input.includes("~");
+
+            if ((hasX || hasY) && hasEquals) {
+                feedbackBox.className = "feedback error";
+                feedbackBox.innerHTML = "Wait! You broke the <strong>No X/Y Rule</strong> AND you need to use the <strong>Tilde Method</strong>. Change '=' to '~', and use letters like 'a', 'b', 'v', or 'h'.";
+            } else if (hasX || hasY) {
+                feedbackBox.className = "feedback error";
+                feedbackBox.innerHTML = "Remember the <strong>No X or Y Rule</strong>! Desmos tries to draw a graph when you use x or y. Change them to letters like 'a', 'b', 'v', or 'h'.";
+            } else if (hasEquals) {
+                feedbackBox.className = "feedback error";
+                feedbackBox.innerHTML = "Remember the <strong>Tilde Method</strong>! To make Desmos solve the formula for you, change the '=' sign to a '~'.";
+            } else if (hasTilde) {
+                feedbackBox.className = "feedback success";
+                feedbackBox.innerHTML = "🎉 PERFECT! You used the Tilde Method and safe variables correctly. You are ready to type this into the STAAR Desmos calculator!";
+            } else {
+                feedbackBox.className = "feedback error";
+                feedbackBox.innerHTML = "Hmm, I don't see a tilde (~). Remember to use the Tilde Method so Desmos can solve it!";
+            }
+        }
+    </script>
+</body>
+</html>
